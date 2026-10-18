@@ -33,15 +33,16 @@ def compara_agreement(clade):
     if comp.empty:
         return None
     rows = []
+    labels = {"SOG1"}  # Compara assigns NAC044/NAC085 orthologs only in close relatives of Arabidopsis
     for sp in sorted(set(clade.species)):
         if sp == config.REFERENCE_SPECIES:
             continue
-        ours = set(clade[clade.species == sp].gene)
+        ours = set(clade[(clade.species == sp) & clade.clade_label.isin(labels)].gene)
         theirs = set(comp[comp.species == sp].gene)
         if not theirs and sp not in set(comp.species):
             continue
         rows.append({"species": sp, "short": SHORT.get(sp, sp), "both": len(ours & theirs),
-                     "hmm_only": sorted(ours - theirs), "compara_only": sorted(theirs - ours)})
+                     "hmm_only": sorted(ours - theirs), "compara_only": sorted(theirs - ours), "subgroups": sorted(labels)})
     return rows
 
 

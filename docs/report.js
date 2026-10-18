@@ -8,6 +8,7 @@
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const f = (x, d = 2) => (x == null || !isFinite(x) ? "–" : Number(x).toFixed(d));
   const pfmt = (p) => (p == null ? "–" : p < 0.001 ? "<0.001" : p.toFixed(3));
+  const pp = (p) => (p == null ? "p = –" : p < 0.001 ? "p < 0.001" : `p = ${p.toFixed(3)}`);
   const arr = (x) => (Array.isArray(x) ? x : x == null ? [] : [x]);
 
   if (!D) {
@@ -68,9 +69,9 @@
     [species.length, "genomes searched", `${D.meta.species.length - species.length} not in this Ensembl release`],
     [fc.nac, "NAC genes in banana", fc.published ? `published: ${fc.published}` : ""],
     [focus.length, "SOG1-clade genes in banana", focusLab.map(([l, n]) => `${n} ${l}-like`).join(", ")],
-    [`${sqSig}/${sqRows.length}`, "tails with more SQ/TQ than chance", `${scd} carry an SQ/TQ cluster`],
+    [`${D.sq.tail_vs_domain.pooled_observed} vs ${Math.round(D.sq.tail_vs_domain.pooled_expected)}`, "SQ/TQ sites in tails, observed vs expected", `${scd} of ${sqRows.length} carry an SQ/TQ cluster`],
     [sel && sel.median_omega_domain != null ? `${f(sel.median_omega_domain)} vs ${f(sel.median_omega_tail)}` : "–", "median dN/dS, domain vs tail", sel ? `${sel.usable_pairs} gene pairs` : ""],
-    [pMa && pMa.proximal.fold ? `${f(pMa.proximal.fold, 1)}×` : "–", "SOG1 sites near banana target genes", pMa ? `within 500 bp, vs random genes, p = ${pfmt(pMa.proximal.p_perm)}` : ""],
+    [pMa && pMa.proximal.fold ? `${f(pMa.proximal.fold, 1)}×` : "–", "SOG1 sites near banana target genes", pMa ? `within 500 bp, vs random genes, ${pp(pMa.proximal.p_perm)}` : ""],
   ];
   $("#kpis").innerHTML = kpis.map(([v, l, s]) => `<div class="kpi"><div class="v">${esc(v ?? "–")}</div><div class="l">${esc(l)}</div><div class="arms small">${esc(s || "")}</div></div>`).join("");
 
@@ -111,7 +112,8 @@
   $("#family-note").textContent = `Every protein-coding gene in ${species.length} genomes was searched with the Pfam NAC (NAM) domain model. ` +
     `Banana has ${fc.nac} NAC genes, ${focus.length} of them in the SOG1 clade (${focusLab.map(([l, n]) => `${n} closest to ${l}`).join(", ")}). ` +
     `In moss and liverwort the closest genes branch off before SOG1 split from its sister NAC group (NAC073/075/099), so they are ancestral copies of both rather than strict SOG1 orthologs. ` +
-    `The algae have no SOG1-like gene (Chlamydomonas has no NAC genes at all; Chara has one).`;
+    `The algae have no SOG1-like gene (Chlamydomonas has no NAC genes at all; Chara has one). ` +
+    `Rice shows one gene only because Ensembl's model of rice SOG1 (Os06g0267500) is a 246-residue fragment, below the 250-residue cut-off for complete proteins.`;
 
   // ------------------------------------------------------------ tree
   function parseNewick(s) {
@@ -135,15 +137,17 @@
   if (D.tree && D.tree.newick) {
     const root = parseNewick(D.tree.newick.trim());
     const tips = [];
+    const CAP = 0.8;
     (function walk(n, depth) {
-      n.depth = depth + (n.len || 0);
+      n.cut = (n.len || 0) > CAP;
+      n.depth = depth + Math.min(n.len || 0, CAP);
       if (!n.children.length) tips.push(n);
       n.children.forEach((c) => walk(c, n.depth));
     })(root, 0);
     tips.forEach((t, i) => (t.y = i));
     (function sety(n) { if (n.children.length) { n.children.forEach(sety); n.y = (n.children[0].y + n.children[n.children.length - 1].y) / 2; } })(root);
     const maxD = Math.max(...tips.map((t) => t.depth));
-    const W = 980, row = 17, H = tips.length * row + 40, left = 10, right = 330;
+    const W = 980, row = 17, H = tips.length * row + 40, left = 30, right = 330;
     const X = (d) => left + (d / maxD) * (W - left - right);
     const Y = (y) => 14 + y * row;
     const s = svg(W, H);
@@ -151,6 +155,7 @@
     (function draw(n) {
       n.children.forEach((c) => {
         add(s, "path", { d: `M${X(n.depth)},${Y(c.y)}H${X(c.depth)}`, stroke: css("--ink"), "stroke-width": 1.2, fill: "none" });
+        if (c.cut) { const mx = (X(n.depth) + X(c.depth)) / 2; add(s, "path", { d: `M${mx - 4},${Y(c.y) + 5}l4,-10M${mx},${Y(c.y) + 5}l4,-10`, stroke: css("--ink"), "stroke-width": 1.2 }); add(s, "text", { x: mx, y: Y(c.y) - 8, "text-anchor": "middle", "font-size": 9.5, class: "muted" }, `${f(c.len, 1)} (shortened)`); }
         draw(c);
       });
       if (n.children.length) {
@@ -212,8 +217,8 @@
   })();
   const tv = D.sq.tail_vs_domain;
   $("#sq-note").textContent = `Each line is one SOG1-clade protein (same order as the tree): green box = NAC DNA-binding domain, pink ticks = SQ/TQ sites in the tail. ` +
-    `Median density is ${f(tv.median_tail)} sites per 100 residues in the tail vs ${f(tv.median_domain)} in the domain (paired Wilcoxon p = ${pfmt(tv.wilcoxon_p)}, ${tv.n} proteins). ` +
-    `${sqSig} of ${sqRows.length} tails have more sites than their own composition gives by chance (q < 0.05).`;
+    `Median density is ${f(tv.median_tail)} sites per 100 residues in the tail vs ${f(tv.median_domain)} in the domain (paired Wilcoxon ${pp(tv.wilcoxon_p)}, ${tv.n} proteins). ` +
+    `Pooled over all tails there are ${tv.pooled_observed} sites vs ${f(tv.pooled_expected, 1)} expected from shuffling (${pp(tv.pooled_p)}); one tail at a time the test has little power (${sqSig} of ${sqRows.length} reach q < 0.05), because tails are short and rich in S, T and Q anyway.`;
   table($("#t-sq"), [{ t: "Protein" }, { t: "Closest" }, { t: "Length", num: 1 }, { t: "Tail SQ/TQ", num: 1 }, { t: "Expected", num: 1 }, { t: "q", num: 1 }, { t: "SCD" }],
     mapOrder.map((k) => { const c = byKey[k]; return [`${c.short === focusShort ? "<b>" : ""}${esc(geneName(c))}${c.short === focusShort ? "</b>" : ""}`, c.clade_label,
       c.length, c.sq_tail, f(c.sq_tail_expected, 1), `<span class="${c.sq_tail_q < 0.05 ? "ok" : ""}">${pfmt(c.sq_tail_q)}</span>`, c.scd ? '<span class="tag">yes</span>' : '<span class="tag no">no</span>']; }));
@@ -277,11 +282,11 @@
     $("#c-sel").appendChild(s);
     $("#c-sel").insertAdjacentHTML("afterend", `<div class="legend"><span><i class="sw" style="background:${css("--c1")}"></i>pair with a banana gene</span><span><i class="sw" style="background:${css("--muted")}"></i>other pairs</span></div>`);
     $("#sel-note").textContent = `Across ${sel.usable_pairs} gene pairs with usable divergence, the median dN/dS is ${f(sel.median_omega_domain, 3)} in the NAC domain and ${f(sel.median_omega_tail, 3)} in the tail ` +
-      `(tail higher in ${Math.round(100 * sel.tail_higher_fraction)}% of pairs; paired Wilcoxon p = ${pfmt(sel.wilcoxon_p)}). Both are far below 1: the whole protein is under purifying selection, the DNA-binding domain most strongly.`;
+      `(tail higher in ${Math.round(100 * sel.tail_higher_fraction)}% of pairs; paired Wilcoxon ${pp(sel.wilcoxon_p)}). Both are far below 1: the whole protein is under purifying selection, the DNA-binding domain most strongly.`;
   } else $("#sel-note").textContent = "Selection results not available.";
   const para = (sel && sel.focus_paralogs) || [];
   table($("#t-para"), [{ t: "Pair" }, { t: "Closest" }, { t: "Ks", num: 1 }, { t: "dN/dS", num: 1 }],
-    para.length ? para.map((p) => [`<span class="mono">${esc(p.a.split("|")[1])}<br>${esc(p.b.split("|")[1])}</span>`, `${p.label_a} / ${p.label_b}`, f(p.ks), f(p.omega, 3)]) : [["Only one banana gene in the clade", "", "", ""]]);
+    para.length ? para.map((p) => [`<span class="mono">${esc(p.a.split("|")[1])}<br>${esc(p.b.split("|")[1])}</span>`, `${p.label_a} / ${p.label_b}`, p.ks == null || p.ks < 0 || p.ks > 2 ? '<span class="small">saturated</span>' : f(p.ks), p.ks == null || p.ks < 0 || p.ks > 2 ? "–" : f(p.omega, 3)]) : [["Only one banana gene in the clade", "", "", ""]]);
 
   // ------------------------------------------------------------ promoters
   (function prom() {
@@ -301,7 +306,7 @@
         const ctl = j > 0;
         add(s, "rect", { x: xx, y: y(r.mean_target), width: bw, height: y(0) - y(r.mean_target), fill: ctl ? css("--muted") : css("--c1"), rx: 2 });
         add(s, "rect", { x: xx + bw, y: y(r.mean_background), width: bw, height: y(0) - y(r.mean_background), fill: ctl ? css("--line") : css("--accent-soft"), stroke: ctl ? css("--muted") : css("--accent"), rx: 2 });
-        add(s, "text", { x: xx + bw, y: y(Math.max(r.mean_target, r.mean_background)) - 4, "text-anchor": "middle", "font-size": 10, class: ctl ? "muted" : "" }, `p ${pfmt(r.p_perm)}`);
+        add(s, "text", { x: xx + bw, y: y(Math.max(r.mean_target, r.mean_background)) - 4, "text-anchor": "middle", "font-size": 10, class: ctl ? "muted" : "" }, pp(r.p_perm));
       });
       add(s, "text", { x: x0 + 55, y: H - 26, "text-anchor": "middle", "font-size": 12, "font-weight": 600 }, spBy[sp].label.replace(/ \(.*\)/, ""));
       add(s, "text", { x: x0 + 55, y: H - 12, "text-anchor": "middle", "font-size": 10, class: "muted" }, `${P[sp][motifs[0]].full.n_target} targets · ${P[sp][motifs[0]].full.n_background} random`);
@@ -333,10 +338,10 @@
     const at = P.arabidopsis_thaliana, fo = P[D.meta.focus_species];
     const atR = at && at[motifs[0]], foR = fo && fo[motifs[0]];
     const ctl = (sp) => P[sp][motifs[1]].proximal;
-    $("#prom-note").textContent = (atR ? `Positive control: within 500 bp of the gene start, promoters of ${atR.proximal.n_target} reported SOG1 targets in Arabidopsis carry ${f(atR.proximal.mean_target)} CTT(N)7AAG sites on average vs ${f(atR.proximal.mean_background)} in 1,000 random genes (${f(atR.proximal.fold, 1)}×, p = ${pfmt(atR.proximal.p_perm)}). ` : "") +
-      (foR ? `In banana, the ${foR.proximal.n_target} orthologs of those targets carry ${f(foR.proximal.mean_target)} vs ${f(foR.proximal.mean_background)} (${f(foR.proximal.fold, 1)}×, p = ${pfmt(foR.proximal.p_perm)}). ` : "") +
+    $("#prom-note").textContent = (atR ? `Positive control: within 500 bp of the gene start, promoters of ${atR.proximal.n_target} reported SOG1 targets in Arabidopsis carry ${f(atR.proximal.mean_target)} CTT(N)7AAG sites on average vs ${f(atR.proximal.mean_background)} in 1,000 random genes (${f(atR.proximal.fold, 1)}×, ${pp(atR.proximal.p_perm)}). ` : "") +
+      (foR ? `In banana, the ${foR.proximal.n_target} orthologs of those targets carry ${f(foR.proximal.mean_target)} vs ${f(foR.proximal.mean_background)} (${f(foR.proximal.fold, 1)}×, ${pp(foR.proximal.p_perm)}). ` : "") +
       (atR && foR ? `The control motif with the same letters is not enriched (${f(ctl("arabidopsis_thaliana").fold, 1)}× and ${f(ctl(D.meta.focus_species).fold, 1)}×), so the signal is the SOG1 site, not base composition. ` +
-        `Over the whole 1.5 kb it is weaker (${f(atR.full.fold, 1)}×, p = ${pfmt(atR.full.p_perm)} in Arabidopsis; ${f(foR.full.fold, 1)}×, p = ${pfmt(foR.full.p_perm)} in banana): the sites sit close to the gene start, as in SOG1 ChIP-seq. The 500 bp window was set before the analysis was run.` : "");
+        `Over the whole 1.5 kb it is weaker (${f(atR.full.fold, 1)}×, ${pp(atR.full.p_perm)} in Arabidopsis; ${f(foR.full.fold, 1)}×, ${pp(foR.full.p_perm)} in banana): the sites sit close to the gene start, as in SOG1 ChIP-seq. The 500 bp window was set before the analysis was run.` : "");
 
     const tg = D.targets;
     const atGenes = Object.fromEntries((at ? at.genes : []).map((g) => [g.gene, g]));
@@ -357,23 +362,23 @@
   // ------------------------------------------------------------ checks
   const checks = [];
   Object.entries(D.counts).forEach(() => {});
-  D.counts.filter((c) => c.published).forEach((c) => checks.push([c.in_range, `${c.label}: ${c.nac} NAC genes found, ${c.published} published`]));
+  D.counts.filter((c) => c.published).forEach((c) => checks.push([c.in_range, `${c.label}: ${c.nac} NAC genes found, ${c.published} published` + (c.species === "oryza_sativa" ? " (the published count used the MSU gene annotation; Ensembl uses RAP-DB, which has fewer NAC gene models)" : "")]));
   const atClade = clade.filter((c) => c.short === "At").map((c) => c.gene).sort();
   checks.push([atClade.join() === Object.keys(D.meta.at_clade).sort().join(), `Arabidopsis SOG1, NAC044 and NAC085 recovered, and nothing else (${atClade.length} genes)`]);
   const cr = counts.chlamydomonas_reinhardtii;
   if (cr) checks.push([cr.sog1_clade === 0, `No SOG1-clade gene in the green alga Chlamydomonas (negative control): ${cr.sog1_clade}`]);
   if (D.tree && D.tree.rule_agreement) {
     const ra = D.tree.rule_agreement;
-    checks.push([true, `Tree and best-match rule agree on ${ra.both} genes; the tree adds ${ra.tree_only.length} (${ra.tree_only.slice(0, 6).join(", ")}${ra.tree_only.length > 6 ? "…" : ""}) and rejects ${ra.best_hit_only.length}`]);
+    checks.push([true, `Tree and best-match rule agree on ${ra.both} genes; the best-match rule alone would add ${ra.best_hit_only.length} protein fragments, and the tree finds ${ra.pro_orthologs.length} ancestral copies in moss and liverwort that the best-match rule misses`]);
   }
   if (D.compara) {
     const both = D.compara.reduce((a, r) => a + r.both, 0), hmm = D.compara.reduce((a, r) => a + r.hmm_only.length, 0), cmp = D.compara.reduce((a, r) => a + r.compara_only.length, 0);
-    checks.push([both / Math.max(1, both + hmm + cmp) >= 0.8, `Clade agrees with Ensembl Compara for ${both} genes; ${hmm} found only by my search, ${cmp} only by Compara`]);
+    checks.push([both / Math.max(1, both + cmp) >= 0.85, `My search finds ${both} of the ${both + cmp} SOG1 orthologs Ensembl Compara lists (the ${cmp} missed did not pass the complete-protein filters, e.g. rice SOG1 is a 246-residue fragment in Ensembl); it also places ${hmm} genes from a long monocot SOG1-like lineage that Compara does not call SOG1 orthologs`]);
   }
   if (sel) checks.push([sel.cds_mismatch.length <= 0.1 * (sel.codon_alignments + sel.cds_mismatch.length), `${sel.codon_alignments} coding sequences translate exactly to their protein (${sel.cds_mismatch.length} did not and were left out of dN/dS)`]);
   if (afAt && afAt.rho != null) checks.push([afAt.rho < -0.3, `Disorder prediction agrees with AlphaFold for Arabidopsis SOG1 (ρ = ${f(afAt.rho)})`]);
-  if (atR_ok()) checks.push([P.arabidopsis_thaliana[M0].proximal.p_perm < 0.05, `Positive control: SOG1 motif enriched near Arabidopsis target genes (p = ${pfmt(P.arabidopsis_thaliana[M0].proximal.p_perm)})`]);
-  if (atR_ok()) checks.push([P.arabidopsis_thaliana[D.promoters.motifs[1]].proximal.p_perm > 0.05, `Composition control motif not enriched (p = ${pfmt(P.arabidopsis_thaliana[D.promoters.motifs[1]].proximal.p_perm)})`]);
+  if (atR_ok()) checks.push([P.arabidopsis_thaliana[M0].proximal.p_perm < 0.05, `Positive control: SOG1 motif enriched near Arabidopsis target genes (${pp(P.arabidopsis_thaliana[M0].proximal.p_perm)})`]);
+  if (atR_ok()) checks.push([P.arabidopsis_thaliana[D.promoters.motifs[1]].proximal.p_perm > 0.05, `Composition control motif not enriched (${pp(P.arabidopsis_thaliana[D.promoters.motifs[1]].proximal.p_perm)})`]);
   function atR_ok() { return P.arabidopsis_thaliana && P.arabidopsis_thaliana[M0]; }
   $("#checklist").innerHTML = checks.map(([ok, t]) => `<li class="${ok ? "ok" : "bad"}">${esc(t)}</li>`).join("");
   if (D.compara) table($("#t-compara"), [{ t: "Genome" }, { t: "Both", num: 1 }, { t: "Only my search" }, { t: "Only Compara" }],
@@ -382,11 +387,14 @@
 
   // ------------------------------------------------------------ takeaways and phase 3
   const take = [];
+  const tv0 = D.sq.tail_vs_domain;
+  const fkey = `${focusShort}|${D.meta.focus_gene}`;
+  const focusSites = D.sq.conservation && D.sq.conservation.length && D.sq.conservation.every((e) => e.present[fkey]) ? { n: D.sq.conservation.length } : null;
   if (D.meta.focus_gene && byKey[`${focusShort}|${D.meta.focus_gene}`]) take.push(`The gene cloned in phase 1 is ${D.meta.focus_gene}, the one-to-one ortholog of Arabidopsis SOG1.`);
   take.push(`Banana carries ${focus.length} SOG1-clade genes (${focusLab.map(([l, n]) => `${n} ${l}-like`).join(", ")}), against ${counts.arabidopsis_thaliana ? counts.arabidopsis_thaliana.sog1_clade : 3} in Arabidopsis and ${counts.oryza_sativa ? counts.oryza_sativa.sog1_clade : "?"} in rice.`);
-  if (sqRows.length) take.push(`The ATM/ATR switch is ancient: ${sqSig} of ${sqRows.length} clade tails hold more SQ/TQ sites than chance and ${scd} carry an SQ/TQ cluster, banana included.`);
+  if (sqRows.length) take.push(`The ATM/ATR switch is old and kept: across the clade, tails hold ${tv0.pooled_observed} SQ/TQ sites vs ${Math.round(tv0.pooled_expected)} expected from their composition (${pp(tv0.pooled_p)}); ${scd} of ${sqRows.length} carry an SQ/TQ cluster${focusSites ? `, and the banana SOG1 keeps all ${focusSites.n} Arabidopsis SOG1 sites in place` : ""}.`);
   if (sel && sel.median_omega_domain != null) take.push(`The DNA-binding domain is the most constrained part (median dN/dS ${f(sel.median_omega_domain, 3)} vs ${f(sel.median_omega_tail, 3)} in the tail).`);
-  if (atR_ok() && pMa) take.push(`The SOG1 binding site marks the start of target genes in Arabidopsis (${f(P.arabidopsis_thaliana[M0].proximal.fold, 1)}×) ${pMa.proximal.p_perm < 0.05 ? "and also of their banana orthologs" : "but not clearly in their banana orthologs"} (${f(pMa.proximal.fold, 1)}×, p = ${pfmt(pMa.proximal.p_perm)}), so MaSOG1 probably controls the same DNA-repair genes.`);
+  if (atR_ok() && pMa) take.push(`The SOG1 binding site marks the start of target genes in Arabidopsis (${f(P.arabidopsis_thaliana[M0].proximal.fold, 1)}×) ${pMa.proximal.p_perm < 0.05 ? "and also of their banana orthologs" : "but not clearly in their banana orthologs"} (${f(pMa.proximal.fold, 1)}×, ${pp(pMa.proximal.p_perm)}), consistent with MaSOG1 controlling the same DNA-repair genes.`);
   $("#takeaways").innerHTML = take.map((t) => `<p>${esc(t)}</p>`).join("");
 
   const fg = D.meta.focus_gene;

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="report.css?v=1">
+<link rel="stylesheet" href="report.css?v=2">
 </head>
 <body>
 <header class="hero">
@@ -77,8 +77,9 @@
     <p class="note" id="tree-note"></p>
     <div class="legend" id="tree-legend"></div>
     <figure class="chart wide" id="c-tree"></figure>
-    <p class="small">Maximum-likelihood tree of the SOG1 clade (trimmed alignment), rooted on three Arabidopsis NACs from other subfamilies.
-      Numbers are ultrafast bootstrap support (%); values of 95 or more are well supported. Banana genes in bold.</p>
+    <p class="small">Maximum-likelihood tree (trimmed alignment) of every SOG1-clade candidate, the Arabidopsis NACs that compete with them as best match, and three distant Arabidopsis NACs; rooted on NST1.
+      Numbers are ultrafast bootstrap support (%); 95 or more is well supported. Banana genes in bold; very long branches are shortened (//).
+      "Ancestral copy" = branches off before SOG1 split from its sister NAC group, so it is related to both.</p>
   </section>
 
   <section id="sq">
@@ -126,7 +127,7 @@
     <h2>Checks</h2>
     <ul class="checks" id="checklist"></ul>
     <h3>Clade membership: my search vs Ensembl Compara</h3>
-    <p class="small">Two independent methods: my domain search plus best Arabidopsis match, and Ensembl's gene-tree orthologs.</p>
+    <p class="small">SOG1-like genes from my search and tree vs Ensembl Compara gene-tree orthologs of Arabidopsis SOG1 (Compara gives NAC044/NAC085 orthologs only for close relatives of Arabidopsis, so those are not compared).</p>
     <div class="tablewrap"><table id="t-compara" class="tbl compact"></table></div>
   </section>
 
@@ -135,12 +136,12 @@
     <ul class="plain">
       <li><b>Data:</b> proteomes and coding sequences from Ensembl Plants (release <span data-k="release">…</span>), downloaded and fingerprinted (MD5) by the pipeline; Pfam NAM domain PF02365 from InterPro; AlphaFold DB models via UniProt (used only when the UniProt sequence is identical).</li>
       <li><b>NAC family:</b> longest protein per protein-coding gene; <code>hmmsearch</code> (pyhmmer) with Pfam gathering thresholds.</li>
-      <li><b>SOG1 clade:</b> every NAC protein searched with <code>phmmer</code> against all Arabidopsis NACs; in the clade when the best match is SOG1, NAC044 or NAC085. Checked against Ensembl Compara and the tree.</li>
+      <li><b>SOG1 clade:</b> every NAC protein searched with <code>phmmer</code> against all Arabidopsis NACs; candidates are proteins of at least 250 residues with SOG1, NAC044 or NAC085 among their 8 best matches and within 70% of the best score. Proteins that match a clade gene strongly (E &lt; 1e-30) but miss the Pfam cut-off are added. The final call comes from the tree: walking up from a gene, if the first group containing Arabidopsis genes holds only SOG1/NAC044/NAC085, the gene is in the clade; if it holds those plus their sister NACs, it is an ancestral copy. Checked against Ensembl Compara.</li>
       <li><b>Tree:</b> MAFFT L-INS-i, trimAl <code>-automated1</code>, IQ-TREE 2 with ModelFinder (BIC) and 1,000 ultrafast bootstraps.</li>
       <li><b>SQ/TQ:</b> sites in the tail (after the NAC domain) vs 10,000 composition-preserving shuffles; Benjamini–Hochberg across proteins.</li>
       <li><b>Disorder:</b> metapredict per residue, compared with AlphaFold pLDDT (Spearman).</li>
       <li><b>Selection:</b> codon alignments threaded onto the protein alignment; pairwise Nei–Gojobori dN/dS (Biopython) for domain and tail columns; pairs with dS outside 0.01–2 dropped.</li>
-      <li><b>Promoters:</b> 1.5 kb upstream of each gene start (Ensembl REST); CTT(N)7AAG on both strands; targets vs 1,000 random genes per species (fixed seed); banana orthologs by reciprocal best hit (E &lt; 1e-10).</li>
+      <li><b>Promoters:</b> 1.5 kb upstream of each gene start (Ensembl REST); CTT(N)7AAG on both strands, counted over the whole 1.5 kb and within 500 bp of the gene start (window set in advance from SOG1 ChIP-seq); targets vs 1,000 random genes per species (fixed seed); banana orthologs by reciprocal best hit (E &lt; 1e-10).</li>
       <li><b>Reproducible:</b> one command (<code>python run_all.py</code>), run end to end by a GitHub workflow; unit tests on known inputs and checks on the output.</li>
     </ul>
     <h3>What this cannot tell you</h3>
@@ -158,7 +159,7 @@
   </section>
 </main>
 <p class="foot wrap">Data: Ensembl Plants, InterPro/Pfam, UniProt, AlphaFold DB. Code: <a href="https://github.com/bymankirat/SOG1-Banana-Comparative-Genomics">github.com/bymankirat/SOG1-Banana-Comparative-Genomics</a>. Built by Mankirat Singh.</p>
-<script src="results.js?v=1"></script>
-<script src="report.js?v=1"></script>
+<script src="results.js?v=2"></script>
+<script src="report.js?v=2"></script>
 </body>
 </html>
