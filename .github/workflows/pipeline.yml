@@ -19,27 +19,30 @@ concurrency:
 
 jobs:
   run:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - uses: mamba-org/setup-micromamba@v2
         with:
-          python-version: "3.12"
-
-      - name: Install alignment and tree tools
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq mafft trimal iqtree
-          mafft --version || true
-          (iqtree2 --version || iqtree --version) | head -3
+          environment-name: sog1
+          create-args: >-
+            -c conda-forge -c bioconda python=3.12 mafft trimal iqtree
+          init-shell: bash
+          cache-environment: true
 
       - name: Install Python packages
-        run: pip install -q -r requirements.txt
+        shell: bash -el {0}
+        run: |
+          mkdir -p results data/derived
+          set -o pipefail
+          { mafft --version; iqtree2 --version | head -2 || iqtree --version | head -2; trimal --version; } 2>&1 | tee results/setup_log.txt
+          pip install -q -r requirements.txt 2>&1 | tee -a results/setup_log.txt
 
       - name: Install disorder predictor (optional)
         continue-on-error: true
+        shell: bash -el {0}
         run: pip install -q metapredict
 
       - name: Cache downloads
@@ -50,12 +53,14 @@ jobs:
           restore-keys: raw-
 
       - name: Run pipeline
+        shell: bash -el {0}
         run: |
           set -o pipefail
           mkdir -p results data/derived
           python run_all.py --from "${{ github.event.inputs.from_step || '1' }}" 2>&1 | tee results/run_log.txt
 
       - name: Tests
+        shell: bash -el {0}
         run: |
           set -o pipefail
           python -m pytest -q 2>&1 | tee results/test_log.txt
@@ -65,7 +70,7 @@ jobs:
         run: |
           git config user.name "bymankirat"
           git config user.email "msinghsandal@gmail.com"
-          git add -A results data/derived docs/results.js || true
+          git add -A results data/derived docs/results.js 2>/dev/null || git add -A results data/derived || true
           if ! git diff --cached --quiet; then
             git commit -q -m "Pipeline results (run ${{ github.run_number }})"
             git pull -q --rebase origin main
