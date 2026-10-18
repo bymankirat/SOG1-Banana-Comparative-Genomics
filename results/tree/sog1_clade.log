@@ -1,0 +1,207 @@
+IQ-TREE version 3.1.4 for Linux x86 64-bit built Sep 29 2026
+Developed by Bui Quang Minh, Thomas Wong, Nhan Ly-Trong, Huaiyan Ren
+Contributed by Lam-Tung Nguyen, Dominik Schrempf, Chris Bielow,
+Olga Chernomor, Michael Woodhams, Diep Thi Hoang, Heiko Schmidt
+
+Host:    runnervm8k3b6 (AVX512, FMA3, 15 GB RAM)
+Command: /home/runner/micromamba/envs/sog1/bin/iqtree -s /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade.trim.faa -m MFP -B 1000 -T AUTO --threads-max 4 --seed 20231107 -o At__AT1G52890,At__AT4G27410,At__AT2G46770 -pre /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade -quiet -redo
+Seed:    20231107 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Sun Oct 18 23:06:03 2026
+Kernel:  AVX+FMA - auto-detect threads (4 CPU cores detected)
+
+Reading alignment file /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade.trim.faa ... Fasta format detected
+Reading fasta file: done in 0.000214815 secs using 66.57% CPU
+Alignment most likely contains protein sequences
+Constructing alignment: done in 0.000435114 secs using 418.7% CPU
+Alignment has 50 sequences with 307 columns, 305 distinct patterns
+271 parsimony-informative, 18 singleton sites, 18 constant sites
+                           Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 1.81198e-05 secs using 88.3% CPU
+   1  Atr__AMTR_s00049p00217400   17.92%    passed     79.62%
+   2  Atr__AMTR_s00060p00054700   20.85%    passed     10.42%
+   3  Ac__Aco003015.1.path1        5.54%    passed     99.84%
+   4  Ac__Aco013436.1.path1       15.64%    passed     91.48%
+   5  Ac__Aco022043.1.path1       21.17%    passed     98.39%
+   6  At__AT1G25580                7.82%    passed     99.99%
+   7  At__AT1G52890               34.53%    passed     34.41%
+   8  At__AT2G46770               35.18%    passed     59.16%
+   9  At__AT3G01600               16.61%    passed     89.03%
+  10  At__AT4G27410               36.48%    passed     26.89%
+  11  At__AT5G14490               18.24%    passed     84.91%
+  12  Bd__BRADI_1g43840v3          6.19%    passed     79.31%
+  13  Bd__BRADI_1g69617v3         11.73%    passed     72.69%
+  14  Bd__BRADI_3g47627v3         10.75%    passed     99.11%
+  15  Bd__BRADI_5g13450v3         15.64%    passed     90.81%
+  16  Dr__DRNTG_02985              7.82%    passed     99.99%
+  17  Dr__DRNTG_07045             13.36%    passed     38.69%
+  18  Dr__DRNTG_23188              8.47%    passed     91.34%
+  19  Gm__GLYMA_01G088200          5.54%    passed     96.52%
+  20  Gm__GLYMA_02G100200          5.54%    passed     98.01%
+  21  Gm__GLYMA_05G002700         10.10%    passed     99.50%
+  22  Gm__GLYMA_10G204700          5.54%    passed     96.11%
+  23  Gm__GLYMA_16G069300          8.47%    passed     96.40%
+  24  Gm__GLYMA_19G002900         10.42%    passed     95.20%
+  25  Gm__GLYMA_19G056400          8.47%    passed     99.61%
+  26  Gm__GLYMA_20G185800          5.54%    passed     96.98%
+  27  Ma__Ma00_g02930              8.14%    passed     99.60%
+  28  Ma__Ma03_g07280              8.14%    passed     99.55%
+  29  Ma__Ma06_g12700              8.79%    passed     95.74%
+  30  Ma__Ma09_g01850              9.12%    passed     99.97%
+  31  Os__Os02g0594800             8.47%    passed     99.76%
+  32  Pt__Potri.001G343800.v4.1    9.45%    passed     91.45%
+  33  Pt__Potri.008G116600.v4.1    5.54%    passed     99.60%
+  34  Pt__Potri.010G129700.v4.1    5.54%    passed     99.40%
+  35  Sb__SORBI_3001G453000       21.17%    passed     15.29%
+  36  Sb__SORBI_3004G201600        8.47%    passed     85.41%
+  37  Sb__SORBI_3006G120301       36.48%    passed     61.70%
+  38  Sb__SORBI_3006G120400        8.79%    passed     91.09%
+  39  Sb__SORBI_3010G111800        4.89%    passed     96.32%
+  40  Vv__Vitis01g00283            5.54%    passed     98.32%
+  41  Vv__Vitis14g02085            8.47%    passed     98.51%
+  42  Zm__Zm00001eb008350         66.78%    passed     37.85%
+  43  Zm__Zm00001eb183700          8.47%    passed     92.48%
+  44  Zm__Zm00001eb246010          8.47%    passed     89.65%
+  45  Zm__Zm00001eb280480         11.07%    passed     98.78%
+  46  Zm__Zm00001eb280490          5.21%    passed     99.45%
+  47  Zm__Zm00001eb337360         34.85%    passed     25.27%
+  48  Zm__Zm00001eb345820         53.42%    passed     67.65%
+  49  Zm__Zm00001eb399930         19.22%    passed     14.57%
+  50  Zm__Zm00001eb424870          8.47%    passed     61.83%
+WARNING: 2 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                       14.73%  0 sequences failed composition chi2 test (p-value<5%; df=19)
+Checking for duplicate sequences: done in 0.000141859 secs using 392.6% CPU
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.011 seconds
+Measuring multi-threading efficiency up to 4 CPU cores
+Increase to 10 rounds for branch lengths
+13 trees examined
+Threads: 1 / Time: 4.274 sec / Speedup: 1.000 / Efficiency: 100% / LogL: -19766
+Threads: 2 / Time: 2.345 sec / Speedup: 1.823 / Efficiency: 91% / LogL: -19766
+Threads: 3 / Time: 2.535 sec / Speedup: 1.686 / Efficiency: 56% / LogL: -19766
+Threads: 4 / Time: 2.562 sec / Speedup: 1.668 / Efficiency: 42% / LogL: -19766
+Determining AUTO threadcount: done in 11.717 secs using 233% CPU
+BEST NUMBER OF THREADS: 2
+
+Perform fast likelihood tree search using LG+I+G model...
+Estimate model parameters (epsilon = 5.000)
+Perform nearest neighbor interchange...
+Estimate model parameters (epsilon = 1.000)
+1. Initial log-likelihood: -13891.507
+Optimal log-likelihood: -13891.449
+Proportion of invariable sites: 0.021
+Gamma shape alpha: 1.361
+Parameters optimization took 1 rounds (0.063 sec)
+Time for fast ML tree search: 0.749 seconds
+
+NOTE: ModelFinder requires 26 MB RAM!
+ModelFinder will test up to 1232 protein models (sample size: 307 epsilon: 0.100) ...
+Akaike Information Criterion:           JTT+I+R3
+Corrected Akaike Information Criterion: JTT+I+R3
+Bayesian Information Criterion:         JTT+I+G4
+Best-fit model: JTT+I+G4 chosen according to BIC
+
+All model information printed to /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade.model.gz
+CPU time for ModelFinder: 250.161 seconds (0h:4m:10s)
+Wall-clock time for ModelFinder: 123.052 seconds (0h:2m:3s)
+Generating 1000 samples for ultrafast bootstrap (seed: 20231107)...
+
+NOTE: 11 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+Thoroughly optimizing +I+G parameters from 10 start values...
+Init pinv, alpha: 0.000, 1.386 / Estimate: 0.000, 1.374 / LogL: -13669.262
+Init pinv, alpha: 0.007, 1.386 / Estimate: 0.029, 1.564 / LogL: -13664.739
+Init pinv, alpha: 0.013, 1.386 / Estimate: 0.030, 1.566 / LogL: -13664.736
+Init pinv, alpha: 0.020, 1.386 / Estimate: 0.030, 1.566 / LogL: -13664.736
+Init pinv, alpha: 0.026, 1.386 / Estimate: 0.030, 1.571 / LogL: -13664.733
+Init pinv, alpha: 0.033, 1.386 / Estimate: 0.031, 1.575 / LogL: -13664.734
+Init pinv, alpha: 0.039, 1.386 / Estimate: 0.031, 1.576 / LogL: -13664.736
+Init pinv, alpha: 0.046, 1.386 / Estimate: 0.031, 1.577 / LogL: -13664.738
+Init pinv, alpha: 0.052, 1.386 / Estimate: 0.032, 1.578 / LogL: -13664.740
+Init pinv, alpha: 0.059, 1.386 / Estimate: 0.032, 1.580 / LogL: -13664.737
+Optimal pinv,alpha: 0.030, 1.571 / LogL: -13664.733
+
+Parameters optimization took 2.855 sec
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.104554 secs using 200% CPU
+Computing ML distances took 0.104627 sec (of wall-clock time) 0.209262 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 6.98566e-05 secs using 260.5% CPU
+Constructing RapidNJ tree: done in 0.000565052 secs using 156.6% CPU
+Computing RapidNJ tree took 0.000662 sec (of wall-clock time) 0.001116 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -13749.995
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 0.683 second
+Computing log-likelihood of 98 initial trees ... 2.118 seconds
+Current best score: -13664.733
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -13657.542
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 2: -13653.369
+Iteration 10 / LogL: -13657.575 / Time: 0h:2m:12s
+Iteration 20 / LogL: -13654.211 / Time: 0h:2m:15s
+Finish initializing candidate tree set (3)
+Current best tree score: -13653.369 / CPU time: 9.381
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -13653.525 / Time: 0h:2m:20s (0h:0m:42s left)
+UPDATE BEST LOG-LIKELIHOOD: -13653.368
+Estimate model parameters (epsilon = 0.100)
+UPDATE BEST LOG-LIKELIHOOD: -13653.300
+Iteration 40 / LogL: -13653.409 / Time: 0h:2m:24s (0h:0m:33s left)
+Iteration 50 / LogL: -13653.683 / Time: 0h:2m:28s (0h:0m:27s left)
+Log-likelihood cutoff on original alignment: -13683.274
+Iteration 60 / LogL: -13660.388 / Time: 0h:2m:33s (0h:0m:22s left)
+Iteration 70 / LogL: -13667.724 / Time: 0h:2m:38s (0h:0m:16s left)
+Iteration 80 / LogL: -13653.567 / Time: 0h:2m:43s (0h:0m:11s left)
+Iteration 90 / LogL: -13653.965 / Time: 0h:2m:48s (0h:0m:6s left)
+Iteration 100 / LogL: -13653.732 / Time: 0h:2m:52s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -13683.274
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.998
+TREE SEARCH COMPLETED AFTER 103 ITERATIONS / Time: 0h:2m:53s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -13653.300
+Optimal log-likelihood: -13653.296
+Proportion of invariable sites: 0.031
+Gamma shape alpha: 1.608
+Parameters optimization took 1 rounds (0.067 sec)
+BEST SCORE FOUND : -13653.296
+Creating bootstrap support values...
+Split supports printed to NEXUS file /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade.splits.nex
+Total tree length: 16.233
+
+Total number of iterations: 103
+CPU time used for tree search: 93.152 sec (0h:1m:33s)
+Wall-clock time used for tree search: 46.860 sec (0h:0m:46s)
+Total CPU time used: 350.829 sec (0h:5m:50s)
+Total wall-clock time used: 173.579 sec (0h:2m:53s)
+
+Computing bootstrap consensus tree...
+Reading input file /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade.splits.nex...
+50 taxa and 225 splits.
+Consensus tree written to /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade.contree
+Reading input trees file /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade.contree
+Log-likelihood of consensus tree: -13653.336
+
+Analysis results written to: 
+  IQ-TREE report:                /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade.iqtree
+  Maximum-likelihood tree:       /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade.treefile
+  Likelihood distances:          /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade.splits.nex
+  Consensus tree:                /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade.contree
+  Screen log file:               /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade.log
+
+Date and Time: Sun Oct 18 23:08:57 2026

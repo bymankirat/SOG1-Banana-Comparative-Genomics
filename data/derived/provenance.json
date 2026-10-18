@@ -1,0 +1,253 @@
+{
+ "downloaded": "2026-10-18",
+ "ensembl_plants_release": "63",
+ "ftp_base": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63",
+ "pfam_hmm": {
+  "accession": "PF02365",
+  "md5": "23e2513859c5a6df37948cd818c49ec5"
+ },
+ "skipped": [
+  "musa_balbisiana",
+  "solanum_lycopersicum"
+ ],
+ "species": {
+  "amborella_trichopoda": {
+   "cds": {
+    "bytes": 8867584,
+    "file": "Amborella_trichopoda.AMTR1.0.cds.all.fa.gz",
+    "md5": "c976d40b9e8bc287b59ebc3226d3be3e",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/amborella_trichopoda/cds/Amborella_trichopoda.AMTR1.0.cds.all.fa.gz"
+   },
+   "pep": {
+    "bytes": 6012678,
+    "file": "Amborella_trichopoda.AMTR1.0.pep.all.fa.gz",
+    "md5": "3fc5b46046da5eba368b466df223c858",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/amborella_trichopoda/pep/Amborella_trichopoda.AMTR1.0.pep.all.fa.gz"
+   }
+  },
+  "ananas_comosus": {
+   "cds": {
+    "bytes": 10033961,
+    "file": "Ananas_comosus.F153.cds.all.fa.gz",
+    "md5": "1a564251944fba2f37a05bb837df5a28",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/ananas_comosus/cds/Ananas_comosus.F153.cds.all.fa.gz"
+   },
+   "pep": {
+    "bytes": 6845376,
+    "file": "Ananas_comosus.F153.pep.all.fa.gz",
+    "md5": "fa277fcb19e09594bd180703ae14194e",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/ananas_comosus/pep/Ananas_comosus.F153.pep.all.fa.gz"
+   }
+  },
+  "arabidopsis_thaliana": {
+   "cds": {
+    "bytes": 14458892,
+    "file": "Arabidopsis_thaliana.TAIR10.cds.all.fa.gz",
+    "md5": "869920318b66409d50f838a3e9c512f7",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/arabidopsis_thaliana/cds/Arabidopsis_thaliana.TAIR10.cds.all.fa.gz"
+   },
+   "pep": {
+    "bytes": 9698724,
+    "file": "Arabidopsis_thaliana.TAIR10.pep.all.fa.gz",
+    "md5": "bd35b7acf4fa1a9852a449e048bdf871",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/arabidopsis_thaliana/pep/Arabidopsis_thaliana.TAIR10.pep.all.fa.gz"
+   }
+  },
+  "brachypodium_distachyon": {
+   "cds": {
+    "bytes": 14892293,
+    "file": "Brachypodium_distachyon.Brachypodium_distachyon_v3.0.cds.all.fa.gz",
+    "md5": "e1e609a2db7382abbadf0a0920d6ddc8",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/brachypodium_distachyon/cds/Brachypodium_distachyon.Brachypodium_distachyon_v3.0.cds.all.fa.gz"
+   },
+   "pep": {
+    "bytes": 9846866,
+    "file": "Brachypodium_distachyon.Brachypodium_distachyon_v3.0.pep.all.fa.gz",
+    "md5": "a804e9cee7581b6e423dc8a59c65a83d",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/brachypodium_distachyon/pep/Brachypodium_distachyon.Brachypodium_distachyon_v3.0.pep.all.fa.gz"
+   }
+  },
+  "chara_braunii": {
+   "cds": {
+    "bytes": 22302828,
+    "file": "Chara_braunii.Cbr_1.0.cds.all.fa.gz",
+    "md5": "174dbb9c16529ace0e1f9d0d4ff710c4",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/chara_braunii/cds/Chara_braunii.Cbr_1.0.cds.all.fa.gz"
+   },
+   "pep": {
+    "bytes": 14064676,
+    "file": "Chara_braunii.Cbr_1.0.pep.all.fa.gz",
+    "md5": "fc050a2cae230e111c1ebb65faaa0c3f",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/chara_braunii/pep/Chara_braunii.Cbr_1.0.pep.all.fa.gz"
+   }
+  },
+  "chlamydomonas_reinhardtii": {
+   "cds": {
+    "bytes": 12526103,
+    "file": "Chlamydomonas_reinhardtii.Chlamydomonas_reinhardtii_v5.5.cds.all.fa.gz",
+    "md5": "39ba1d800477705770a50f2866187122",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/chlamydomonas_reinhardtii/cds/Chlamydomonas_reinhardtii.Chlamydomonas_reinhardtii_v5.5.cds.all.fa.gz"
+   },
+   "pep": {
+    "bytes": 8135722,
+    "file": "Chlamydomonas_reinhardtii.Chlamydomonas_reinhardtii_v5.5.pep.all.fa.gz",
+    "md5": "aa1ef49865487797403f89c6ec52116d",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/chlamydomonas_reinhardtii/pep/Chlamydomonas_reinhardtii.Chlamydomonas_reinhardtii_v5.5.pep.all.fa.gz"
+   }
+  },
+  "dioscorea_rotundata": {
+   "cds": {
+    "bytes": 12477180,
+    "file": "Dioscorea_rotundata.TDr96_F1_v2_PseudoChromosome.cds.all.fa.gz",
+    "md5": "e165fd68ab7b95e6431e84c3d629bed5",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/dioscorea_rotundata/cds/Dioscorea_rotundata.TDr96_F1_v2_PseudoChromosome.cds.all.fa.gz"
+   },
+   "pep": {
+    "bytes": 8380370,
+    "file": "Dioscorea_rotundata.TDr96_F1_v2_PseudoChromosome.pep.all.fa.gz",
+    "md5": "c11236d9f7aaa8c3b7b30a57aedce741",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/dioscorea_rotundata/pep/Dioscorea_rotundata.TDr96_F1_v2_PseudoChromosome.pep.all.fa.gz"
+   }
+  },
+  "glycine_max": {
+   "cds": {
+    "bytes": 24979595,
+    "file": "Glycine_max.Glycine_max_v2.1.cds.all.fa.gz",
+    "md5": "6bec974b2e92961714c0aefa7d313231",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/glycine_max/cds/Glycine_max.Glycine_max_v2.1.cds.all.fa.gz"
+   },
+   "pep": {
+    "bytes": 16518999,
+    "file": "Glycine_max.Glycine_max_v2.1.pep.all.fa.gz",
+    "md5": "9b90a696997c1543f5529959b7e69c22",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/glycine_max/pep/Glycine_max.Glycine_max_v2.1.pep.all.fa.gz"
+   }
+  },
+  "marchantia_polymorpha": {
+   "cds": {
+    "bytes": 8297718,
+    "file": "Marchantia_polymorpha.MpTak1_v7.1.cds.all.fa.gz",
+    "md5": "dfc952c1b9eb6963d1dd9dfba38f1628",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/marchantia_polymorpha/cds/Marchantia_polymorpha.MpTak1_v7.1.cds.all.fa.gz"
+   },
+   "pep": {
+    "bytes": 5518330,
+    "file": "Marchantia_polymorpha.MpTak1_v7.1.pep.all.fa.gz",
+    "md5": "1a48a6653d09482a5055b66c4a837030",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/marchantia_polymorpha/pep/Marchantia_polymorpha.MpTak1_v7.1.pep.all.fa.gz"
+   }
+  },
+  "musa_acuminata": {
+   "cds": {
+    "bytes": 15188424,
+    "file": "Musa_acuminata.Musa_acuminata_v2.cds.all.fa.gz",
+    "md5": "54373348ed7099a53e3e8276030bcd72",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/musa_acuminata/cds/Musa_acuminata.Musa_acuminata_v2.cds.all.fa.gz"
+   },
+   "pep": {
+    "bytes": 10137156,
+    "file": "Musa_acuminata.Musa_acuminata_v2.pep.all.fa.gz",
+    "md5": "6050184288d195f5a2e463b3ed3d745b",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/musa_acuminata/pep/Musa_acuminata.Musa_acuminata_v2.pep.all.fa.gz"
+   }
+  },
+  "oryza_sativa": {
+   "cds": {
+    "bytes": 13305619,
+    "file": "Oryza_sativa.IRGSP-1.0.cds.all.fa.gz",
+    "md5": "f39f60c16630aebfc2b46f5661731bb8",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/oryza_sativa/cds/Oryza_sativa.IRGSP-1.0.cds.all.fa.gz"
+   },
+   "pep": {
+    "bytes": 9086736,
+    "file": "Oryza_sativa.IRGSP-1.0.pep.all.fa.gz",
+    "md5": "bfe788938e4d5eedd14b1c246df10865",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/oryza_sativa/pep/Oryza_sativa.IRGSP-1.0.pep.all.fa.gz"
+   }
+  },
+  "physcomitrium_patens": {
+   "cds": {
+    "bytes": 16024957,
+    "file": "Physcomitrium_patens.Phypa_V3.cds.all.fa.gz",
+    "md5": "c4f4d4b2a0a1052ca0276e24ae8a7daa",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/physcomitrium_patens/cds/Physcomitrium_patens.Phypa_V3.cds.all.fa.gz"
+   },
+   "pep": {
+    "bytes": 10490059,
+    "file": "Physcomitrium_patens.Phypa_V3.pep.all.fa.gz",
+    "md5": "96c628a0a2f8e24b1a91860ed3678339",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/physcomitrium_patens/pep/Physcomitrium_patens.Phypa_V3.pep.all.fa.gz"
+   }
+  },
+  "populus_trichocarpa": {
+   "cds": {
+    "bytes": 16859575,
+    "file": "Populus_trichocarpa.Pop_tri_v4.cds.all.fa.gz",
+    "md5": "1bb3d14e1b6e2cb3ab6f0d70e4cff4d2",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/populus_trichocarpa/cds/Populus_trichocarpa.Pop_tri_v4.cds.all.fa.gz"
+   },
+   "pep": {
+    "bytes": 11132638,
+    "file": "Populus_trichocarpa.Pop_tri_v4.pep.all.fa.gz",
+    "md5": "d2065602deb1cf67d1c852686a08a819",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/populus_trichocarpa/pep/Populus_trichocarpa.Pop_tri_v4.pep.all.fa.gz"
+   }
+  },
+  "selaginella_moellendorffii": {
+   "cds": {
+    "bytes": 13829430,
+    "file": "Selaginella_moellendorffii.v1.0.cds.all.fa.gz",
+    "md5": "1aced3777a6090817eac62dacec2d9ea",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/selaginella_moellendorffii/cds/Selaginella_moellendorffii.v1.0.cds.all.fa.gz"
+   },
+   "pep": {
+    "bytes": 9195862,
+    "file": "Selaginella_moellendorffii.v1.0.pep.all.fa.gz",
+    "md5": "5936e090715fa04e74f9771c2bb6154a",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/selaginella_moellendorffii/pep/Selaginella_moellendorffii.v1.0.pep.all.fa.gz"
+   }
+  },
+  "sorghum_bicolor": {
+   "cds": {
+    "bytes": 14575981,
+    "file": "Sorghum_bicolor.Sorghum_bicolor_NCBIv3.cds.all.fa.gz",
+    "md5": "0412b0992258a10d377a026a2e4bd4fc",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/sorghum_bicolor/cds/Sorghum_bicolor.Sorghum_bicolor_NCBIv3.cds.all.fa.gz"
+   },
+   "pep": {
+    "bytes": 9701928,
+    "file": "Sorghum_bicolor.Sorghum_bicolor_NCBIv3.pep.all.fa.gz",
+    "md5": "8d8e263cd5431b4305a844488624e4c2",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/sorghum_bicolor/pep/Sorghum_bicolor.Sorghum_bicolor_NCBIv3.pep.all.fa.gz"
+   }
+  },
+  "vitis_vinifera": {
+   "cds": {
+    "bytes": 16273268,
+    "file": "Vitis_vinifera.ASM3070453v1.cds.all.fa.gz",
+    "md5": "85904fa9cf7f68178ae1b206d9acba32",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/vitis_vinifera/cds/Vitis_vinifera.ASM3070453v1.cds.all.fa.gz"
+   },
+   "pep": {
+    "bytes": 10956511,
+    "file": "Vitis_vinifera.ASM3070453v1.pep.all.fa.gz",
+    "md5": "6b6c14c7b529fbdb6e2d162711a9f570",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/vitis_vinifera/pep/Vitis_vinifera.ASM3070453v1.pep.all.fa.gz"
+   }
+  },
+  "zea_mays": {
+   "cds": {
+    "bytes": 18087788,
+    "file": "Zea_mays.Zm-B73-REFERENCE-NAM-5.0.cds.all.fa.gz",
+    "md5": "a507c1175fb2f3291b5c3dae5b60d256",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/zea_mays/cds/Zea_mays.Zm-B73-REFERENCE-NAM-5.0.cds.all.fa.gz"
+   },
+   "pep": {
+    "bytes": 11958751,
+    "file": "Zea_mays.Zm-B73-REFERENCE-NAM-5.0.pep.all.fa.gz",
+    "md5": "a2b1fd59934d36f8dabdf585a75bb1ea",
+    "url": "https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63/fasta/zea_mays/pep/Zea_mays.Zm-B73-REFERENCE-NAM-5.0.pep.all.fa.gz"
+   }
+  }
+ }
+}

@@ -1,0 +1,160 @@
+
+=== step 1: download proteomes, CDS and the NAC domain model ===
+22:45:29 Ensembl Plants release: 63 -> https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63
+22:45:29 Cr: Chlamydomonas_reinhardtii.Chlamydomonas_reinhardtii_v5.5.pep.all.fa.gz
+22:45:32 Cr: Chlamydomonas_reinhardtii.Chlamydomonas_reinhardtii_v5.5.cds.all.fa.gz
+22:45:35 Cb: Chara_braunii.Cbr_1.0.pep.all.fa.gz
+22:45:38 Cb: Chara_braunii.Cbr_1.0.cds.all.fa.gz
+22:45:46 Mp: Marchantia_polymorpha.MpTak1_v7.1.pep.all.fa.gz
+22:45:48 Mp: Marchantia_polymorpha.MpTak1_v7.1.cds.all.fa.gz
+22:45:52 Pp: Physcomitrium_patens.Phypa_V3.pep.all.fa.gz
+22:46:02 Pp: Physcomitrium_patens.Phypa_V3.cds.all.fa.gz
+22:46:19 Sm: Selaginella_moellendorffii.v1.0.pep.all.fa.gz
+22:46:29 Sm: Selaginella_moellendorffii.v1.0.cds.all.fa.gz
+22:46:43 Atr: Amborella_trichopoda.AMTR1.0.pep.all.fa.gz
+22:46:47 Atr: Amborella_trichopoda.AMTR1.0.cds.all.fa.gz
+22:46:59 Ma: Musa_acuminata.Musa_acuminata_v2.pep.all.fa.gz
+22:47:13 Ma: Musa_acuminata.Musa_acuminata_v2.cds.all.fa.gz
+22:47:31 skip: musa_balbisiana not in this Ensembl Plants release
+22:47:31 Dr: Dioscorea_rotundata.TDr96_F1_v2_PseudoChromosome.pep.all.fa.gz
+22:47:40 Dr: Dioscorea_rotundata.TDr96_F1_v2_PseudoChromosome.cds.all.fa.gz
+22:48:02 Ac: Ananas_comosus.F153.pep.all.fa.gz
+22:48:09 Ac: Ananas_comosus.F153.cds.all.fa.gz
+22:48:24 Os: Oryza_sativa.IRGSP-1.0.pep.all.fa.gz
+22:48:36 Os: Oryza_sativa.IRGSP-1.0.cds.all.fa.gz
+22:48:53 Bd: Brachypodium_distachyon.Brachypodium_distachyon_v3.0.pep.all.fa.gz
+22:49:06 Bd: Brachypodium_distachyon.Brachypodium_distachyon_v3.0.cds.all.fa.gz
+22:49:14 Sb: Sorghum_bicolor.Sorghum_bicolor_NCBIv3.pep.all.fa.gz
+22:49:20 Sb: Sorghum_bicolor.Sorghum_bicolor_NCBIv3.cds.all.fa.gz
+22:49:37 Zm: Zea_mays.Zm-B73-REFERENCE-NAM-5.0.pep.all.fa.gz
+22:49:45 Zm: Zea_mays.Zm-B73-REFERENCE-NAM-5.0.cds.all.fa.gz
+22:49:59 Vv: Vitis_vinifera.ASM3070453v1.pep.all.fa.gz
+22:50:11 Vv: Vitis_vinifera.ASM3070453v1.cds.all.fa.gz
+22:50:31 skip: solanum_lycopersicum not in this Ensembl Plants release
+22:50:31 Pt: Populus_trichocarpa.Pop_tri_v4.pep.all.fa.gz
+22:50:44 Pt: Populus_trichocarpa.Pop_tri_v4.cds.all.fa.gz
+22:51:06 Gm: Glycine_max.Glycine_max_v2.1.pep.all.fa.gz
+22:51:22 Gm: Glycine_max.Glycine_max_v2.1.cds.all.fa.gz
+22:51:46 At: Arabidopsis_thaliana.TAIR10.pep.all.fa.gz
+22:51:55 At: Arabidopsis_thaliana.TAIR10.cds.all.fa.gz
+22:52:11 17 species downloaded, 2 skipped
+
+=== step 2: NAC family and SOG1 clade in every genome ===
+22:52:11  Atr:  27313 protein-coding genes,   46 NAC
+22:52:12   Ac:  25431 protein-coding genes,   73 NAC
+22:52:13   At:  27573 protein-coding genes,  114 NAC
+22:52:14   Bd:  34298 protein-coding genes,  136 NAC
+22:52:14   Cb:  34704 protein-coding genes,    1 NAC
+22:52:15   Cr:  17743 protein-coding genes,    0 NAC
+22:52:16   Dr:  34039 protein-coding genes,   85 NAC
+22:52:17   Gm:  55890 protein-coding genes,  179 NAC
+22:52:17   Mp:  17991 protein-coding genes,   10 NAC
+22:52:18   Ma:  34779 protein-coding genes,  181 NAC
+22:52:19   Os:  35730 protein-coding genes,  100 NAC
+22:52:20   Pp:  32009 protein-coding genes,   34 NAC
+22:52:21   Pt:  34681 protein-coding genes,  157 NAC
+22:52:22   Sm:  34799 protein-coding genes,   40 NAC
+22:52:22   Sb:  34116 protein-coding genes,  131 NAC
+22:52:23   Vv:  37467 protein-coding genes,   77 NAC
+22:52:25   Zm:  39756 protein-coding genes,  172 NAC
+22:58:26 SOG1 clade members per species: {'amborella_trichopoda': np.int64(2), 'ananas_comosus': np.int64(3), 'arabidopsis_thaliana': np.int64(3), 'brachypodium_distachyon': np.int64(4), 'dioscorea_rotundata': np.int64(3), 'glycine_max': np.int64(8), 'musa_acuminata': np.int64(4), 'oryza_sativa': np.int64(1), 'populus_trichocarpa': np.int64(3), 'sorghum_bicolor': np.int64(5), 'vitis_vinifera': np.int64(2), 'zea_mays': np.int64(9)}
+22:58:34 50 of 50 clade coding sequences found
+22:59:32 31 banana orthologs for 18 target genes
+
+=== step 3: gene structure, Compara, promoters, AlphaFold ===
+22:59:32 gene structures
+22:59:59 Ensembl Compara orthologs
+23:00:41   HTTP 503, waiting 1s: https://rest.ensembl.org/homology/id/arabidopsis_thaliana/AT3G01600
+23:00:57 promoters
+23:02:00   HTTP 503, waiting 1s: https://rest.ensembl.org/sequence/region/arabidopsis_thaliana
+23:02:09   HTTP 500, waiting 1s: https://rest.ensembl.org/sequence/region/arabidopsis_thaliana
+23:02:11   HTTP 500, waiting 2s: https://rest.ensembl.org/sequence/region/arabidopsis_thaliana
+23:02:52   arabidopsis_thaliana: 1021 promoters
+23:05:22   musa_acuminata: 1035 promoters
+23:05:22 2056 promoters written, 0 skipped (too short or not returned)
+23:05:22 UniProt + AlphaFold
+23:05:24   Atr|AMTR_s00049p00217400: W1Q0B7 AF-W1Q0B7-F1 (354 residues)
+23:05:24   Atr|AMTR_s00060p00054700: W1NK30 AF-W1NK30-F1 (404 residues)
+23:05:26   Ac|Aco013436.1.path1: A0A6P5GH23 AF-A0A6P5GH23-F1 (1045 residues)
+23:05:27   At|AT1G25580: Q6NQK2 AF-Q6NQK2-F1 (449 residues)
+23:05:28   At|AT1G52890: Q9C932 AF-Q9C932-F1 (317 residues)
+23:05:29   At|AT2G46770: Q84WP6 AF-Q84WP6-F1 (365 residues)
+23:05:29   At|AT3G01600: F4J4R5 AF-F4J4R5-F1 (366 residues)
+23:05:30   At|AT4G27410: F4JIU9 AF-F4JIU9-F1 (314 residues)
+23:05:31   At|AT5G14490: A0A1P8BAI4 AF-A0A1P8BAI4-F1 (361 residues)
+23:05:31   Bd|BRADI_1g43840v3: I1GZ50 AF-I1GZ50-F1 (481 residues)
+23:05:32   Bd|BRADI_1g69617v3: A0A0Q3HIZ7 AF-A0A0Q3HIZ7-F1 (846 residues)
+23:05:33   Bd|BRADI_3g47627v3: I1IB62 AF-I1IB62-F1 (382 residues)
+23:05:33   Bd|BRADI_5g13450v3: I1IYV3 AF-I1IYV3-F1 (356 residues)
+23:05:36   Gm|GLYMA_01G088200: A0A0R0LFP2 AF-A0A0R0LFP2-F1 (451 residues)
+23:05:37   Gm|GLYMA_02G100200: I1JDX2 AF-I1JDX2-F1 (436 residues)
+23:05:37   Gm|GLYMA_05G002700: K7KNP9 AF-K7KNP9-F1 (390 residues)
+23:05:38   Gm|GLYMA_10G204700: A0A0R0HWD5 AF-A0A0R0HWD5-F1 (422 residues)
+23:05:38   Gm|GLYMA_16G069300: K7MFL5 AF-K7MFL5-F1 (399 residues)
+23:05:39   Gm|GLYMA_19G002900: A0A0R0ESN7 AF-A0A0R0ESN7-F1 (389 residues)
+23:05:39   Gm|GLYMA_19G056400: K7MWS8 AF-K7MWS8-F1 (398 residues)
+23:05:40   Gm|GLYMA_20G185800: K7N4B9 AF-K7N4B9-F1 (442 residues)
+23:05:41   Ma|Ma00_g02930: A0A804HMR8 AF-A0A804HMR8-F1 (398 residues)
+23:05:41   Ma|Ma03_g07280: A0A804I9F6 AF-A0A804I9F6-F1 (416 residues)
+23:05:42   Ma|Ma06_g12700: A0A804JFK8 AF-A0A804JFK8-F1 (1156 residues)
+23:05:43   Ma|Ma09_g01850: A0A804KEW7 AF-A0A804KEW7-F1 (396 residues)
+23:05:43   Os|Os02g0594800: Q6ZI65 AF-Q6ZI65-F1 (393 residues)
+23:05:44   Pt|Potri.001G343800.v4.1: A0A2K2C845 AF-A0A2K2C845-F1 (395 residues)
+23:05:44   Pt|Potri.008G116600.v4.1: B9HIY7 AF-B9HIY7-F1 (428 residues)
+23:05:45   Pt|Potri.010G129700.v4.1: B9HWM0 AF-B9HWM0-F1 (422 residues)
+23:05:46   Sb|SORBI_3001G453000: A0A1Z5SAN3 AF-A0A1Z5SAN3-F1 (689 residues)
+23:05:47   Sb|SORBI_3004G201600: C5XWJ0 AF-C5XWJ0-F1 (399 residues)
+23:05:47   Sb|SORBI_3006G120301: A0A1Z5REC0 AF-A0A1Z5REC0-F1 (298 residues)
+23:05:48   Sb|SORBI_3006G120400: A0A1Z5RDL4 AF-A0A1Z5RDL4-F1 (440 residues)
+23:05:49   Sb|SORBI_3010G111800: A0A1W0VSI7 AF-A0A1W0VSI7-F1 (488 residues)
+23:05:50   Zm|Zm00001eb008350: A0A804LFV9 AF-A0A804LFV9-F1 (117 residues)
+23:05:51   Zm|Zm00001eb246010: A0A1D6HC24 AF-A0A1D6HC24-F1 (399 residues)
+23:05:51   Zm|Zm00001eb280480: A0A804UB37 AF-A0A804UB37-F1 (406 residues)
+23:05:52   Zm|Zm00001eb280490: A0A804PWE0 AF-A0A804PWE0-F1 (633 residues)
+23:05:53   Zm|Zm00001eb337360: A0A804QIS4 AF-A0A804QIS4-F1 (290 residues)
+23:05:53   Zm|Zm00001eb345820: A0A804QP94 AF-A0A804QP94-F1 (159 residues)
+23:05:54   Zm|Zm00001eb399930: A0A804R690 AF-A0A804R690-F1 (699 residues)
+23:05:54   Zm|Zm00001eb424870: A0A1D6J8K9 AF-A0A1D6J8K9-F1 (452 residues)
+
+=== step 4: alignment and maximum-likelihood tree ===
+23:05:54 $ mafft --localpair --maxiterate 1000 --thread -1 --quiet /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/input.faa
+23:06:03 $ trimal -in /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade.aln.faa -out /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade.trim.faa -automated1
+23:06:03 $ /home/runner/micromamba/envs/sog1/bin/iqtree -s /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade.trim.faa -m MFP -B 1000 -T AUTO --threads-max 4 --seed 20231107 -o At__AT1G52890,At__AT4G27410,At__AT2G46770 -pre /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade -quiet -redo
+23:08:57 best model: JTT+I+G4
+
+=== step 5: SQ/TQ motifs, disorder, AlphaFold confidence ===
+/home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/pipeline/s05_proteins.py:153: RuntimeWarning: Mean of empty slice
+  "tail_low_plddt": round(float((pl[int(r.domain_end):] < 50).mean()), 3),
+/home/runner/micromamba/envs/sog1/lib/python3.12/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+23:09:03 0 of 47 tails enriched for SQ/TQ (q<0.05); SCD in 21
+
+=== step 6: dN/dS of NAC domain vs tail ===
+23:09:03 47 codon alignments, 0 CDS did not match their protein: []
+/home/runner/micromamba/envs/sog1/lib/python3.12/site-packages/Bio/codonalign/__init__.py:21: BiopythonExperimentalWarning: Bio.codonalign is an experimental module which may undergo significant changes prior to its future official release.
+  warnings.warn(
+23:09:22 omega domain 0.183 vs tail 0.374 over 119 pairs
+
+=== step 7: SOG1 binding motif in target promoters ===
+23:09:22 arabidopsis_thaliana: targets 1.0 vs background 0.623 motifs per promoter, p=0.053394660533946606
+23:09:22 musa_acuminata: targets 0.621 vs background 0.5 motifs per promoter, p=0.21497850214978503
+
+=== step 8: write docs/results.js ===
+Traceback (most recent call last):
+  File "/home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/run_all.py", line 43, in <module>
+    main()
+  File "/home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/run_all.py", line 38, in main
+    importlib.import_module(mod).main()
+  File "/home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/pipeline/s08_export.py", line 83, in main
+    js = "window.SOG1 = " + json.dumps(out, separators=(",", ":"), allow_nan=False) + ";\n"
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/micromamba/envs/sog1/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/home/runner/micromamba/envs/sog1/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/micromamba/envs/sog1/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+ValueError: Out of range float values are not JSON compliant: nan
