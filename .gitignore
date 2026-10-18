@@ -1,0 +1,9 @@
+data/raw/
+__pycache__/
+*.pyc
+.pytest_cache/
+results/tree/*.ckp.gz
+results/tree/*.mldist
+results/tree/*.bionj
+results/tree/*.uniqueseq.phy
+results/tree/*.model.gz

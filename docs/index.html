@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOG1 in Banana</title>
+<meta name="description" content="Phase 2 of a banana Ma-SOG1 project: the NAC family and SOG1 clade across land plants, a maximum-likelihood tree, ATM/ATR phosphorylation motifs, disorder, selection and predicted SOG1 target genes, all from public genomes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="report.css?v=1">
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Comparative genomics · Python · HMMER · IQ-TREE · Ensembl Plants</p>
+    <h1>SOG1 in banana: the plant DNA-damage master switch, from one cloned gene to the whole family across land plants</h1>
+    <p class="lede">SOG1 is the plant counterpart of p53: after DNA damage it is switched on by the ATM and ATR kinases and turns on DNA repair,
+      stops the cell cycle or triggers cell death. In 2023 I worked on the banana gene <i>Ma-SOG1</i> during research training at NABI, Mohali.
+      This is the next phase, done entirely on public genomes: how many SOG1 genes banana has, where they sit in plant evolution,
+      whether the phosphorylation switch and the DNA-binding domain are conserved, and which banana genes MaSOG1 is likely to control.</p>
+    <p class="byline">Mankirat Singh · <span id="generated"></span></p>
+    <nav class="toc" aria-label="Sections">
+      <a href="#glance">At a glance</a><a href="#phases">Phase 1 → 2</a><a href="#family">NAC family</a><a href="#tree">Tree</a>
+      <a href="#sq">SQ/TQ switch</a><a href="#disorder">Disorder</a><a href="#selection">Selection</a><a href="#targets">Target genes</a>
+      <a href="#checks">Checks</a><a href="#methods">Methods</a><a href="#next">Phase 3</a>
+    </nav>
+  </div>
+</header>
+<div id="banner" class="banner" hidden></div>
+
+<main class="wrap">
+  <section id="glance">
+    <h2>At a glance</h2>
+    <div id="kpis" class="kpis"></div>
+    <div id="takeaways" class="takeaways"></div>
+  </section>
+
+  <section id="phases">
+    <h2>From phase 1 to phase 2</h2>
+    <div class="two">
+      <div>
+        <h3>Phase 1 · NABI, Jul–Nov 2023 (lab)</h3>
+        <ul class="plain">
+          <li>Retrieved the <i>Ma-SOG1</i> coding sequence from the banana genome and compared it with SOG1 from Arabidopsis, rice and moss</li>
+          <li>Conserved motifs (MEME), NAM domain (CD-Search) and a neighbour-joining tree of five proteins</li>
+          <li>Amplified <i>Ma-SOG1</i> from banana leaf cDNA, cloned it into pJET1.2, confirmed it by Sanger sequencing,
+            and moved it into the plant expression vector pRI101-AN for overexpression in <i>Arabidopsis</i></li>
+        </ul>
+        <p class="small">The lab work and its report belong to the NABI group and are not reproduced here.</p>
+      </div>
+      <div>
+        <h3>Phase 2 · this project (computational)</h3>
+        <ul class="plain" id="phase2-list">
+          <li>The whole NAC family in <span data-k="nspecies">…</span> genomes, from green algae to banana, with Pfam's own thresholds</li>
+          <li>All SOG1-clade genes (SOG1, NAC044, NAC085), checked against Ensembl Compara</li>
+          <li>Maximum-likelihood tree with model selection and 1,000 bootstrap replicates</li>
+          <li>ATM/ATR phosphorylation sites tested against chance, disorder vs AlphaFold</li>
+          <li>dN/dS of the DNA-binding domain vs the regulatory tail</li>
+          <li>The SOG1 binding motif in promoters of target genes: Arabidopsis as positive control, then banana</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="family">
+    <h2>The NAC family in every genome</h2>
+    <p class="note" id="family-note"></p>
+    <div class="two">
+      <div><h3>SOG1-clade genes per genome</h3><p class="small">Ordered from algae to flowering plants. Bars are split by the closest Arabidopsis gene.</p><figure class="chart" id="c-copies"></figure></div>
+      <div><h3>NAC genes found vs published counts</h3><p class="small">A check that the domain search finds what earlier genome-wide studies found.</p><div class="tablewrap"><table id="t-counts" class="tbl compact"></table></div></div>
+    </div>
+  </section>
+
+  <section id="tree">
+    <h2>Where banana SOG1 sits in plant evolution</h2>
+    <p class="note" id="tree-note"></p>
+    <div class="legend" id="tree-legend"></div>
+    <figure class="chart wide" id="c-tree"></figure>
+    <p class="small">Maximum-likelihood tree of the SOG1 clade (trimmed alignment), rooted on three Arabidopsis NACs from other subfamilies.
+      Numbers are ultrafast bootstrap support (%); values of 95 or more are well supported. Banana genes in bold.</p>
+  </section>
+
+  <section id="sq">
+    <h2>The phosphorylation switch: SQ/TQ sites</h2>
+    <p class="note" id="sq-note"></p>
+    <figure class="chart wide" id="c-maps"></figure>
+    <h3>Are the tail sites more than chance?</h3>
+    <p class="small">Observed SQ/TQ sites in each tail vs the average after shuffling that tail's own residues 10,000 times. q = Benjamini–Hochberg.
+      SCD = SQ/TQ cluster domain (at least 3 sites within 100 residues), the hallmark of ATM/ATR substrates.</p>
+    <div class="tablewrap"><table id="t-sq" class="tbl compact"></table></div>
+    <h3 id="cons-h">Are the Arabidopsis SOG1 sites at the same place in banana?</h3>
+    <div class="tablewrap"><table id="t-cons" class="tbl compact"></table></div>
+  </section>
+
+  <section id="disorder">
+    <h2>A folded DNA-binding domain and a flexible tail</h2>
+    <p class="note" id="dis-note"></p>
+    <div class="tools"><label>Protein <select id="dis-pick"></select></label></div>
+    <figure class="chart wide" id="c-dis"></figure>
+    <div class="legend"><span><i class="sw" style="background:var(--c1)"></i>Disorder (metapredict, 0–1)</span><span><i class="sw" style="background:var(--c2)"></i>AlphaFold pLDDT / 100</span><span><i class="sw" style="background:var(--accent-soft);border:1px solid var(--accent)"></i>NAC domain</span><span><i class="sw" style="background:var(--c3)"></i>SQ/TQ site</span></div>
+  </section>
+
+  <section id="selection">
+    <h2>How strongly is each part constrained?</h2>
+    <p class="note" id="sel-note"></p>
+    <div class="two">
+      <div><h3>dN/dS: NAC domain vs tail, per gene pair</h3><p class="small">Each point is a pair of SOG1-clade genes. Above the diagonal, the tail changes faster than the domain.</p><figure class="chart" id="c-sel"></figure></div>
+      <div><h3>Banana paralog pairs</h3><p class="small">Ks (synonymous divergence) dates a duplication: similar Ks values mean the copies arose together, as in a whole-genome duplication.</p><div class="tablewrap"><table id="t-para" class="tbl compact"></table></div></div>
+    </div>
+  </section>
+
+  <section id="targets">
+    <h2>Which genes would MaSOG1 switch on?</h2>
+    <p class="note" id="prom-note"></p>
+    <div class="two">
+      <div><h3>SOG1 motif per promoter</h3><p class="small">Mean number of CTT(N)7AAG sites in 1.5 kb upstream, target genes vs 1,000 random genes. p from 10,000 random draws. Grey: a control motif with the same letters that SOG1 does not bind.</p><figure class="chart" id="c-prom"></figure></div>
+      <div><h3>Where the motif sits</h3><p class="small">Motifs per kb in 100 bp windows, from the gene start (left) upstream. SOG1 sites cluster near the start of genes it binds.</p><div class="tools"><div class="seg" id="dens-sp"></div></div><figure class="chart" id="c-dens"></figure></div>
+    </div>
+    <h3>Target genes and their banana orthologs</h3>
+    <p class="small">Banana orthologs by reciprocal best hit. Motif positions are bp upstream of the gene start.</p>
+    <div class="tablewrap"><table id="t-targets" class="tbl compact"></table></div>
+  </section>
+
+  <section id="checks">
+    <h2>Checks</h2>
+    <ul class="checks" id="checklist"></ul>
+    <h3>Clade membership: my search vs Ensembl Compara</h3>
+    <p class="small">Two independent methods: my domain search plus best Arabidopsis match, and Ensembl's gene-tree orthologs.</p>
+    <div class="tablewrap"><table id="t-compara" class="tbl compact"></table></div>
+  </section>
+
+  <section id="methods">
+    <h2>Methods</h2>
+    <ul class="plain">
+      <li><b>Data:</b> proteomes and coding sequences from Ensembl Plants (release <span data-k="release">…</span>), downloaded and fingerprinted (MD5) by the pipeline; Pfam NAM domain PF02365 from InterPro; AlphaFold DB models via UniProt (used only when the UniProt sequence is identical).</li>
+      <li><b>NAC family:</b> longest protein per protein-coding gene; <code>hmmsearch</code> (pyhmmer) with Pfam gathering thresholds.</li>
+      <li><b>SOG1 clade:</b> every NAC protein searched with <code>phmmer</code> against all Arabidopsis NACs; in the clade when the best match is SOG1, NAC044 or NAC085. Checked against Ensembl Compara and the tree.</li>
+      <li><b>Tree:</b> MAFFT L-INS-i, trimAl <code>-automated1</code>, IQ-TREE 2 with ModelFinder (BIC) and 1,000 ultrafast bootstraps.</li>
+      <li><b>SQ/TQ:</b> sites in the tail (after the NAC domain) vs 10,000 composition-preserving shuffles; Benjamini–Hochberg across proteins.</li>
+      <li><b>Disorder:</b> metapredict per residue, compared with AlphaFold pLDDT (Spearman).</li>
+      <li><b>Selection:</b> codon alignments threaded onto the protein alignment; pairwise Nei–Gojobori dN/dS (Biopython) for domain and tail columns; pairs with dS outside 0.01–2 dropped.</li>
+      <li><b>Promoters:</b> 1.5 kb upstream of each gene start (Ensembl REST); CTT(N)7AAG on both strands; targets vs 1,000 random genes per species (fixed seed); banana orthologs by reciprocal best hit (E &lt; 1e-10).</li>
+      <li><b>Reproducible:</b> one command (<code>python run_all.py</code>), run end to end by a GitHub workflow; unit tests on known inputs and checks on the output.</li>
+    </ul>
+    <h3>What this cannot tell you</h3>
+    <ul class="plain">
+      <li>Sequence and motif analyses predict function; they do not show it. Whether MaSOG1 rescues an Arabidopsis <i>sog1</i> mutant is a lab question (phase 3).</li>
+      <li>A motif in a promoter is not binding: SOG1 ChIP data exist only for Arabidopsis.</li>
+      <li>Gene models come from each genome's annotation; a missed or split gene changes copy numbers.</li>
+      <li>Pairwise dN/dS averages over sites and lineages and pairs are not independent; it shows relative constraint, not positive selection.</li>
+    </ul>
+  </section>
+
+  <section id="next">
+    <h2>Phase 3: what to test in the lab</h2>
+    <ul class="plain" id="next-list"></ul>
+  </section>
+</main>
+<p class="foot wrap">Data: Ensembl Plants, InterPro/Pfam, UniProt, AlphaFold DB. Code: <a href="https://github.com/bymankirat/SOG1-Banana-Comparative-Genomics">github.com/bymankirat/SOG1-Banana-Comparative-Genomics</a>. Built by Mankirat Singh.</p>
+<script src="results.js?v=1"></script>
+<script src="report.js?v=1"></script>
+</body>
+</html>

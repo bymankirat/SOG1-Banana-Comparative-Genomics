@@ -1,0 +1,73 @@
+name: Run SOG1 pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      from_step:
+        description: "First step to run (1 = download everything again)"
+        default: "1"
+  push:
+    branches: [main]
+    paths: ["pipeline/**", "config.py", "run_all.py", ".github/workflows/pipeline.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pipeline
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install alignment and tree tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq mafft trimal iqtree
+          mafft --version || true
+          (iqtree2 --version || iqtree --version) | head -3
+
+      - name: Install Python packages
+        run: pip install -q -r requirements.txt
+
+      - name: Install disorder predictor (optional)
+        continue-on-error: true
+        run: pip install -q metapredict
+
+      - name: Cache downloads
+        uses: actions/cache@v4
+        with:
+          path: data/raw
+          key: raw-${{ hashFiles('config.py') }}
+          restore-keys: raw-
+
+      - name: Run pipeline
+        run: |
+          set -o pipefail
+          mkdir -p results data/derived
+          python run_all.py --from "${{ github.event.inputs.from_step || '1' }}" 2>&1 | tee results/run_log.txt
+
+      - name: Tests
+        run: |
+          set -o pipefail
+          python -m pytest -q 2>&1 | tee results/test_log.txt
+
+      - name: Save results to the repository
+        if: always()
+        run: |
+          git config user.name "bymankirat"
+          git config user.email "msinghsandal@gmail.com"
+          git add -A results data/derived docs/results.js || true
+          if ! git diff --cached --quiet; then
+            git commit -q -m "Pipeline results (run ${{ github.run_number }})"
+            git pull -q --rebase origin main
+            git push -q origin HEAD:main
+          fi
