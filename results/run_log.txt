@@ -1,149 +1,148 @@
 
 === step 1: download proteomes, CDS and the NAC domain model ===
-23:15:26   HTTP 500, waiting 1s: https://rest.ensembl.org/info/eg_version
-23:15:41 Ensembl Plants release: 63 -> https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63
-23:15:42 Cr: Chlamydomonas_reinhardtii.Chlamydomonas_reinhardtii_v5.5.pep.all.fa.gz
-23:15:43 Cr: Chlamydomonas_reinhardtii.Chlamydomonas_reinhardtii_v5.5.cds.all.fa.gz
-23:15:43 Cb: Chara_braunii.Cbr_1.0.pep.all.fa.gz
-23:15:44 Cb: Chara_braunii.Cbr_1.0.cds.all.fa.gz
-23:15:45 Mp: Marchantia_polymorpha.MpTak1_v7.1.pep.all.fa.gz
-23:15:45 Mp: Marchantia_polymorpha.MpTak1_v7.1.cds.all.fa.gz
-23:15:45 Pp: Physcomitrium_patens.Phypa_V3.pep.all.fa.gz
-23:15:46 Pp: Physcomitrium_patens.Phypa_V3.cds.all.fa.gz
-23:15:47 Sm: Selaginella_moellendorffii.v1.0.pep.all.fa.gz
-23:15:47 Sm: Selaginella_moellendorffii.v1.0.cds.all.fa.gz
-23:15:48 Atr: Amborella_trichopoda.AMTR1.0.pep.all.fa.gz
-23:15:49 Atr: Amborella_trichopoda.AMTR1.0.cds.all.fa.gz
-23:15:50 Ma: Musa_acuminata.Musa_acuminata_v2.pep.all.fa.gz
-23:15:52 Ma: Musa_acuminata.Musa_acuminata_v2.cds.all.fa.gz
-23:15:56 skip: musa_balbisiana not in this Ensembl Plants release
-23:15:56 Dr: Dioscorea_rotundata.TDr96_F1_v2_PseudoChromosome.pep.all.fa.gz
-23:16:01 Dr: Dioscorea_rotundata.TDr96_F1_v2_PseudoChromosome.cds.all.fa.gz
-23:16:08 Ac: Ananas_comosus.F153.pep.all.fa.gz
-23:16:13 Ac: Ananas_comosus.F153.cds.all.fa.gz
-23:16:18 Os: Oryza_sativa.IRGSP-1.0.pep.all.fa.gz
-23:16:23 Os: Oryza_sativa.IRGSP-1.0.cds.all.fa.gz
-23:16:31 Bd: Brachypodium_distachyon.Brachypodium_distachyon_v3.0.pep.all.fa.gz
-23:16:35 Bd: Brachypodium_distachyon.Brachypodium_distachyon_v3.0.cds.all.fa.gz
-23:16:40 Sb: Sorghum_bicolor.Sorghum_bicolor_NCBIv3.pep.all.fa.gz
-23:16:44 Sb: Sorghum_bicolor.Sorghum_bicolor_NCBIv3.cds.all.fa.gz
-23:16:51 Zm: Zea_mays.Zm-B73-REFERENCE-NAM-5.0.pep.all.fa.gz
-23:17:01 Zm: Zea_mays.Zm-B73-REFERENCE-NAM-5.0.cds.all.fa.gz
-23:17:15 Vv: Vitis_vinifera.ASM3070453v1.pep.all.fa.gz
-23:17:23 Vv: Vitis_vinifera.ASM3070453v1.cds.all.fa.gz
-23:17:31 skip: solanum_lycopersicum not in this Ensembl Plants release
-23:17:31 Pt: Populus_trichocarpa.Pop_tri_v4.pep.all.fa.gz
-23:17:37 Pt: Populus_trichocarpa.Pop_tri_v4.cds.all.fa.gz
-23:17:50 Gm: Glycine_max.Glycine_max_v2.1.pep.all.fa.gz
-23:18:04 Gm: Glycine_max.Glycine_max_v2.1.cds.all.fa.gz
-23:18:18 At: Arabidopsis_thaliana.TAIR10.pep.all.fa.gz
-23:18:23 At: Arabidopsis_thaliana.TAIR10.cds.all.fa.gz
-23:18:34 17 species downloaded, 2 skipped
+23:37:39 Ensembl Plants release: 63 -> https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-63
+23:37:39 Cr: Chlamydomonas_reinhardtii.Chlamydomonas_reinhardtii_v5.5.pep.all.fa.gz
+23:37:40 Cr: Chlamydomonas_reinhardtii.Chlamydomonas_reinhardtii_v5.5.cds.all.fa.gz
+23:37:41 Cb: Chara_braunii.Cbr_1.0.pep.all.fa.gz
+23:37:42 Cb: Chara_braunii.Cbr_1.0.cds.all.fa.gz
+23:37:45 Mp: Marchantia_polymorpha.MpTak1_v7.1.pep.all.fa.gz
+23:37:46 Mp: Marchantia_polymorpha.MpTak1_v7.1.cds.all.fa.gz
+23:37:48 Pp: Physcomitrium_patens.Phypa_V3.pep.all.fa.gz
+23:37:52 Pp: Physcomitrium_patens.Phypa_V3.cds.all.fa.gz
+23:37:59 Sm: Selaginella_moellendorffii.v1.0.pep.all.fa.gz
+23:38:04 Sm: Selaginella_moellendorffii.v1.0.cds.all.fa.gz
+23:38:21 Atr: Amborella_trichopoda.AMTR1.0.pep.all.fa.gz
+23:38:23 Atr: Amborella_trichopoda.AMTR1.0.cds.all.fa.gz
+23:38:24 Ma: Musa_acuminata.Musa_acuminata_v2.pep.all.fa.gz
+23:38:24 Ma: Musa_acuminata.Musa_acuminata_v2.cds.all.fa.gz
+23:38:26 skip: musa_balbisiana not in this Ensembl Plants release
+23:38:26 Dr: Dioscorea_rotundata.TDr96_F1_v2_PseudoChromosome.pep.all.fa.gz
+23:38:27 Dr: Dioscorea_rotundata.TDr96_F1_v2_PseudoChromosome.cds.all.fa.gz
+23:38:28 Ac: Ananas_comosus.F153.pep.all.fa.gz
+23:38:29 Ac: Ananas_comosus.F153.cds.all.fa.gz
+23:38:30 Os: Oryza_sativa.IRGSP-1.0.pep.all.fa.gz
+23:38:31 Os: Oryza_sativa.IRGSP-1.0.cds.all.fa.gz
+23:38:32 Bd: Brachypodium_distachyon.Brachypodium_distachyon_v3.0.pep.all.fa.gz
+23:38:34 Bd: Brachypodium_distachyon.Brachypodium_distachyon_v3.0.cds.all.fa.gz
+23:38:38 Sb: Sorghum_bicolor.Sorghum_bicolor_NCBIv3.pep.all.fa.gz
+23:38:41 Sb: Sorghum_bicolor.Sorghum_bicolor_NCBIv3.cds.all.fa.gz
+23:38:56 Zm: Zea_mays.Zm-B73-REFERENCE-NAM-5.0.pep.all.fa.gz
+23:39:04 Zm: Zea_mays.Zm-B73-REFERENCE-NAM-5.0.cds.all.fa.gz
+23:39:15 Vv: Vitis_vinifera.ASM3070453v1.pep.all.fa.gz
+23:39:21 Vv: Vitis_vinifera.ASM3070453v1.cds.all.fa.gz
+23:39:32 skip: solanum_lycopersicum not in this Ensembl Plants release
+23:39:32 Pt: Populus_trichocarpa.Pop_tri_v4.pep.all.fa.gz
+23:39:43 Pt: Populus_trichocarpa.Pop_tri_v4.cds.all.fa.gz
+23:40:00 Gm: Glycine_max.Glycine_max_v2.1.pep.all.fa.gz
+23:40:19 Gm: Glycine_max.Glycine_max_v2.1.cds.all.fa.gz
+23:40:36 At: Arabidopsis_thaliana.TAIR10.pep.all.fa.gz
+23:40:45 At: Arabidopsis_thaliana.TAIR10.cds.all.fa.gz
+23:40:55 17 species downloaded, 2 skipped
 
 === step 2: NAC family and SOG1 clade in every genome ===
-23:18:34  Atr:  27313 protein-coding genes,   46 NAC (Pfam cut-off),   46 at E<1e-5
-23:18:35   Ac:  25431 protein-coding genes,   73 NAC (Pfam cut-off),   73 at E<1e-5
-23:18:36   At:  27573 protein-coding genes,  114 NAC (Pfam cut-off),  114 at E<1e-5
-23:18:37   Bd:  34298 protein-coding genes,  136 NAC (Pfam cut-off),  136 at E<1e-5
-23:18:38   Cb:  34704 protein-coding genes,    1 NAC (Pfam cut-off),    1 at E<1e-5
-23:18:39   Cr:  17743 protein-coding genes,    0 NAC (Pfam cut-off),    0 at E<1e-5
-23:18:40   Dr:  34039 protein-coding genes,   85 NAC (Pfam cut-off),   85 at E<1e-5
-23:18:42   Gm:  55890 protein-coding genes,  179 NAC (Pfam cut-off),  179 at E<1e-5
-23:18:42   Mp:  17991 protein-coding genes,   10 NAC (Pfam cut-off),   10 at E<1e-5
-23:18:43   Ma:  34779 protein-coding genes,  181 NAC (Pfam cut-off),  181 at E<1e-5
-23:18:44   Os:  35730 protein-coding genes,  100 NAC (Pfam cut-off),  100 at E<1e-5
-23:18:46   Pp:  32009 protein-coding genes,   34 NAC (Pfam cut-off),   34 at E<1e-5
-23:18:47   Pt:  34681 protein-coding genes,  157 NAC (Pfam cut-off),  157 at E<1e-5
-23:18:48   Sm:  34799 protein-coding genes,   40 NAC (Pfam cut-off),   40 at E<1e-5
-23:18:49   Sb:  34116 protein-coding genes,  131 NAC (Pfam cut-off),  131 at E<1e-5
-23:18:50   Vv:  37467 protein-coding genes,   77 NAC (Pfam cut-off),   77 at E<1e-5
-23:18:51   Zm:  39756 protein-coding genes,  172 NAC (Pfam cut-off),  172 at E<1e-5
-23:21:39 SOG1-clade candidates per species: {'amborella_trichopoda': 2, 'ananas_comosus': 3, 'arabidopsis_thaliana': 3, 'brachypodium_distachyon': 4, 'dioscorea_rotundata': 3, 'glycine_max': 8, 'marchantia_polymorpha': 1, 'musa_acuminata': 4, 'oryza_sativa': 1, 'physcomitrium_patens': 2, 'populus_trichocarpa': 3, 'sorghum_bicolor': 8, 'vitis_vinifera': 2, 'zea_mays': 7} | competitors in tree: ['AT4G29230', 'AT4G28500', 'AT5G56620']
-23:21:49 57 of 57 coding sequences found
-23:22:28 31 banana orthologs for 18 target genes
+23:40:56  Atr:  27313 protein-coding genes,   46 NAC (Pfam cut-off),   46 at E<1e-5
+23:40:56   Ac:  25431 protein-coding genes,   73 NAC (Pfam cut-off),   73 at E<1e-5
+23:40:57   At:  27573 protein-coding genes,  114 NAC (Pfam cut-off),  114 at E<1e-5
+23:40:58   Bd:  34298 protein-coding genes,  136 NAC (Pfam cut-off),  136 at E<1e-5
+23:40:59   Cb:  34704 protein-coding genes,    1 NAC (Pfam cut-off),    1 at E<1e-5
+23:40:59   Cr:  17743 protein-coding genes,    0 NAC (Pfam cut-off),    0 at E<1e-5
+23:41:00   Dr:  34039 protein-coding genes,   85 NAC (Pfam cut-off),   85 at E<1e-5
+23:41:01   Gm:  55890 protein-coding genes,  179 NAC (Pfam cut-off),  179 at E<1e-5
+23:41:02   Mp:  17991 protein-coding genes,   10 NAC (Pfam cut-off),   10 at E<1e-5
+23:41:02   Ma:  34779 protein-coding genes,  181 NAC (Pfam cut-off),  181 at E<1e-5
+23:41:03   check Os06g0267500: kept, 246 aa
+23:41:03   Os:  35730 protein-coding genes,  100 NAC (Pfam cut-off),  100 at E<1e-5
+23:41:04   Pp:  32009 protein-coding genes,   34 NAC (Pfam cut-off),   34 at E<1e-5
+23:41:05   Pt:  34681 protein-coding genes,  157 NAC (Pfam cut-off),  157 at E<1e-5
+23:41:06   Sm:  34799 protein-coding genes,   40 NAC (Pfam cut-off),   40 at E<1e-5
+23:41:06   Sb:  34116 protein-coding genes,  131 NAC (Pfam cut-off),  131 at E<1e-5
+23:41:07   Vv:  37467 protein-coding genes,   77 NAC (Pfam cut-off),   77 at E<1e-5
+23:41:08   Zm:  39756 protein-coding genes,  172 NAC (Pfam cut-off),  172 at E<1e-5
+23:43:08 SOG1-clade candidates per species: {'amborella_trichopoda': 2, 'ananas_comosus': 3, 'arabidopsis_thaliana': 3, 'brachypodium_distachyon': 4, 'dioscorea_rotundata': 3, 'glycine_max': 8, 'marchantia_polymorpha': 1, 'musa_acuminata': 4, 'oryza_sativa': 1, 'physcomitrium_patens': 2, 'populus_trichocarpa': 3, 'sorghum_bicolor': 8, 'vitis_vinifera': 2, 'zea_mays': 7} | competitors in tree: ['AT4G29230', 'AT4G28500', 'AT5G56620']
+23:43:14 57 of 57 coding sequences found
+23:43:43 31 banana orthologs for 18 target genes
 
 === step 3: gene structure, Compara, promoters, AlphaFold ===
-23:22:28 gene structures
-23:22:57 Ensembl Compara orthologs
-23:23:25   HTTP 503, waiting 1s: https://rest.ensembl.org/homology/id/arabidopsis_thaliana/AT3G01600
-23:23:27 promoters
-23:25:32   arabidopsis_thaliana: 1021 promoters
-23:28:13   musa_acuminata: 1035 promoters
-23:28:13 2056 promoters written, 0 skipped (too short or not returned)
-23:28:13 UniProt + AlphaFold
-23:28:14   Atr|AMTR_s00049p00217400: W1Q0B7 AF-W1Q0B7-F1 (354 residues)
-23:28:15   Atr|AMTR_s00060p00054700: W1NK30 AF-W1NK30-F1 (404 residues)
-23:28:16   Ac|Aco013436.1.path1: A0A6P5GH23 AF-A0A6P5GH23-F1 (1045 residues)
-23:28:17   At|AT1G25580: Q6NQK2 AF-Q6NQK2-F1 (449 residues)
-23:28:17   At|AT1G52890: Q9C932 AF-Q9C932-F1 (317 residues)
-23:28:17   At|AT2G46770: Q84WP6 AF-Q84WP6-F1 (365 residues)
-23:28:18   At|AT3G01600: F4J4R5 AF-F4J4R5-F1 (366 residues)
-23:28:18   At|AT4G27410: F4JIU9 AF-F4JIU9-F1 (314 residues)
-23:28:19   At|AT4G28500: O49459 AF-O49459-F1 (305 residues)
-23:28:20   At|AT4G29230: Q9M0F8 AF-Q9M0F8-F1 (498 residues)
-23:28:20   At|AT5G14490: A0A1P8BAI4 AF-A0A1P8BAI4-F1 (361 residues)
-23:28:21   At|AT5G56620: A0A1P8B9R1 AF-A0A1P8B9R1-F1 (414 residues)
-23:28:21   Bd|BRADI_1g43840v3: I1GZ50 AF-I1GZ50-F1 (481 residues)
-23:28:22   Bd|BRADI_1g69617v3: A0A0Q3HIZ7 AF-A0A0Q3HIZ7-F1 (846 residues)
-23:28:22   Bd|BRADI_3g47627v3: I1IB62 AF-I1IB62-F1 (382 residues)
-23:28:23   Bd|BRADI_5g13450v3: I1IYV3 AF-I1IYV3-F1 (356 residues)
-23:28:25   Gm|GLYMA_01G088200: A0A0R0LFP2 AF-A0A0R0LFP2-F1 (451 residues)
-23:28:26   Gm|GLYMA_02G100200: I1JDX2 AF-I1JDX2-F1 (436 residues)
-23:28:26   Gm|GLYMA_05G002700: K7KNP9 AF-K7KNP9-F1 (390 residues)
-23:28:26   Gm|GLYMA_10G204700: A0A0R0HWD5 AF-A0A0R0HWD5-F1 (422 residues)
-23:28:27   Gm|GLYMA_16G069300: K7MFL5 AF-K7MFL5-F1 (399 residues)
-23:28:27   Gm|GLYMA_19G002900: A0A0R0ESN7 AF-A0A0R0ESN7-F1 (389 residues)
-23:28:28   Gm|GLYMA_19G056400: K7MWS8 AF-K7MWS8-F1 (398 residues)
-23:28:28   Gm|GLYMA_20G185800: K7N4B9 AF-K7N4B9-F1 (442 residues)
-23:28:29   Mp|Mp5g08410: A0A2R6WIS1 AF-A0A2R6WIS1-F1 (523 residues)
-23:28:29   Ma|Ma00_g02930: A0A804HMR8 AF-A0A804HMR8-F1 (398 residues)
-23:28:29   Ma|Ma03_g07280: A0A804I9F6 AF-A0A804I9F6-F1 (416 residues)
-23:28:30   Ma|Ma06_g12700: A0A804JFK8 AF-A0A804JFK8-F1 (1156 residues)
-23:28:30   Ma|Ma09_g01850: A0A804KEW7 AF-A0A804KEW7-F1 (396 residues)
-23:28:30   Os|Os02g0594800: Q6ZI65 AF-Q6ZI65-F1 (393 residues)
-23:28:31   Pp|Pp3c19_1580: A0A7I4F9R4 AF-A0A7I4F9R4-F1 (525 residues)
-23:28:32   Pp|Pp3c22_130: A0A7I4C8G9 AF-A0A7I4C8G9-F1 (484 residues)
-23:28:33   Pt|Potri.001G343800.v4.1: A0A2K2C845 AF-A0A2K2C845-F1 (395 residues)
-23:28:33   Pt|Potri.008G116600.v4.1: B9HIY7 AF-B9HIY7-F1 (428 residues)
-23:28:33   Pt|Potri.010G129700.v4.1: B9HWM0 AF-B9HWM0-F1 (422 residues)
-23:28:34   Sb|SORBI_3001G453000: A0A1Z5SAN3 AF-A0A1Z5SAN3-F1 (689 residues)
-23:28:35   Sb|SORBI_3004G201600: C5XWJ0 AF-C5XWJ0-F1 (399 residues)
-23:28:35   Sb|SORBI_3006G003800: C5YBA7 AF-C5YBA7-F1 (358 residues)
-23:28:36   Sb|SORBI_3006G004100: A0A1Z5RBA8 AF-A0A1Z5RBA8-F1 (315 residues)
-23:28:36   Sb|SORBI_3006G120301: A0A1Z5REC0 AF-A0A1Z5REC0-F1 (298 residues)
-23:28:37   Sb|SORBI_3006G120400: A0A1Z5RDL4 AF-A0A1Z5RDL4-F1 (440 residues)
-23:28:37   Sb|SORBI_3009G071500: A0A1B6P712 AF-A0A1B6P712-F1 (264 residues)
-23:28:38   Sb|SORBI_3010G111800: A0A1W0VSI7 AF-A0A1W0VSI7-F1 (488 residues)
-23:28:40   Zm|Zm00001eb246010: A0A1D6HC24 AF-A0A1D6HC24-F1 (399 residues)
-23:28:40   Zm|Zm00001eb280480: A0A804UB37 AF-A0A804UB37-F1 (406 residues)
-23:28:41   Zm|Zm00001eb280490: A0A804PWE0 AF-A0A804PWE0-F1 (633 residues)
-23:28:41   Zm|Zm00001eb337360: A0A804QIS4 AF-A0A804QIS4-F1 (290 residues)
-23:28:41   Zm|Zm00001eb399930: A0A804R690 AF-A0A804R690-F1 (699 residues)
-23:28:42   Zm|Zm00001eb424870: A0A1D6J8K9 AF-A0A1D6J8K9-F1 (452 residues)
+23:43:43 gene structures
+23:44:09 Ensembl Compara orthologs
+23:44:09   HTTP 500, waiting 1s: https://rest.ensembl.org/homology/id/arabidopsis_thaliana/AT1G25580
+23:44:11   HTTP 500, waiting 2s: https://rest.ensembl.org/homology/id/arabidopsis_thaliana/AT1G25580
+23:44:40   HTTP 503, waiting 1s: https://rest.ensembl.org/homology/id/arabidopsis_thaliana/AT5G14490
+23:44:42 promoters
+23:45:50   arabidopsis_thaliana: 1019 promoters
+23:46:39   musa_acuminata: 1033 promoters
+23:46:39 2052 promoters written, 0 skipped (too short or not returned)
+23:46:39 UniProt + AlphaFold
+23:46:41   Atr|AMTR_s00049p00217400: W1Q0B7 AF-W1Q0B7-F1 (354 residues)
+23:46:42   Atr|AMTR_s00060p00054700: W1NK30 AF-W1NK30-F1 (404 residues)
+23:46:43   Ac|Aco013436.1.path1: A0A6P5GH23 AF-A0A6P5GH23-F1 (1045 residues)
+23:46:44   At|AT1G25580: Q6NQK2 AF-Q6NQK2-F1 (449 residues)
+23:46:45   At|AT1G52890: Q9C932 AF-Q9C932-F1 (317 residues)
+23:46:45   At|AT2G46770: Q84WP6 AF-Q84WP6-F1 (365 residues)
+23:46:46   At|AT3G01600: F4J4R5 AF-F4J4R5-F1 (366 residues)
+23:46:47   At|AT4G27410: F4JIU9 AF-F4JIU9-F1 (314 residues)
+23:46:48   At|AT4G28500: O49459 AF-O49459-F1 (305 residues)
+23:46:49   At|AT4G29230: Q9M0F8 AF-Q9M0F8-F1 (498 residues)
+23:46:49   At|AT5G14490: A0A1P8BAI4 AF-A0A1P8BAI4-F1 (361 residues)
+23:46:50   At|AT5G56620: A0A1P8B9R1 AF-A0A1P8B9R1-F1 (414 residues)
+23:46:51   Bd|BRADI_1g43840v3: I1GZ50 AF-I1GZ50-F1 (481 residues)
+23:46:52   Bd|BRADI_1g69617v3: A0A0Q3HIZ7 AF-A0A0Q3HIZ7-F1 (846 residues)
+23:46:53   Bd|BRADI_3g47627v3: I1IB62 AF-I1IB62-F1 (382 residues)
+23:46:54   Bd|BRADI_5g13450v3: I1IYV3 AF-I1IYV3-F1 (356 residues)
+23:46:56   Gm|GLYMA_01G088200: A0A0R0LFP2 AF-A0A0R0LFP2-F1 (451 residues)
+23:46:57   Gm|GLYMA_02G100200: I1JDX2 AF-I1JDX2-F1 (436 residues)
+23:46:58   Gm|GLYMA_05G002700: K7KNP9 AF-K7KNP9-F1 (390 residues)
+23:46:58   Gm|GLYMA_10G204700: A0A0R0HWD5 AF-A0A0R0HWD5-F1 (422 residues)
+23:46:59   Gm|GLYMA_16G069300: K7MFL5 AF-K7MFL5-F1 (399 residues)
+23:47:00   Gm|GLYMA_19G002900: A0A0R0ESN7 AF-A0A0R0ESN7-F1 (389 residues)
+23:47:01   Gm|GLYMA_19G056400: K7MWS8 AF-K7MWS8-F1 (398 residues)
+23:47:02   Gm|GLYMA_20G185800: K7N4B9 AF-K7N4B9-F1 (442 residues)
+23:47:02   Mp|Mp5g08410: A0A2R6WIS1 AF-A0A2R6WIS1-F1 (523 residues)
+23:47:03   Ma|Ma00_g02930: A0A804HMR8 AF-A0A804HMR8-F1 (398 residues)
+23:47:04   Ma|Ma03_g07280: A0A804I9F6 AF-A0A804I9F6-F1 (416 residues)
+23:47:04   Ma|Ma06_g12700: A0A804JFK8 AF-A0A804JFK8-F1 (1156 residues)
+23:47:05   Ma|Ma09_g01850: A0A804KEW7 AF-A0A804KEW7-F1 (396 residues)
+23:47:06   Os|Os02g0594800: Q6ZI65 AF-Q6ZI65-F1 (393 residues)
+23:47:06   Pp|Pp3c19_1580: A0A7I4F9R4 AF-A0A7I4F9R4-F1 (525 residues)
+23:47:07   Pp|Pp3c22_130: A0A7I4C8G9 AF-A0A7I4C8G9-F1 (484 residues)
+23:47:08   Pt|Potri.001G343800.v4.1: A0A2K2C845 AF-A0A2K2C845-F1 (395 residues)
+23:47:08   Pt|Potri.008G116600.v4.1: B9HIY7 AF-B9HIY7-F1 (428 residues)
+23:47:09   Pt|Potri.010G129700.v4.1: B9HWM0 AF-B9HWM0-F1 (422 residues)
+23:47:10   Sb|SORBI_3001G453000: A0A1Z5SAN3 AF-A0A1Z5SAN3-F1 (689 residues)
+23:47:10   Sb|SORBI_3004G201600: C5XWJ0 AF-C5XWJ0-F1 (399 residues)
+23:47:11   Sb|SORBI_3006G003800: C5YBA7 AF-C5YBA7-F1 (358 residues)
+23:47:11   Sb|SORBI_3006G004100: A0A1Z5RBA8 AF-A0A1Z5RBA8-F1 (315 residues)
+23:47:12   Sb|SORBI_3006G120301: A0A1Z5REC0 AF-A0A1Z5REC0-F1 (298 residues)
+23:47:12   Sb|SORBI_3006G120400: A0A1Z5RDL4 AF-A0A1Z5RDL4-F1 (440 residues)
+23:47:13   Sb|SORBI_3009G071500: A0A1B6P712 AF-A0A1B6P712-F1 (264 residues)
+23:47:14   Sb|SORBI_3010G111800: A0A1W0VSI7 AF-A0A1W0VSI7-F1 (488 residues)
+23:47:16   Zm|Zm00001eb246010: A0A1D6HC24 AF-A0A1D6HC24-F1 (399 residues)
+23:47:17   Zm|Zm00001eb280480: A0A804UB37 AF-A0A804UB37-F1 (406 residues)
+23:47:18   Zm|Zm00001eb280490: A0A804PWE0 AF-A0A804PWE0-F1 (633 residues)
+23:47:18   Zm|Zm00001eb337360: A0A804QIS4 AF-A0A804QIS4-F1 (290 residues)
+23:47:19   Zm|Zm00001eb399930: A0A804R690 AF-A0A804R690-F1 (699 residues)
+23:47:20   Zm|Zm00001eb424870: A0A1D6J8K9 AF-A0A1D6J8K9-F1 (452 residues)
 
 === step 4: alignment and maximum-likelihood tree ===
-23:28:42 $ mafft --localpair --maxiterate 1000 --thread -1 --quiet /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/input.faa
-23:28:53 $ trimal -in /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade.aln.faa -out /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade.trim.faa -automated1
-23:28:53 $ /home/runner/micromamba/envs/sog1/bin/iqtree -s /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade.trim.faa -m MFP -B 1000 -T AUTO --threads-max 4 --seed 20231107 -o At__AT2G46770 -pre /home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/results/tree/sog1_clade -quiet -redo
-23:31:50 best model: Q.PLANT+I+G4
-23:31:50 SOG1 clade per species: {'amborella_trichopoda': 2, 'ananas_comosus': 3, 'arabidopsis_thaliana': 3, 'brachypodium_distachyon': 4, 'dioscorea_rotundata': 3, 'glycine_max': 8, 'musa_acuminata': 4, 'oryza_sativa': 1, 'populus_trichocarpa': 3, 'sorghum_bicolor': 5, 'vitis_vinifera': 2, 'zea_mays': 7}
-23:31:50 tree vs best-hit rule: {'both': 45, 'tree_only': [nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan], 'best_hit_only': [nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan]}
+23:47:20 tree is up to date
+23:47:20 SOG1 clade per species: {'amborella_trichopoda': 2, 'ananas_comosus': 3, 'arabidopsis_thaliana': 3, 'brachypodium_distachyon': 4, 'dioscorea_rotundata': 3, 'glycine_max': 8, 'musa_acuminata': 4, 'oryza_sativa': 1, 'populus_trichocarpa': 3, 'sorghum_bicolor': 5, 'vitis_vinifera': 2, 'zea_mays': 7}
+23:47:20 tree vs best-hit rule: {'both': 45, 'tree_only': [], 'best_hit_only': ['Zm|Zm00001eb008350', 'Zm|Zm00001eb345820'], 'pro_orthologs': ['Mp|Mp5g08410', 'Pp|Pp3c19_1580', 'Pp|Pp3c22_130']}
 
 === step 5: SQ/TQ motifs, disorder, AlphaFold confidence ===
-23:31:57 pooled tails: 146 SQ/TQ vs 91.5 expected
-23:31:57 0 of 45 tails enriched for SQ/TQ (q<0.05); SCD in 21
+23:47:24 pooled tails: 146 SQ/TQ vs 91.5 expected
+23:47:24 0 of 45 tails enriched for SQ/TQ (q<0.05); SCD in 21
 
 === step 6: dN/dS of NAC domain vs tail ===
-23:31:57 45 codon alignments, 0 CDS did not match their protein: []
+23:47:24 45 codon alignments, 0 CDS did not match their protein: []
 /home/runner/micromamba/envs/sog1/lib/python3.12/site-packages/Bio/codonalign/__init__.py:21: BiopythonExperimentalWarning: Bio.codonalign is an experimental module which may undergo significant changes prior to its future official release.
   warnings.warn(
-23:32:20 omega domain 0.188 vs tail 0.404 over 126 pairs
+23:47:35 omega domain 0.188 vs tail 0.404 over 126 pairs
 
 === step 7: SOG1 binding motif in target promoters ===
-23:32:20 arabidopsis_thaliana: targets 1.0 vs background 0.623 motifs per promoter, p=0.053394660533946606
-23:32:20 musa_acuminata: targets 0.621 vs background 0.5 motifs per promoter, p=0.21497850214978503
+23:47:35 arabidopsis_thaliana: targets 1.167 vs background 0.623 motifs per promoter, p=0.0082991700829917
+23:47:35 musa_acuminata: targets 0.677 vs background 0.5 motifs per promoter, p=0.11348865113488651
 
 === step 8: write docs/results.js ===
-23:32:20 docs/results.js written (150 kB)
+23:47:35 docs/results.js written (150 kB)
 
-finished in 16.9 min
+finished in 10.0 min

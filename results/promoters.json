@@ -26,45 +26,45 @@
      0.4
     ],
     "density_target": [
-     4.375,
+     4.444,
+     0.0,
+     0.556,
+     1.667,
+     1.111,
      0.0,
      0.0,
-     1.875,
-     1.25,
+     0.0,
+     0.556,
      0.0,
      0.0,
+     1.667,
      0.0,
-     0.625,
-     0.0,
-     0.0,
-     0.625,
-     0.0,
-     0.625,
-     0.625
+     0.556,
+     1.111
     ],
-    "fisher_p": 0.00717794419818473,
+    "fisher_p": 0.0009713683569536196,
     "full": {
-     "fold": 1.61,
+     "fold": 1.87,
      "mean_background": 0.623,
-     "mean_target": 1.0,
+     "mean_target": 1.167,
      "n_background": 1000,
-     "n_target": 16,
-     "p_perm": 0.053394660533946606
+     "n_target": 18,
+     "p_perm": 0.0082991700829917
     },
-    "odds_ratio": 4.05050505050505,
+    "odds_ratio": 5.063131313131313,
     "proximal": {
-     "fold": 3.22,
+     "fold": 3.34,
      "mean_background": 0.233,
-     "mean_target": 0.75,
+     "mean_target": 0.778,
      "n_background": 1000,
-     "n_target": 16,
-     "p_perm": 0.0006999300069993001
+     "n_target": 18,
+     "p_perm": 0.00029997000299970003
     },
     "with_proximal_background": 198,
-    "with_proximal_target": 8
+    "with_proximal_target": 10
    },
    "at_background": 0.661,
-   "at_target": 0.658,
+   "at_target": 0.657,
    "control CTT(N)7CTT": {
     "density_background": [
      0.9,
@@ -84,42 +84,42 @@
      1.22
     ],
     "density_target": [
-     0.625,
-     1.875,
-     2.5,
+     1.111,
+     1.667,
+     2.222,
+     0.556,
+     1.667,
+     1.111,
+     1.111,
      0.0,
-     1.875,
-     1.25,
-     0.625,
+     0.556,
+     0.556,
+     2.222,
      0.0,
-     0.0,
-     0.625,
-     1.875,
-     0.0,
-     0.625,
-     0.625,
-     1.25
+     0.556,
+     0.556,
+     1.667
     ],
-    "fisher_p": 0.10882773840469077,
+    "fisher_p": 0.04077077815280879,
     "full": {
-     "fold": 0.84,
+     "fold": 0.95,
      "mean_background": 1.636,
-     "mean_target": 1.375,
+     "mean_target": 1.556,
      "n_background": 1000,
-     "n_target": 16,
-     "p_perm": 0.791020897910209
+     "n_target": 18,
+     "p_perm": 0.6057394260573943
     },
-    "odds_ratio": 2.1066716924236712,
+    "odds_ratio": 2.5748209574067094,
     "proximal": {
-     "fold": 1.34,
+     "fold": 1.41,
      "mean_background": 0.514,
-     "mean_target": 0.688,
+     "mean_target": 0.722,
      "n_background": 1000,
-     "n_target": 16,
-     "p_perm": 0.22307769223077692
+     "n_target": 18,
+     "p_perm": 0.15548445155484453
     },
     "with_proximal_background": 379,
-    "with_proximal_target": 9
+    "with_proximal_target": 11
    },
    "genes": [
     {
@@ -164,7 +164,7 @@
     },
     {
      "gene": "AT3G01600",
-     "group": "sog1_clade",
+     "group": "target",
      "motif": 1,
      "positions": [
       65
@@ -252,7 +252,7 @@
     },
     {
      "gene": "AT5G14490",
-     "group": "sog1_clade",
+     "group": "target",
      "motif": 4,
      "positions": [
       295,
@@ -310,29 +310,6 @@
      ],
      "proximal": 0,
      "symbol": ""
-    },
-    {
-     "gene": "AT3G01600",
-     "group": "sog1_clade",
-     "motif": 1,
-     "positions": [
-      65
-     ],
-     "proximal": 1,
-     "symbol": "NAC044"
-    },
-    {
-     "gene": "AT5G14490",
-     "group": "sog1_clade",
-     "motif": 4,
-     "positions": [
-      295,
-      1156,
-      1193,
-      1434
-     ],
-     "proximal": 1,
-     "symbol": "NAC085"
     }
    ]
   },
@@ -356,42 +333,42 @@
      0.43
     ],
     "density_target": [
-     1.034,
-     1.379,
-     0.345,
-     0.345,
-     0.69,
-     0.345,
+     0.968,
+     1.29,
+     0.968,
+     0.645,
+     0.645,
+     0.323,
      0.0,
-     0.345,
-     0.0,
-     0.0,
+     0.323,
      0.0,
      0.0,
-     0.69,
-     0.69,
-     0.345
+     0.0,
+     0.0,
+     0.645,
+     0.645,
+     0.323
     ],
-    "fisher_p": 0.004599480519167179,
+    "fisher_p": 0.0006401213087098134,
     "full": {
-     "fold": 1.24,
+     "fold": 1.35,
      "mean_background": 0.5,
-     "mean_target": 0.621,
+     "mean_target": 0.677,
      "n_background": 1000,
-     "n_target": 29,
-     "p_perm": 0.21497850214978503
+     "n_target": 31,
+     "p_perm": 0.11348865113488651
     },
-    "odds_ratio": 3.3154053015751055,
+    "odds_ratio": 3.978486361890127,
     "proximal": {
-     "fold": 2.51,
+     "fold": 2.99,
      "mean_background": 0.151,
-     "mean_target": 0.379,
+     "mean_target": 0.452,
      "n_background": 1000,
-     "n_target": 29,
-     "p_perm": 0.007399260073992601
+     "n_target": 31,
+     "p_perm": 0.0004999500049995
     },
     "with_proximal_background": 137,
-    "with_proximal_target": 10
+    "with_proximal_target": 12
    },
    "at_background": 0.601,
    "at_target": 0.588,
@@ -414,47 +391,47 @@
      0.96
     ],
     "density_target": [
-     1.034,
-     0.345,
-     1.034,
-     0.345,
+     0.968,
+     0.645,
+     0.968,
+     0.323,
      0.0,
-     2.414,
-     1.379,
-     1.034,
-     1.379,
-     1.379,
-     1.379,
-     1.034,
-     1.034,
-     1.034,
-     0.69
+     2.258,
+     1.29,
+     0.968,
+     1.29,
+     1.29,
+     1.29,
+     0.968,
+     0.968,
+     1.29,
+     0.645
     ],
-    "fisher_p": 0.898138685657935,
+    "fisher_p": 0.8629892552736307,
     "full": {
-     "fold": 1.09,
+     "fold": 1.06,
      "mean_background": 1.429,
-     "mean_target": 1.552,
+     "mean_target": 1.516,
      "n_background": 1000,
-     "n_target": 29,
-     "p_perm": 0.31956804319568044
+     "n_target": 31,
+     "p_perm": 0.3648635136486351
     },
-    "odds_ratio": 0.6316146540027137,
+    "odds_ratio": 0.6904607397793641,
     "proximal": {
-     "fold": 0.61,
+     "fold": 0.64,
      "mean_background": 0.452,
-     "mean_target": 0.276,
+     "mean_target": 0.29,
      "n_background": 1000,
-     "n_target": 29,
-     "p_perm": 0.9317068293170683
+     "n_target": 31,
+     "p_perm": 0.9217078292170783
     },
     "with_proximal_background": 335,
-    "with_proximal_target": 7
+    "with_proximal_target": 8
    },
    "genes": [
     {
      "gene": "Ma00_g02930",
-     "group": "sog1_clade",
+     "group": "target",
      "motif": 1,
      "positions": [
       375
@@ -666,7 +643,7 @@
     },
     {
      "gene": "Ma09_g01850",
-     "group": "sog1_clade",
+     "group": "target",
      "motif": 2,
      "positions": [
       240,
@@ -739,16 +716,6 @@
      "symbol": "XRI1"
     },
     {
-     "gene": "Ma00_g02930",
-     "group": "sog1_clade",
-     "motif": 1,
-     "positions": [
-      375
-     ],
-     "proximal": 1,
-     "symbol": "NAC044"
-    },
-    {
      "gene": "Ma03_g07280",
      "group": "sog1_clade",
      "motif": 0,
@@ -766,17 +733,6 @@
      ],
      "proximal": 0,
      "symbol": ""
-    },
-    {
-     "gene": "Ma09_g01850",
-     "group": "sog1_clade",
-     "motif": 2,
-     "positions": [
-      240,
-      294
-     ],
-     "proximal": 2,
-     "symbol": "NAC044"
     }
    ]
   }

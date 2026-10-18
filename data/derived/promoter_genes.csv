@@ -18,8 +18,6 @@ arabidopsis_thaliana,AT5G24280,target,5,8251378,8262154,-1
 arabidopsis_thaliana,AT5G48720,target,5,19758881,19762015,1
 arabidopsis_thaliana,AT5G66130,target,5,26433964,26437222,1
 arabidopsis_thaliana,AT1G25580,sog1_clade,1,8996714,8999917,-1
-arabidopsis_thaliana,AT3G01600,sog1_clade,3,229075,231517,1
-arabidopsis_thaliana,AT5G14490,sog1_clade,5,4670561,4672072,-1
 arabidopsis_thaliana,AT4G25707,background,4,13096860,13098088,-1
 arabidopsis_thaliana,AT3G07480,background,3,2388703,2389823,1
 arabidopsis_thaliana,AT4G13040,background,4,7613720,7615955,1
@@ -1051,10 +1049,8 @@ musa_acuminata,Ma10_g18650,target,CAJGYN010000010.1,29502706,29505257,-1
 musa_acuminata,Ma10_g22240,target,CAJGYN010000010.1,31678285,31713688,-1
 musa_acuminata,Ma11_g25130,target,CAJGYN010000011.1,27880315,27880777,-1
 musa_acuminata,Ma11_g25140,target,CAJGYN010000011.1,27880796,27882717,-1
-musa_acuminata,Ma00_g02930,sog1_clade,CAJGYN010000024.1,22640571,22645710,-1
 musa_acuminata,Ma03_g07280,sog1_clade,CAJGYN010000003.1,5082509,5088137,-1
 musa_acuminata,Ma06_g12700,sog1_clade,CAJGYN010000006.1,8773686,8782118,-1
-musa_acuminata,Ma09_g01850,sog1_clade,CAJGYN010000009.1,1388246,1394179,-1
 musa_acuminata,Ma01_g02010,background,CAJGYN010000001.1,1360276,1360559,1
 musa_acuminata,Ma04_g24550,background,CAJGYN010000004.1,26549711,26552622,1
 musa_acuminata,Ma10_g30240,background,CAJGYN010000010.1,36591081,36592577,-1
