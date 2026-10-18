@@ -7,6 +7,17 @@ import pandas as pd
 from util import DERIVED, RESULTS, ROOT, LABEL, LINEAGE, SHORT, config, load_json, log, read_fasta
 
 
+def clean(x):
+    """Replace NaN/inf anywhere in nested data with None so the output is valid JSON."""
+    if isinstance(x, dict):
+        return {k: clean(v) for k, v in x.items()}
+    if isinstance(x, (list, tuple)):
+        return [clean(v) for v in x]
+    if isinstance(x, float) and not np.isfinite(x):
+        return None
+    return x
+
+
 def records(df):
     return json.loads(df.replace({np.nan: None}).to_json(orient="records"))
 
@@ -80,7 +91,7 @@ def main():
         "targets": records(tor),
         "promoters": prom,
     }
-    js = "window.SOG1 = " + json.dumps(out, separators=(",", ":"), allow_nan=False) + ";\n"
+    js = "window.SOG1 = " + json.dumps(clean(out), separators=(",", ":"), allow_nan=False) + ";\n"
     (ROOT / "docs" / "results.js").write_text(js)
     log(f"docs/results.js written ({len(js) / 1024:.0f} kB)")
 

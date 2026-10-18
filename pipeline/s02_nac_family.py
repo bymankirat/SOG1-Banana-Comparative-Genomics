@@ -44,11 +44,14 @@ def proteome(sp, prov):
     return longest_isoforms(read_fasta(RAW / prov["species"][sp]["pep"]["file"]))
 
 
-def search_domain(hmm, prot):
-    names = sorted(prot)
+def search_domain(hmm, prot, names=None, gathering=True):
+    names = sorted(prot) if names is None else sorted(names)
+    if not names:
+        return {}
     block = digitize([(g, prot[g]["seq"]) for g in names])
+    kw = {"bit_cutoffs": "gathering"} if gathering else {"E": 1e-5, "domE": 1e-3}
     found = {}
-    for hits in pyhmmer.hmmsearch([hmm], block, bit_cutoffs="gathering"):
+    for hits in pyhmmer.hmmsearch([hmm], block, **kw):
         for hit in hits:
             if not hit.included:
                 continue
@@ -59,42 +62,53 @@ def search_domain(hmm, prot):
     return found
 
 
-def best_hits(queries, targets, top=1):
+def best_hits(queries, targets, top=1, E=1e-5):
     """phmmer each query against targets. Returns {query: [(target, bitscore, evalue), ...]} best first."""
     qblock, tblock = digitize(queries), digitize(targets)
     out = {}
-    for (qname, _), hits in zip(queries, pyhmmer.phmmer(qblock, tblock, E=1e-5)):
+    for (qname, _), hits in zip(queries, pyhmmer.phmmer(qblock, tblock, E=E)):
         q = getattr(hits, "query_name", None) or getattr(getattr(hits, "query", None), "name", None)
         if q is not None and _s(q) != qname:
             raise RuntimeError(f"phmmer results out of order: {_s(q)} vs {qname}")
-        ranked = sorted(((_s(h.name), h.score, h.evalue) for h in hits), key=lambda x: -x[1])
-        # one gene can appear once per target; keep the order
-        out[qname] = ranked[:top]
+        out[qname] = sorted(((_s(h.name), h.score, h.evalue) for h in hits), key=lambda x: -x[1])[:top]
     return out
 
 
 def main():
+    import pandas as pd
     prov = load_json(DERIVED / "provenance.json")
     hmm = load_hmm()
     species = list(prov["species"])
-    prot, nac, counts = {}, {}, []
+    at = config.REFERENCE_SPECIES
+    prot, nac, counts, extra = {}, {}, [], {}
     for sp in species:
         prot[sp] = proteome(sp, prov)
         nac[sp] = search_domain(hmm, prot[sp])
+        relaxed = search_domain(hmm, prot[sp], gathering=False)
         exp = config.EXPECTED_NAC.get(sp)
         counts.append({"species": sp, "short": SHORT[sp], "label": LABEL[sp], "lineage": LINEAGE[sp],
-                       "genes": len(prot[sp]), "nac": len(nac[sp]),
+                       "genes": len(prot[sp]), "nac": len(nac[sp]), "nac_relaxed": len(relaxed),
                        "published": exp[0] if exp else None,
-                       "in_range": (exp[1][0] <= len(nac[sp]) <= exp[1][1]) if exp else None})
-        log(f"{SHORT[sp]:>4}: {len(prot[sp]):6d} protein-coding genes, {len(nac[sp]):4d} NAC")
+                       "in_range": (exp[1][0] <= len(nac[sp]) <= exp[1][1] or exp[1][0] <= len(relaxed) <= exp[1][1]) if exp else None})
+        log(f"{SHORT[sp]:>4}: {len(prot[sp]):6d} protein-coding genes, {len(nac[sp]):4d} NAC (Pfam cut-off), {len(relaxed):4d} at E<1e-5")
+        extra[sp] = relaxed
 
-    at = config.REFERENCE_SPECIES
-    at_nac = [(g, prot[at][g]["seq"]) for g in sorted(nac[at])]
     for g in list(config.AT_CLADE) + list(config.AT_OUTGROUP):
         if g not in nac[at]:
             raise SystemExit(f"{g} not detected as NAC in Arabidopsis; check the domain search")
 
-    rows, clade_fa, nac_fa = [], [], []
+    # Genes the Pfam cut-off misses (e.g. a slightly divergent domain) but that clearly match a clade protein
+    clade_q = [(g, prot[at][g]["seq"]) for g in config.AT_CLADE]
+    for sp in species:
+        hits = best_hits(clade_q, [(g, prot[sp][g]["seq"]) for g in sorted(prot[sp])], top=25, E=1e-30)
+        new = {h[0] for q in hits for h in hits[q]} - set(nac[sp])
+        for g in new:
+            if g in extra[sp]:
+                nac[sp][g] = {**extra[sp][g], "pfam_cutoff": False}
+                log(f"  {SHORT[sp]} {g}: matches a SOG1-clade protein, NAC domain below Pfam cut-off; added")
+    at_nac = [(g, prot[at][g]["seq"]) for g in sorted(nac[at])]
+
+    rows, nac_fa = [], []
     for sp in species:
         queries = [(g, prot[sp][g]["seq"]) for g in sorted(nac[sp])]
         if not queries:
@@ -102,40 +116,47 @@ def main():
         hits = best_hits(queries, at_nac, top=8)
         for g, _ in queries:
             p, d = prot[sp][g], nac[sp][g]
-            ranked = hits.get(g, [])
-            if sp == at:  # an Arabidopsis protein's best hit is itself; use the next one
-                ranked = [h for h in ranked if h[0] != g]
+            ranked = [h for h in hits.get(g, []) if not (sp == at and h[0] == g)]
             best = ranked[0] if ranked else (None, 0.0, 1.0)
             best_clade = next((h for h in ranked if h[0] in config.AT_CLADE), None)
             best_other = next((h for h in ranked if h[0] not in config.AT_CLADE), None)
-            in_clade = g in config.AT_CLADE if sp == at else (best[0] in config.AT_CLADE)
-            label = config.AT_CLADE.get(g) if sp == at else (config.AT_CLADE.get(best[0]) if in_clade else None)
-            row = {"species": sp, "short": SHORT[sp], "gene": g, "transcript": p["transcript"],
-                   "symbol": p["symbol"], "length": len(p["seq"]), **d,
-                   "best_at": best[0], "best_score": round(best[1], 1),
-                   "clade_score": round(best_clade[1], 1) if best_clade else None,
-                   "other_score": round(best_other[1], 1) if best_other else None,
-                   "sog1_clade": bool(in_clade), "clade_label": label,
-                   "seq_region": p["seq_region"], "start": p["start"], "end": p["end"], "strand": p["strand"]}
-            rows.append(row)
+            if sp == at:
+                candidate = g in config.AT_CLADE
+            else:
+                # candidate: a clade protein is among the 8 best Arabidopsis matches and scores close to the best;
+                # the tree (step 4) makes the final call
+                candidate = bool(best_clade) and best_clade[1] >= 0.7 * best[1] and len(p["seq"]) >= config.MIN_LENGTH
+            rows.append({"species": sp, "short": SHORT[sp], "gene": g, "transcript": p["transcript"],
+                         "symbol": p["symbol"], "length": len(p["seq"]), "pfam_cutoff": d.get("pfam_cutoff", True),
+                         "score": d["score"], "env_from": d["env_from"], "env_to": d["env_to"], "n_domains": d["n_domains"],
+                         "best_at": best[0], "best_score": round(best[1], 1),
+                         "best_clade_at": best_clade[0] if best_clade else None,
+                         "clade_score": round(best_clade[1], 1) if best_clade else None,
+                         "other_at": best_other[0] if best_other else None,
+                         "other_score": round(best_other[1], 1) if best_other else None,
+                         "best_hit_rule": bool(g in config.AT_CLADE) if sp == at else bool(best[0] in config.AT_CLADE),
+                         "candidate": bool(candidate),
+                         "seq_region": p["seq_region"], "start": p["start"], "end": p["end"], "strand": p["strand"]})
             nac_fa.append((f"{SHORT[sp]}|{g}", p["seq"]))
-            if in_clade or (sp == at and g in config.AT_OUTGROUP):
-                clade_fa.append((f"{SHORT[sp]}|{g}", p["seq"]))
-
-    import pandas as pd
     df = pd.DataFrame(rows)
+
+    # Arabidopsis NACs that compete with the clade for these candidates go into the tree, so the tree can tell them apart
+    cand = df[df.candidate & (df.species != at)]
+    competitors = [g for g in cand.other_at.value_counts().index if g not in config.AT_CLADE][:config.N_COMPETITORS]
+    tree_at = list(config.AT_CLADE) + [g for g in competitors if g not in config.AT_OUTGROUP] + list(config.AT_OUTGROUP)
+    df["in_tree"] = df.candidate | ((df.species == at) & df.gene.isin(tree_at))
     df.to_csv(DERIVED / "nac_genes.csv", index=False)
     write_fasta(DERIVED / "nac_proteins.faa", nac_fa)
-    write_fasta(DERIVED / "sog1_clade_proteins.faa", clade_fa)
-    per = df[df.sog1_clade].groupby("species").size()
+    seqs = dict(nac_fa)
+    write_fasta(DERIVED / "sog1_candidates.faa", [(f"{r.short}|{r.gene}", seqs[f"{r.short}|{r.gene}"]) for r in df[df.in_tree].itertuples()])
+    per = df[df.candidate].groupby("species").size()
     for c in counts:
-        c["sog1_clade"] = int(per.get(c["species"], 0))
+        c["candidates"] = int(per.get(c["species"], 0))
     pd.DataFrame(counts).to_csv(RESULTS / "nac_counts.csv", index=False)
-    log("SOG1 clade members per species:", dict(per))
+    log("SOG1-clade candidates per species:", {k: int(v) for k, v in per.items()}, "| competitors in tree:", competitors)
 
-    # coding sequences of the clade (for dN/dS) and of the outgroup
-    want = {r["transcript"]: f"{r['short']}|{r['gene']}" for r in rows
-            if r["sog1_clade"] or (r["species"] == at and r["gene"] in config.AT_OUTGROUP)}
+    # coding sequences of every protein in the tree (for dN/dS)
+    want = {r.transcript: f"{r.short}|{r.gene}" for r in df[df.in_tree].itertuples()}
     cds = []
     for sp in species:
         if "cds" not in prov["species"][sp]:
@@ -145,7 +166,7 @@ def main():
             if tid in want:
                 cds.append((want[tid], seq.upper()))
     write_fasta(DERIVED / "sog1_clade_cds.fna", cds)
-    log(f"{len(cds)} of {len(want)} clade coding sequences found")
+    log(f"{len(cds)} of {len(want)} coding sequences found")
 
     # orthologs of the reported SOG1 target genes in the focus species, by reciprocal best hit
     focus = config.FOCUS_SPECIES
@@ -174,7 +195,7 @@ def main():
     rng = random.Random(config.SEED)
     loc = []
     for sp, targets in ((at, set(config.SOG1_TARGETS)), (focus, {r["focus_gene"] for r in trows if r["focus_gene"]})):
-        clade = set(df[(df.species == sp) & df.sog1_clade].gene)
+        clade = set(df[(df.species == sp) & df.candidate].gene)
         pool = sorted(g for g in prot[sp] if g not in targets and g not in clade and prot[sp][g]["start"])
         bg = rng.sample(pool, min(config.BACKGROUND_N, len(pool)))
         for group, genes in (("target", sorted(targets)), ("sog1_clade", sorted(clade)), ("background", bg)):

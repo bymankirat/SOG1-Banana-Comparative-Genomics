@@ -11,6 +11,7 @@ from util import longest_isoforms, parse_header, revcomp, translate  # noqa: E40
 from s05_proteins import count_sq_matrix, has_scd, shuffle_test, sq_positions  # noqa: E402
 from s06_selection import codon_alignment  # noqa: E402
 from s07_promoters import hits  # noqa: E402
+from s04_phylogeny import classify, parse_newick  # noqa: E402
 
 HEAD = ("AT1G25580.1 pep chromosome:TAIR10:1:8979977:8983008:-1 gene:AT1G25580 transcript:AT1G25580.1 "
         "gene_biotype:protein_coding transcript_biotype:protein_coding gene_symbol:SOG1 description:NAC domain")
@@ -73,3 +74,16 @@ def test_motif_hits_palindrome_counted_once_and_positioned():
     ctrl = "G" * 10 + "CTTAAAAAAACTT" + "G" * 10
     assert len(hits(ctrl, "CTT.......CTT")) == 1
     assert len(hits(revcomp(ctrl), "CTT.......CTT")) == 1
+
+
+def test_tree_clade_rule():
+    # moss gene sits next to the SOG1 group; maize gene sits with a different Arabidopsis NAC
+    nwk = ("(At__AT2G46770:0.5,((At__AT1G25580:0.1,Ma__g1:0.1)99:0.1,(At__AT3G01600:0.1,At__AT5G14490:0.1)100:0.1,"
+           "Pp__g2:0.4)90:0.2,(At__AT4G28500:0.1,Zm__g3:0.1)100:0.2);")
+    names = {k: k.replace("__", "|") for k in ["At__AT2G46770", "At__AT1G25580", "Ma__g1", "At__AT3G01600",
+                                              "At__AT5G14490", "Pp__g2", "At__AT4G28500", "Zm__g3"]}
+    calls = classify(parse_newick(nwk), names)
+    assert calls["Ma|g1"][:2] == (True, "SOG1") and calls["Ma|g1"][2] == 99
+    assert calls["Pp|g2"][0] is True
+    assert calls["Zm|g3"][0] is False
+    assert calls["At|AT4G28500"][0] is False and calls["At|AT3G01600"] == (True, "NAC044", None)

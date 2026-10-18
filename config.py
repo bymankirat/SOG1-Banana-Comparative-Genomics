@@ -41,15 +41,21 @@ REFERENCE_SPECIES = "arabidopsis_thaliana"
 
 # The SOG1 clade in Arabidopsis: SOG1 and its two closest paralogs, which also act in the DNA damage response
 AT_CLADE = {"AT1G25580": "SOG1", "AT3G01600": "NAC044", "AT5G14490": "NAC085"}
-# Other Arabidopsis NACs used to root the tree
+# Other Arabidopsis NACs placed in the tree; NST1 (a distant subfamily) roots it
 AT_OUTGROUP = {"AT1G52890": "ANAC019", "AT4G27410": "RD26", "AT2G46770": "NST1"}
+TREE_ROOT = "AT2G46770"
+# Arabidopsis NACs that most often compete with the clade as best match are added to the tree too
+N_COMPETITORS = 6
+# Shorter proteins are fragments or partial gene models and are left out
+MIN_LENGTH = 250
 
 # Banana gene studied during the 2023 NABI training project (set after the first run; None = not yet known)
 FOCUS_GENE = None
 
 # Published NAC family sizes, used as a sanity check of the domain search (not as a hard rule).
 # Arabidopsis: Ooka et al. 2003 (105, older annotation; ~115 on TAIR10). Rice: Nuruzzaman et al. 2010 (151).
-# Banana: Cenci et al. 2014 (167 on the first genome assembly).
+# Banana: Cenci et al. 2014 (167 on the first genome assembly). The rice count used the MSU annotation;
+# Ensembl uses RAP-DB gene models, so the rice comparison is only approximate.
 EXPECTED_NAC = {
     "arabidopsis_thaliana": (105, (95, 140)),
     "oryza_sativa": (151, (120, 190)),

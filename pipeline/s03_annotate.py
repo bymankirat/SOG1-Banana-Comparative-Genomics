@@ -164,9 +164,9 @@ def promoters(loc):
 
 def main():
     nac = pd.read_csv(DERIVED / "nac_genes.csv")
-    clade = nac[nac.sog1_clade | ((nac.species == config.REFERENCE_SPECIES) & nac.gene.isin(list(config.AT_OUTGROUP)))]
+    clade = nac[nac.in_tree]
     from util import read_fasta
-    seqs = dict(read_fasta(DERIVED / "sog1_clade_proteins.faa"))
+    seqs = dict(read_fasta(DERIVED / "sog1_candidates.faa"))
 
     log("gene structures")
     gene_structures(clade).to_csv(DERIVED / "gene_structure.csv", index=False)

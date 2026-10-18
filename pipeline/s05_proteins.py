@@ -33,14 +33,15 @@ def count_sq_matrix(mat):
     return (st & (mat[:, 1:] == "Q")).sum(axis=1)
 
 
-def shuffle_test(segment, n, rng):
+def shuffle_test(segment, n, rng, return_null=False):
     """One-sided permutation p-value that a segment has as many [ST]Q as observed, given its composition."""
     obs = len(sq_positions(segment))
     if len(segment) < 2:
-        return obs, float("nan"), 1.0
-    arr = np.array(list(segment))
-    null = count_sq_matrix(rng.permuted(np.tile(arr, (n, 1)), axis=1))
-    return obs, float(null.mean()), float((1 + (null >= obs).sum()) / (n + 1))
+        null = np.zeros(n, dtype=int)
+    else:
+        null = count_sq_matrix(rng.permuted(np.tile(np.array(list(segment)), (n, 1)), axis=1))
+    res = (obs, float(null.mean()), float((1 + (null >= obs).sum()) / (n + 1)))
+    return res + (null,) if return_null else res
 
 
 def has_scd(positions, window=config.SCD_WINDOW, k=config.SCD_MIN):
@@ -83,14 +84,16 @@ def main():
     allseq = dict(read_fasta(DERIVED / "sog1_clade_proteins.faa"))
     seqs = {f"{r.short}|{r.gene}": allseq[f"{r.short}|{r.gene}"] for r in clade.itertuples()}
 
-    rows, positions = [], {}
+    rows, positions, pooled_obs, pooled_null = [], {}, 0, np.zeros(config.N_PERMUTATIONS)
     for r in clade.itertuples():
         key = f"{r.short}|{r.gene}"
         seq = seqs[key]
         dom_a, dom_b = int(r.env_from) - 1, int(r.env_to)  # 0-based, end exclusive
         tail = seq[dom_b:]
         pos = sq_positions(seq)
-        obs, exp, p = shuffle_test(tail, config.N_PERMUTATIONS, rng)
+        obs, exp, p, null = shuffle_test(tail, config.N_PERMUTATIONS, rng, return_null=True)
+        pooled_obs += obs
+        pooled_null = pooled_null + null
         tail_pos = [x for x in pos if x >= dom_b]
         rows.append({"key": key, "species": r.species, "short": r.short, "gene": r.gene, "label": r.clade_label,
                      "length": len(seq), "domain_start": dom_a + 1, "domain_end": dom_b, "tail_length": len(tail),
@@ -150,7 +153,7 @@ def main():
             pl = np.array(a["plddt"])
             rho = stats.spearmanr(d, pl).statistic if d is not None else np.nan
             agree.append({"key": key, "uniprot": a["uniprot"], "rho": None if np.isnan(rho) else round(float(rho), 3),
-                          "tail_low_plddt": round(float((pl[int(r.domain_end):] < 50).mean()), 3),
+                          "tail_low_plddt": round(float((pl[int(r.domain_end):] < 50).mean()), 3) if len(pl) > int(r.domain_end) else None,
                           "domain_mean_plddt": round(float(pl[int(r.domain_start) - 1:int(r.domain_end)].mean()), 1)})
     df.to_csv(RESULTS / "sq_motifs.csv", index=False)
     save_json(RESULTS / "proteins.json", {
@@ -158,7 +161,10 @@ def main():
         "plddt": {k: v["plddt"] for k, v in af.items() if v.get("same_sequence")},
         "alphafold": agree,
         "tail_vs_domain": {"median_tail": float(df.sq_per_100_tail.median()), "median_domain": float(df.sq_per_100_domain.median()),
-                           "wilcoxon_p": float(w.pvalue) if w else None, "n": len(df)}})
+                           "wilcoxon_p": float(w.pvalue) if w else None, "n": len(df),
+                           "pooled_observed": int(pooled_obs), "pooled_expected": round(float(pooled_null.mean()), 1),
+                           "pooled_p": float((1 + (pooled_null >= pooled_obs).sum()) / (len(pooled_null) + 1))}})
+    log(f"pooled tails: {pooled_obs} SQ/TQ vs {pooled_null.mean():.1f} expected")
     log(f"{int((df.sq_tail_q < 0.05).sum())} of {len(df)} tails enriched for SQ/TQ (q<0.05); SCD in {int(df.scd.sum())}")
 
 

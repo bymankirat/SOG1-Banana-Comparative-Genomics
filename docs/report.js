@@ -102,8 +102,8 @@
     $("#c-copies").insertAdjacentHTML("afterend", `<div class="legend">${LABELS.map((l) => `<span><i class="sw" style="background:${labColor[l]}"></i>${l}-like</span>`).join("")}</div>`);
   })();
 
-  table($("#t-counts"), [{ t: "Genome" }, { t: "Genes", num: 1 }, { t: "NAC", num: 1 }, { t: "Published", num: 1 }, { t: "SOG1 clade", num: 1 }],
-    order.map((sp) => { const c = counts[sp] || {}; return [esc(spBy[sp].label), (c.genes || 0).toLocaleString(), c.nac,
+  table($("#t-counts"), [{ t: "Genome" }, { t: "Genes", num: 1 }, { t: "NAC", num: 1 }, { t: "Relaxed", num: 1 }, { t: "Published", num: 1 }, { t: "SOG1 clade", num: 1 }],
+    order.map((sp) => { const c = counts[sp] || {}; return [esc(spBy[sp].label), (c.genes || 0).toLocaleString(), c.nac, c.nac_relaxed ?? "–",
       c.published ? `${c.published} <span class="${c.in_range ? "ok" : "bad"}">${c.in_range ? "✓" : "✗"}</span>` : "", c.sog1_clade]; }));
   const noNac = order.filter((sp) => counts[sp] && counts[sp].sog1_clade === 0).map((sp) => spBy[sp].label);
   $("#family-note").textContent = `Every protein-coding gene in ${species.length} genomes was searched with the Pfam NAC (NAM) domain model. ` +
@@ -159,7 +159,7 @@
         const [sh, gene] = key.split("|");
         const sp = shortBy[sh] || {};
         const isOut = !c;
-        const lab = `${sp.label ? sp.label.replace(/ \(.*\)/, "") : sh} · ${gene}` + (c && c.symbol ? ` (${c.symbol})` : isOut ? " (outgroup)" : "");
+        const lab = `${sp.label ? sp.label.replace(/ \(.*\)/, "") : sh} · ${gene}` + (c && c.symbol ? ` (${c.symbol})` : isOut ? ` (${(D.tree.other_at || {})[key] || "other NAC"}, not SOG1 clade)` : "");
         add(s, "circle", { cx: X(n.depth), cy: Y(n.y), r: 3.4, fill: isOut ? css("--muted") : linColor(sp.lineage) });
         add(s, "text", { x: X(n.depth) + 7, y: Y(n.y) + 4, class: "tree-label" + (sh === focusShort ? " focus" : ""), fill: isOut ? css("--muted") : css("--ink") }, lab);
         if (c && c.clade_label) add(s, "text", { x: W - 8, y: Y(n.y) + 4, "text-anchor": "end", "font-size": 11, fill: labColor[c.clade_label] }, `${c.clade_label}-like`);
@@ -353,6 +353,10 @@
   checks.push([atClade.join() === Object.keys(D.meta.at_clade).sort().join(), `Arabidopsis SOG1, NAC044 and NAC085 recovered, and nothing else (${atClade.length} genes)`]);
   const cr = counts.chlamydomonas_reinhardtii;
   if (cr) checks.push([cr.sog1_clade === 0, `No SOG1-clade gene in the green alga Chlamydomonas (negative control): ${cr.sog1_clade}`]);
+  if (D.tree && D.tree.rule_agreement) {
+    const ra = D.tree.rule_agreement;
+    checks.push([true, `Tree and best-match rule agree on ${ra.both} genes; the tree adds ${ra.tree_only.length} (${ra.tree_only.slice(0, 6).join(", ")}${ra.tree_only.length > 6 ? "…" : ""}) and rejects ${ra.best_hit_only.length}`]);
+  }
   if (D.compara) {
     const both = D.compara.reduce((a, r) => a + r.both, 0), hmm = D.compara.reduce((a, r) => a + r.hmm_only.length, 0), cmp = D.compara.reduce((a, r) => a + r.compara_only.length, 0);
     checks.push([both / Math.max(1, both + hmm + cmp) >= 0.8, `Clade agrees with Ensembl Compara for ${both} genes; ${hmm} found only by my search, ${cmp} only by Compara`]);
