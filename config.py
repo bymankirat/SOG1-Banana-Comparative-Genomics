@@ -50,7 +50,10 @@ N_COMPETITORS = 6
 MIN_LENGTH = 250
 
 # Banana gene studied during the 2023 NABI training project (set after the first run; None = not yet known)
-FOCUS_GENE = None
+FOCUS_GENE = "Ma03_g07280"
+
+# Genes that Ensembl Compara lists as SOG1 orthologs; the log explains if one is not in the protein set
+CHECK_GENES = {"oryza_sativa": ["Os06g0267500"]}
 
 # Published NAC family sizes, used as a sanity check of the domain search (not as a hard rule).
 # Arabidopsis: Ooka et al. 2003 (105, older annotation; ~115 on TAIR10). Rice: Nuruzzaman et al. 2010 (151).

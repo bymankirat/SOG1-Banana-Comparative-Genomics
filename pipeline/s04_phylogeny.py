@@ -78,8 +78,11 @@ def tips(n):
     return [n] if not n["children"] else [t for c in n["children"] for t in tips(c)]
 
 
-def classify(root, names):
-    """names: tree label -> 'Sp|gene'. Returns {key: (in_clade, label, support)}."""
+def classify(root, names, competitors=()):
+    """names: tree label -> 'Sp|gene'. Returns {key: (in_clade, label, support)}.
+
+    in_clade is True (SOG1 clade), False, or "pro-ortholog": the first group with Arabidopsis genes holds the
+    clade genes plus the competing NACs (a copy from before SOG1 split from its sister group, e.g. in moss)."""
     clade_keys = {f"At|{g}": s for g, s in config.AT_CLADE.items()}
     leaves = {names.get(t["label"], t["label"]): t for t in tips(root)}
     at_leaves = {k for k in leaves if k.startswith("At|")}
@@ -105,11 +108,13 @@ def classify(root, names):
         for a in ancestors(t):
             at_here = {names.get(x["label"], x["label"]) for x in tips(a)} & at_leaves
             if at_here:
-                ok = at_here <= set(clade_keys)
                 sup = float(a["label"]) if re.fullmatch(r"[\d.]+", a["label"] or "") else None
-                if ok:
+                comp = {f"At|{g}" for g in competitors}
+                if at_here <= set(clade_keys):
                     near = min(clade_keys, key=lambda c: t["depth"] + leaves[c]["depth"] - 2 * lca_depth(t, leaves[c]))
                     verdict = (True, clade_keys[near], sup)
+                elif set(clade_keys) <= at_here <= set(clade_keys) | comp:
+                    verdict = ("pro-ortholog", None, sup)
                 else:
                     verdict = (False, None, sup)
                 break
@@ -156,10 +161,13 @@ def main():
         log("best model:", summ["model"])
 
     root = parse_newick((OUT / "sog1_clade.treefile").read_text())
-    calls = classify(root, summ["names"])
     nac = pd.read_csv(DERIVED / "nac_genes.csv")
+    at_tree = set(nac[(nac.species == config.REFERENCE_SPECIES) & nac.in_tree].gene)
+    competitors = sorted(at_tree - set(config.AT_CLADE) - set(config.AT_OUTGROUP))
+    calls = classify(root, summ["names"], competitors)
     nac["key"] = nac.short + "|" + nac.gene
-    nac["sog1_clade"] = nac.key.map(lambda k: calls.get(k, (False,))[0]).fillna(False).astype(bool)
+    nac["pro_ortholog"] = nac.key.map(lambda k: calls.get(k, (False,))[0] == "pro-ortholog")
+    nac["sog1_clade"] = nac.key.map(lambda k: calls.get(k, (False,))[0] is True)
     nac["clade_label"] = nac.key.map(lambda k: calls.get(k, (False, None))[1])
     nac["clade_support"] = nac.key.map(lambda k: calls.get(k, (False, None, None))[2])
     nac.drop(columns=["key"]).to_csv(DERIVED / "nac_genes.csv", index=False)
@@ -167,10 +175,12 @@ def main():
     seqs = dict(read_fasta(src))
     members = nac[nac.sog1_clade]
     write_fasta(DERIVED / "sog1_clade_proteins.faa", [(f"{r.short}|{r.gene}", seqs[f"{r.short}|{r.gene}"]) for r in members.itertuples()])
-    agree = nac[nac.candidate | nac.sog1_clade]
-    summ["rule_agreement"] = {"both": int((agree.best_hit_rule & agree.sog1_clade).sum()),
-                              "tree_only": sorted((agree[~agree.best_hit_rule & agree.sog1_clade].short + "|" + agree.gene).tolist()),
-                              "best_hit_only": sorted((agree[agree.best_hit_rule & ~agree.sog1_clade].short + "|" + agree.gene).tolist())}
+    key = nac.short + "|" + nac.gene
+    summ["rule_agreement"] = {"both": int((nac.best_hit_rule & nac.sog1_clade).sum()),
+                              "tree_only": sorted(key[~nac.best_hit_rule & nac.sog1_clade]),
+                              "best_hit_only": sorted(key[nac.best_hit_rule & ~nac.sog1_clade]),
+                              "pro_orthologs": sorted(key[nac.pro_ortholog])}
+    summ["competitors"] = competitors
     summ["other_at"] = {f"At|{r.gene}": (r.symbol if isinstance(r.symbol, str) and r.symbol else r.gene)
                         for r in nac[(nac.species == config.REFERENCE_SPECIES) & nac.in_tree & ~nac.sog1_clade].itertuples()}
     save_json(OUT / "summary.json", summ)
@@ -178,6 +188,7 @@ def main():
     counts = pd.read_csv(RESULTS / "nac_counts.csv")
     per = members.groupby("species").size()
     counts["sog1_clade"] = counts.species.map(per).fillna(0).astype(int)
+    counts["pro_orthologs"] = counts.species.map(nac[nac.pro_ortholog].groupby("species").size()).fillna(0).astype(int)
     counts.to_csv(RESULTS / "nac_counts.csv", index=False)
     log("SOG1 clade per species:", {k: int(v) for k, v in per.items()})
     log("tree vs best-hit rule:", summ["rule_agreement"])

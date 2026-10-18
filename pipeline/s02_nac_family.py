@@ -41,7 +41,19 @@ def load_hmm():
 
 
 def proteome(sp, prov):
-    return longest_isoforms(read_fasta(RAW / prov["species"][sp]["pep"]["file"]))
+    recs = read_fasta(RAW / prov["species"][sp]["pep"]["file"])
+    best = longest_isoforms(recs)
+    for g in config.CHECK_GENES.get(sp, []):
+        mine = [(h, q) for h, q in recs if f"gene:{g} " in h + " "]
+        if g in best:
+            log(f"  check {g}: kept, {len(best[g]['seq'])} aa")
+        elif not mine:
+            log(f"  check {g}: not in the {sp} protein file")
+        else:
+            for h, q in mine:
+                log(f"  check {g}: dropped isoform {h.split()[0]} len={len(q)} internal_stops={q.rstrip('*').count('*')} "
+                    f"biotypes={[t for t in h.split() if 'biotype' in t]}")
+    return best
 
 
 def search_domain(hmm, prot, names=None, gathering=True):
@@ -195,7 +207,7 @@ def main():
     rng = random.Random(config.SEED)
     loc = []
     for sp, targets in ((at, set(config.SOG1_TARGETS)), (focus, {r["focus_gene"] for r in trows if r["focus_gene"]})):
-        clade = set(df[(df.species == sp) & df.candidate].gene)
+        clade = set(df[(df.species == sp) & df.candidate].gene) - targets
         pool = sorted(g for g in prot[sp] if g not in targets and g not in clade and prot[sp][g]["start"])
         bg = rng.sample(pool, min(config.BACKGROUND_N, len(pool)))
         for group, genes in (("target", sorted(targets)), ("sog1_clade", sorted(clade)), ("background", bg)):

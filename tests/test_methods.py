@@ -82,8 +82,16 @@ def test_tree_clade_rule():
            "Pp__g2:0.4)90:0.2,(At__AT4G28500:0.1,Zm__g3:0.1)100:0.2);")
     names = {k: k.replace("__", "|") for k in ["At__AT2G46770", "At__AT1G25580", "Ma__g1", "At__AT3G01600",
                                               "At__AT5G14490", "Pp__g2", "At__AT4G28500", "Zm__g3"]}
-    calls = classify(parse_newick(nwk), names)
+    calls = classify(parse_newick(nwk), names, competitors=["AT4G28500"])
     assert calls["Ma|g1"][:2] == (True, "SOG1") and calls["Ma|g1"][2] == 99
     assert calls["Pp|g2"][0] is True
     assert calls["Zm|g3"][0] is False
     assert calls["At|AT4G28500"][0] is False and calls["At|AT3G01600"] == (True, "NAC044", None)
+
+
+def test_tree_pro_ortholog():
+    # moss gene branches before SOG1 and its sister NAC group split
+    nwk = "(At__AT2G46770:0.5,(((At__AT1G25580:0.1,At__AT3G01600:0.1,At__AT5G14490:0.1):0.1,At__AT4G28500:0.2):0.1,Pp__g2:0.4):0.2);"
+    names = {k: k.replace("__", "|") for k in ["At__AT2G46770", "At__AT1G25580", "At__AT3G01600", "At__AT5G14490", "At__AT4G28500", "Pp__g2"]}
+    assert classify(parse_newick(nwk), names, competitors=["AT4G28500"])["Pp|g2"][0] == "pro-ortholog"
+    assert classify(parse_newick(nwk), names, competitors=[])["Pp|g2"][0] is False
