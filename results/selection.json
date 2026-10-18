@@ -1,9 +1,9 @@
 {
  "cds_mismatch": [],
- "codon_alignments": 47,
+ "codon_alignments": 45,
  "domain_columns": [
-  155,
-  330
+  240,
+  424
  ],
  "ds_range": [
   0.01,
@@ -53,17 +53,17 @@
   {
    "a": "Ma|Ma06_g12700",
    "b": "Ma|Ma09_g01850",
-   "ks": -1.0,
+   "ks": 3.088,
    "label_a": "SOG1",
    "label_b": "NAC044",
-   "omega": null
+   "omega": 0.265
   }
  ],
- "median_omega_domain": 0.18256853397307937,
- "median_omega_full": 0.30078201165719665,
- "median_omega_tail": 0.37438963626006433,
- "pairs": 1081,
- "tail_higher_fraction": 0.9747899159663865,
- "usable_pairs": 119,
- "wilcoxon_p": 2.6433552137790545e-21
+ "median_omega_domain": 0.18835329768583634,
+ "median_omega_full": 0.32021343482434184,
+ "median_omega_tail": 0.40433478392036415,
+ "pairs": 990,
+ "tail_higher_fraction": 0.9761904761904762,
+ "usable_pairs": 126,
+ "wilcoxon_p": 1.4526239907992674e-22
 }

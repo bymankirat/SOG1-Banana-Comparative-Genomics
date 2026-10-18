@@ -1,18 +1,18 @@
-species,short,label,lineage,genes,nac,published,in_range,sog1_clade
-amborella_trichopoda,Atr,Amborella trichopoda,Early angiosperm,27313,46,,,2
-ananas_comosus,Ac,Ananas comosus (pineapple),Monocot,25431,73,,,3
-arabidopsis_thaliana,At,Arabidopsis thaliana,Eudicot,27573,114,105.0,True,3
-brachypodium_distachyon,Bd,Brachypodium distachyon,Monocot,34298,136,,,4
-chara_braunii,Cb,Chara braunii,Charophyte alga,34704,1,,,0
-chlamydomonas_reinhardtii,Cr,Chlamydomonas reinhardtii,Green alga,17743,0,,,0
-dioscorea_rotundata,Dr,Dioscorea rotundata (yam),Monocot,34039,85,,,3
-glycine_max,Gm,Glycine max (soybean),Eudicot,55890,179,,,8
-marchantia_polymorpha,Mp,Marchantia polymorpha,Liverwort,17991,10,,,0
-musa_acuminata,Ma,Musa acuminata (banana),Monocot,34779,181,167.0,True,4
-oryza_sativa,Os,Oryza sativa (rice),Monocot,35730,100,151.0,False,1
-physcomitrium_patens,Pp,Physcomitrium patens,Moss,32009,34,,,0
-populus_trichocarpa,Pt,Populus trichocarpa (poplar),Eudicot,34681,157,,,3
-selaginella_moellendorffii,Sm,Selaginella moellendorffii,Lycophyte,34799,40,,,0
-sorghum_bicolor,Sb,Sorghum bicolor,Monocot,34116,131,,,5
-vitis_vinifera,Vv,Vitis vinifera (grapevine),Eudicot,37467,77,,,2
-zea_mays,Zm,Zea mays (maize),Monocot,39756,172,,,9
+species,short,label,lineage,genes,nac,nac_relaxed,published,in_range,candidates,sog1_clade
+amborella_trichopoda,Atr,Amborella trichopoda,Early angiosperm,27313,46,46,,,2,2
+ananas_comosus,Ac,Ananas comosus (pineapple),Monocot,25431,73,73,,,3,3
+arabidopsis_thaliana,At,Arabidopsis thaliana,Eudicot,27573,114,114,105.0,True,3,3
+brachypodium_distachyon,Bd,Brachypodium distachyon,Monocot,34298,136,136,,,4,4
+chara_braunii,Cb,Chara braunii,Charophyte alga,34704,1,1,,,0,0
+chlamydomonas_reinhardtii,Cr,Chlamydomonas reinhardtii,Green alga,17743,0,0,,,0,0
+dioscorea_rotundata,Dr,Dioscorea rotundata (yam),Monocot,34039,85,85,,,3,3
+glycine_max,Gm,Glycine max (soybean),Eudicot,55890,179,179,,,8,8
+marchantia_polymorpha,Mp,Marchantia polymorpha,Liverwort,17991,10,10,,,1,0
+musa_acuminata,Ma,Musa acuminata (banana),Monocot,34779,181,181,167.0,True,4,4
+oryza_sativa,Os,Oryza sativa (rice),Monocot,35730,100,100,151.0,False,1,1
+physcomitrium_patens,Pp,Physcomitrium patens,Moss,32009,34,34,,,2,0
+populus_trichocarpa,Pt,Populus trichocarpa (poplar),Eudicot,34681,157,157,,,3,3
+selaginella_moellendorffii,Sm,Selaginella moellendorffii,Lycophyte,34799,40,40,,,0,0
+sorghum_bicolor,Sb,Sorghum bicolor,Monocot,34116,131,131,,,8,5
+vitis_vinifera,Vv,Vitis vinifera (grapevine),Eudicot,37467,77,77,,,2,2
+zea_mays,Zm,Zea mays (maize),Monocot,39756,172,172,,,7,7
