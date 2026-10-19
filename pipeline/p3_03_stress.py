@@ -10,10 +10,13 @@ the genome in the same contrast. Two tests, both against the same background:
 Genotoxic contrasts (bleomycin, gamma rays, UV) act as the positive control: SOG1 targets are known to go up there,
 so if the method cannot see it in those, nothing else in this step can be believed.
 """
+import re
+
 import numpy as np
 import pandas as pd
 
 import config
+from p3_02_orthologs import species_slug
 from util import RAW, RESULTS, log, save_json
 
 OUT = RESULTS / "phase3"
@@ -21,6 +24,18 @@ CACHE = RAW / "atlas"
 N_PERM = 10000
 RNG = np.random.default_rng(config.SEED)
 MIN_SET = 3  # a set smaller than this is not worth testing
+
+# Atlas contrast names read "'treatment' vs 'reference' in 'background'". Only contrasts whose reference side is an
+# untreated control answer the question "does this stress induce the gene?"; the rest compare genotypes or
+# cultivars inside a stress and are kept separately.
+CONTROL = re.compile(r"vs '(none|control|untreated|mock|water|wild type[^']*|normal[^']*|0 ?(m?m|hour|h)[^']*)'", re.I)
+
+
+def comparison_type(name):
+    m = CONTROL.search(str(name))
+    if not m:
+        return "other"
+    return "genotype vs wild type" if "wild type" in m.group(1).lower() else "stress vs control"
 
 
 def analytics_path(acc, array):
@@ -64,6 +79,7 @@ def main():
     orth = pd.read_csv(OUT / "orthologs.csv")
     orth["gene"] = orth.gene.astype(str).str.strip().str.upper()
     by_species = {sp: g for sp, g in orth.groupby(orth.species.str.lower())}
+    log("ortholog table covers:", sorted(by_species))
 
     rows, missing = [], []
     for (acc, array), grp in con.groupby(["accession", con.array.fillna("")]):
@@ -76,7 +92,7 @@ def main():
         except Exception as e:  # noqa: BLE001
             missing.append(f"{path.name}: {e}")
             continue
-        sp = grp.species.iloc[0].lower().replace(" ", "_")
+        sp = species_slug(grp.species.iloc[0])
         genes = by_species.get(sp)
         if genes is None:
             continue
@@ -88,7 +104,7 @@ def main():
                 continue
             bg = tab.log2fc.to_numpy(dtype=float)
             row = {"accession": acc, "array": array, "contrast": c.contrast, "name": c["name"],
-                   "stress": c.stress, "species": sp, "n_genes": len(tab),
+                   "stress": c.stress, "species": sp, "comparison": comparison_type(c["name"]), "n_genes": len(tab),
                    "bg_median": float(np.median(bg))}
             s1 = tab[tab.gene.isin(sog1_ids)]
             if len(s1):
@@ -105,7 +121,7 @@ def main():
                 for _, t in tg.iterrows():
                     sym = genes[genes.gene == t.gene].at_symbol.iloc[0]
                     rows.append({"kind": "gene", "accession": acc, "contrast": c.contrast, "stress": c.stress,
-                                 "species": sp, "symbol": sym, "gene": t.gene,
+                                 "comparison": row["comparison"], "species": sp, "symbol": sym, "gene": t.gene,
                                  "log2fc": float(t.log2fc), "padj": float(t.padj)})
             rows.append({"kind": "contrast", **row})
 
@@ -116,6 +132,7 @@ def main():
     genes_df.to_csv(OUT / "stress_genes.csv", index=False)
 
     tested = contrasts.dropna(subset=["p_up"])
+    tested = tested[tested.comparison == "stress vs control"]  # headline test: does the stress itself induce them?
     if len(tested):
         # Benjamini-Hochberg across all tested contrasts
         p = tested.p_up.to_numpy()

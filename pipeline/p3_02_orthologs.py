@@ -12,8 +12,19 @@ from util import DERIVED, RESULTS, ensembl_get, log
 OUT = RESULTS / "phase3"
 
 
+# Atlas species names -> Ensembl Plants species. Subspecies and cultivar groups share one reference genome,
+# and Physcomitrella patens was renamed Physcomitrium patens.
+ALIAS = {
+    "oryza sativa japonica group": "oryza_sativa",
+    "oryza sativa indica group": "oryza_indica",
+    "hordeum vulgare subsp. vulgare": "hordeum_vulgare",
+    "physcomitrella patens": "physcomitrium_patens",
+}
+
+
 def species_slug(name):
-    return name.strip().lower().replace(" ", "_")
+    name = name.strip().lower()
+    return ALIAS.get(name, name.replace(" ", "_"))
 
 
 def compara(at_gene, target):
