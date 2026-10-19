@@ -1,5 +1,5 @@
 v7.526 (2024/Apr/26)
-/home/runner/work/_temp/ec7ffa50-c842-4e85-8726-8bb0857dcc1d.sh: line 3: iqtree2: command not found
+/home/runner/work/_temp/0414a27b-7d04-4f47-88f7-6b7e3158f032.sh: line 3: iqtree2: command not found
 IQ-TREE version 3.1.4 for Linux x86 64-bit built Sep 29 2026
 Developed by Bui Quang Minh, Thomas Wong, Nhan Ly-Trong, Huaiyan Ren
 
