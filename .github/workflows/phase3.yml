@@ -24,16 +24,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: mamba-org/setup-micromamba@v2
+      - uses: actions/setup-python@v5
         with:
-          environment-name: p3
-          create-args: >-
-            -c conda-forge -c bioconda python=3.12 bowtie
-          init-shell: bash
-          cache-environment: true
+          python-version: "3.12"
 
       - name: Install Python packages
-        shell: bash -el {0}
         run: |
           mkdir -p results/phase3
           pip install -q -r requirements.txt 2>&1 | tee results/phase3/setup_log.txt
@@ -46,14 +41,12 @@ jobs:
           restore-keys: p3raw-
 
       - name: Run phase 3
-        shell: bash -el {0}
         run: |
           set -o pipefail
           python run_phase3.py --from "${{ github.event.inputs.from_step || '1' }}" 2>&1 | tee results/phase3/run_log.txt
 
       - name: Tests
         if: hashFiles('tests/test_phase3.py') != ''
-        shell: bash -el {0}
         run: |
           set -o pipefail
           python -m pytest -q tests/test_phase3.py 2>&1 | tee results/phase3/test_log.txt

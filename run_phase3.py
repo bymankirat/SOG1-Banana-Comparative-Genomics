@@ -15,6 +15,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent / "pipeline"))
 
 STEPS = [
     ("p3_01_atlas", "find and download stress experiments (Expression Atlas)"),
+    ("p3_02_orthologs", "map SOG1 and its targets to every species (Compara)"),
+    ("p3_03_stress", "is the SOG1 regulon induced under stress? (permutation tests)"),
+    ("p3_04_motifs", "SOG1 binding motif in the promoters of responsive genes"),
+    ("p3_05_export", "write docs/phase3_results.js"),
 ]
 
 
