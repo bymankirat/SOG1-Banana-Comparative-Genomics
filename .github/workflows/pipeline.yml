@@ -8,7 +8,7 @@ on:
         default: "1"
   push:
     branches: [main]
-    paths: ["pipeline/**", "config.py", "run_all.py", ".github/workflows/pipeline.yml"]
+    paths: ["pipeline/s0*.py", "run_all.py", ".github/workflows/pipeline.yml"]
 
 permissions:
   contents: write

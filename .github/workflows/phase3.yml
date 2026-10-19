@@ -1,0 +1,71 @@
+name: Run phase 3 (stress expression and CRISPR guides)
+
+on:
+  workflow_dispatch:
+    inputs:
+      from_step:
+        description: "First step to run"
+        default: "1"
+  push:
+    branches: [main]
+    paths: ["pipeline/p3_*.py", "run_phase3.py", ".github/workflows/phase3.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: phase3
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: mamba-org/setup-micromamba@v2
+        with:
+          environment-name: p3
+          create-args: >-
+            -c conda-forge -c bioconda python=3.12 bowtie
+          init-shell: bash
+          cache-environment: true
+
+      - name: Install Python packages
+        shell: bash -el {0}
+        run: |
+          mkdir -p results/phase3
+          pip install -q -r requirements.txt 2>&1 | tee results/phase3/setup_log.txt
+
+      - name: Cache downloads
+        uses: actions/cache@v4
+        with:
+          path: data/raw
+          key: p3raw-${{ github.run_id }}
+          restore-keys: p3raw-
+
+      - name: Run phase 3
+        shell: bash -el {0}
+        run: |
+          set -o pipefail
+          python run_phase3.py --from "${{ github.event.inputs.from_step || '1' }}" 2>&1 | tee results/phase3/run_log.txt
+
+      - name: Tests
+        if: hashFiles('tests/test_phase3.py') != ''
+        shell: bash -el {0}
+        run: |
+          set -o pipefail
+          python -m pytest -q tests/test_phase3.py 2>&1 | tee results/phase3/test_log.txt
+
+      - name: Save results to the repository
+        if: always()
+        run: |
+          git config user.name "bymankirat"
+          git config user.email "msinghsandal@gmail.com"
+          git add -A results/phase3 data/derived docs/phase3_results.js 2>/dev/null || git add -A results/phase3 data/derived || true
+          if ! git diff --cached --quiet; then
+            git commit -q -m "Phase 3 results (run ${{ github.run_number }})"
+            git pull -q --rebase -X theirs origin main
+            git push -q origin HEAD:main
+          fi
