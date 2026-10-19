@@ -1,8 +1,8 @@
 
 === phase 3 step 1: find and download stress experiments (Expression Atlas) ===
-16:26:07 Expression Atlas lists 4562 experiments; keys: ['experimentAccession', 'experimentDescription', 'experimentProjects', 'experimentType', 'experimentalFactors', 'kingdom', 'lastUpdate', 'loadDate', 'numberOfAssays', 'rawExperimentType', 'species', 'technologyType']
-16:26:07 135 differential stress-related experiments in the chosen species
-16:26:07 species
+16:27:38 Expression Atlas lists 4562 experiments; keys: ['experimentAccession', 'experimentDescription', 'experimentProjects', 'experimentType', 'experimentalFactors', 'kingdom', 'lastUpdate', 'loadDate', 'numberOfAssays', 'rawExperimentType', 'species', 'technologyType']
+16:27:38 135 differential stress-related experiments in the chosen species
+16:27:38 species
 arabidopsis thaliana              73
 brachypodium distachyon            3
 glycine max                        6
@@ -19,15 +19,153 @@ sorghum bicolor                    4
 triticum aestivum                  3
 vitis vinifera                     4
 zea mays                           9
-16:26:07 659 contrasts, 423 classified as a stress: {'Drought': 182, 'Salt': 100, 'Cold': 44, 'Oxidative': 40, 'Flooding / hypoxia': 24, 'DNA damage': 17, 'Heat': 16}
-16:26:07 done; 0 downloads failed (see atlas_failed.json)
+16:27:38 659 contrasts, 423 classified as a stress: {'Drought': 182, 'Salt': 100, 'Cold': 44, 'Oxidative': 40, 'Flooding / hypoxia': 24, 'DNA damage': 17, 'Heat': 16}
+16:27:38 done; 0 downloads failed (see atlas_failed.json)
 
 === phase 3 step 2: map SOG1 and its targets to every species (Compara) ===
-16:26:07 species with stress contrasts: ['arabidopsis_thaliana', 'brachypodium_distachyon', 'glycine_max', 'hordeum_vulgare', 'hordeum_vulgare_subsp._vulgare', 'musa_acuminata', 'oryza_sativa', 'oryza_sativa_indica_group', 'oryza_sativa_japonica_group', 'physcomitrella_patens', 'solanum_tuberosum', 'sorghum_bicolor', 'triticum_aestivum', 'vitis_vinifera', 'zea_mays']
-16:26:22   brachypodium_distachyon: no ortholog for RPA1E
-16:26:24   brachypodium_distachyon: no ortholog for SMR4
-16:26:27   brachypodium_distachyon: no ortholog for SMR7
-16:26:28   brachypodium_distachyon: no ortholog for NAC044
-16:26:28   brachypodium_distachyon: no ortholog for NAC085
-16:26:29   brachypodium_distachyon: no ortholog for XRI1
-16:26:38   glycine_max: no ortholog for BRCA1
+16:27:38 species with stress contrasts: ['arabidopsis_thaliana', 'brachypodium_distachyon', 'glycine_max', 'hordeum_vulgare', 'musa_acuminata', 'oryza_indica', 'oryza_sativa', 'physcomitrium_patens', 'solanum_tuberosum', 'sorghum_bicolor', 'triticum_aestivum', 'vitis_vinifera', 'zea_mays']
+16:27:47   brachypodium_distachyon: no ortholog for RPA1E
+16:27:55   brachypodium_distachyon: no ortholog for SMR4
+16:27:56   brachypodium_distachyon: no ortholog for SMR7
+16:27:57   brachypodium_distachyon: no ortholog for NAC044
+16:28:03   brachypodium_distachyon: no ortholog for NAC085
+16:28:04   brachypodium_distachyon: no ortholog for XRI1
+16:28:08   glycine_max: no ortholog for BRCA1
+16:28:15   glycine_max: no ortholog for SMR5
+16:28:15   glycine_max: no ortholog for NAC044
+16:28:16   glycine_max: no ortholog for NAC085
+16:28:30   hordeum_vulgare: no ortholog for RPA1E
+16:28:33   hordeum_vulgare: no ortholog for SMR4
+16:28:37   hordeum_vulgare: no ortholog for SMR7
+16:28:37   hordeum_vulgare: no ortholog for NAC044
+16:28:39   hordeum_vulgare: no ortholog for NAC085
+16:28:39   hordeum_vulgare: no ortholog for XRI1
+16:28:51   musa_acuminata: no ortholog for SMR4
+16:28:56   musa_acuminata: no ortholog for SMR7
+16:28:58   musa_acuminata: no ortholog for NAC044
+16:29:00   musa_acuminata: no ortholog for NAC085
+16:29:13   oryza_indica: no ortholog for RPA1E
+16:29:13   oryza_indica: no ortholog for GMI1
+16:29:16   oryza_indica: no ortholog for SMR4
+16:29:18   oryza_indica: no ortholog for SMR7
+16:29:19   oryza_indica: no ortholog for NAC044
+16:29:24   oryza_indica: no ortholog for NAC085
+16:29:24   oryza_indica: no ortholog for XRI1
+16:29:27   oryza_sativa: no ortholog for RPA1E
+16:29:27   oryza_sativa: no ortholog for GMI1
+16:29:28   oryza_sativa: no ortholog for SMR4
+16:29:28   oryza_sativa: no ortholog for SMR7
+16:29:29   oryza_sativa: no ortholog for NAC044
+16:29:29   oryza_sativa: no ortholog for NAC085
+16:29:29   oryza_sativa: no ortholog for XRI1
+16:29:34   physcomitrium_patens: no ortholog for BRCA1
+16:29:38   physcomitrium_patens: no ortholog for BARD1
+16:29:39   physcomitrium_patens: no ortholog for TSO2
+16:29:40   physcomitrium_patens: no ortholog for SMR4
+16:29:40   physcomitrium_patens: no ortholog for SMR5
+16:29:40   physcomitrium_patens: no ortholog for SMR7
+16:29:40   physcomitrium_patens: no ortholog for NAC044
+16:29:41   physcomitrium_patens: no ortholog for NAC085
+16:29:41   physcomitrium_patens: no ortholog for XRI1
+16:29:42   physcomitrium_patens: no ortholog for OXI1
+16:29:43   solanum_tuberosum: no ortholog for RAD51
+16:29:50   solanum_tuberosum: no ortholog for GMI1
+16:29:51   solanum_tuberosum: no ortholog for SMR4
+16:29:51   solanum_tuberosum: no ortholog for SMR5
+16:29:51   solanum_tuberosum: no ortholog for NAC044
+16:29:52   solanum_tuberosum: no ortholog for NAC085
+16:29:53   solanum_tuberosum: no ortholog for WEE1
+16:30:00   sorghum_bicolor: no ortholog for RPA1E
+16:30:05   sorghum_bicolor: no ortholog for SMR4
+16:30:07   sorghum_bicolor: no ortholog for SMR7
+16:30:09   sorghum_bicolor: no ortholog for NAC044
+16:30:09   sorghum_bicolor: no ortholog for NAC085
+16:30:11   sorghum_bicolor: no ortholog for XRI1
+16:30:20   triticum_aestivum: no ortholog for RPA1E
+16:30:21   triticum_aestivum: no ortholog for SMR4
+16:30:23   triticum_aestivum: no ortholog for SMR7
+16:30:24   triticum_aestivum: no ortholog for NAC044
+16:30:24   triticum_aestivum: no ortholog for NAC085
+16:30:25   triticum_aestivum: no ortholog for XRI1
+16:30:29   vitis_vinifera: no ortholog for RAD17
+16:30:30   vitis_vinifera: no ortholog for SMR4
+16:30:32   vitis_vinifera: no ortholog for NAC044
+16:30:32   vitis_vinifera: no ortholog for NAC085
+16:30:36   vitis_vinifera: no ortholog for FMO1
+16:30:43   zea_mays: no ortholog for RPA1E
+16:30:43   zea_mays: no ortholog for GMI1
+16:30:44   zea_mays: no ortholog for SMR4
+16:30:46   zea_mays: no ortholog for SMR7
+16:30:47   zea_mays: no ortholog for NAC044
+16:30:47   zea_mays: no ortholog for NAC085
+16:30:47   zea_mays: no ortholog for XRI1
+16:30:50 species    arabidopsis_thaliana  brachypodium_distachyon  glycine_max  hordeum_vulgare  musa_acuminata  oryza_indica  oryza_sativa  physcomitrium_patens  solanum_tuberosum  sorghum_bicolor  triticum_aestivum  vitis_vinifera  zea_mays
+at_symbol                                                                                                                                                                                                                                
+BARD1                         1                        1            2                1               1             1             1                     0                  1                1                  3               1         1
+BRCA1                         1                        1            0                1               1             1             1                     0                  1                1                  3               1         1
+CYCB1;1                       1                        2            6                1               7             3             4                     1                  2                3                 11               2        11
+FMO1                          1                        1            3                6               3             1             1                     1                  1                1                 18               0         2
+GMI1                          1                        1            1                1               1             0             0                     3                  0                1                  3               1         0
+NAC044                        1                        0            0                0               0             0             0                     0                  0                0                  0               0         0
+NAC085                        1                        0            0                0               0             0             0                     0                  0                0                  0               0         0
+OXI1                          1                        1            3                2               2             3             2                     0                  1                2                  5               1         6
+PARP2                         1                        1            2                1               1             1             2                     1                  2                2                  4               1         1
+RAD17                         1                        1            1                1               1             2             1                     1                  1                1                  3               0         1
+RAD51                         1                        2            2                1               1             3             2                     2                  0                3                  3               1         2
+RPA1E                         1                        0            3                0               2             0             0                     2                  1                0                  0               1         0
+SMR4                          1                        0            1                0               0             0             0                     0                  0                0                  0               0         0
+SMR5                          1                        2            0                2               4             2             2                     0                  0                2                  6               2         2
+SMR7                          1                        0            2                0               0             0             0                     0                  2                0                  0               1         0
+SOG1                          1                        1            4                1               1             1             1                     0                  1                1                  3               1         3
+TSO2                          1                        2            3                1               4             3             2                     0                  1                3                  3               1         3
+WEE1                          1                        1            1                1               1             1             1                     1                  0                1                  3               1         1
+XRI1                          1                        0            4                0               3             0             0                     0                  2                0                  0               1         0
+
+=== phase 3 step 3: is the SOG1 regulon induced under stress? (permutation tests) ===
+16:30:50 ortholog table covers: ['arabidopsis_thaliana', 'brachypodium_distachyon', 'glycine_max', 'hordeum_vulgare', 'musa_acuminata', 'oryza_indica', 'oryza_sativa', 'physcomitrium_patens', 'solanum_tuberosum', 'sorghum_bicolor', 'triticum_aestivum', 'vitis_vinifera', 'zea_mays']
+16:31:05 
+                    contrasts  species  median_shift  significant
+stress                                                           
+Drought                   126        7          0.00            4
+Salt                       23        4          0.00            1
+Heat                       15        5          0.00            0
+Oxidative                  13        2         -0.10            0
+Cold                       13        2          0.15            0
+Flooding / hypoxia          5        3         -0.10            0
+DNA damage                  3        2          1.50            3
+16:31:05 421 contrasts analysed, 0 tables missing
+
+=== phase 3 step 4: SOG1 binding motif in the promoters of responsive genes ===
+16:31:05 106 species-gene pairs are up in at least one stress contrast
+16:31:05 arabidopsis_thaliana: 18 responsive target orthologs
+16:38:11 brachypodium_distachyon: 5 responsive target orthologs
+16:41:25   HTTP 503, waiting 1s: https://rest.ensembl.org/overlap/region/brachypodium_distachyon/1:31043605..31143605
+16:52:02   HTTP 503, waiting 1s: https://rest.ensembl.org/sequence/region/brachypodium_distachyon/1:25924456..25925955:1
+17:00:12 glycine_max: 18 responsive target orthologs
+17:10:49   HTTP 503, waiting 1s: https://rest.ensembl.org/sequence/region/glycine_max/1:49291047..49292546:1
+17:14:21   HTTP 500, waiting 1s: https://rest.ensembl.org/lookup/id/GLYMA_02G252900
+17:14:42   HTTP 500, waiting 1s: https://rest.ensembl.org/lookup/id/GLYMA_03G107200
+17:18:07   HTTP 503, waiting 1s: https://rest.ensembl.org/sequence/region/glycine_max/3:23375030..23376529:1
+17:24:10   HTTP 503, waiting 1s: https://rest.ensembl.org/sequence/region/glycine_max/5:22664923..22666422:1
+17:25:50   HTTP 503, waiting 1s: https://rest.ensembl.org/sequence/region/glycine_max/5:10472161..10473660:-1
+17:30:54   HTTP 503, waiting 1s: https://rest.ensembl.org/sequence/region/glycine_max/7:38014957..38016456:1
+17:32:53   HTTP 503, waiting 1s: https://rest.ensembl.org/sequence/region/glycine_max/7:36836276..36837775:-1
+17:32:54   HTTP 500, waiting 2s: https://rest.ensembl.org/sequence/region/glycine_max/7:36836276..36837775:-1
+17:32:57   HTTP 500, waiting 4s: https://rest.ensembl.org/sequence/region/glycine_max/7:36836276..36837775:-1
+Traceback (most recent call last):
+  File "/home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/run_phase3.py", line 39, in <module>
+    main()
+  File "/home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/run_phase3.py", line 34, in main
+    importlib.import_module(mod).main()
+  File "/home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/pipeline/p3_04_motifs.py", line 86, in main
+    seq = promoter(species, gid)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/pipeline/p3_04_motifs.py", line 29, in promoter
+    g = ensembl_get(f"/lookup/id/{gene}", species=species)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/pipeline/util.py", line 175, in ensembl_get
+    r = http("GET", config.ENSEMBL_REST + path, params=params, headers={"Accept": "application/json"}, ok404=True)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/SOG1-Banana-Comparative-Genomics/SOG1-Banana-Comparative-Genomics/pipeline/util.py", line 169, in http
+    raise RuntimeError(f"HTTP {r.status_code} for {url}: {r.text[:300]}")
+RuntimeError: HTTP 400 for https://rest.ensembl.org/lookup/id/GLYMA_07G043100: {"error":"Could not connect to database ensembl_stable_ids_116 as user ensro using [DBI:mysql:database=ensembl_stable_ids_116;host=hh-mysql-ens-rest-web.ebi.ac.uk;port=4571] as a locator:DBI connect('database=ensembl_stable_ids_116;host=hh-mysql-ens-rest-web.ebi.ac.uk;port=4571','ensro',...) failed:

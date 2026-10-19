@@ -1,0 +1,58 @@
+{
+ "by_stress": [
+  {
+   "contrasts": 126,
+   "median_shift": 0.0,
+   "significant": 4,
+   "species": 7,
+   "stress": "Drought"
+  },
+  {
+   "contrasts": 23,
+   "median_shift": 0.0,
+   "significant": 1,
+   "species": 4,
+   "stress": "Salt"
+  },
+  {
+   "contrasts": 15,
+   "median_shift": 0.0,
+   "significant": 0,
+   "species": 5,
+   "stress": "Heat"
+  },
+  {
+   "contrasts": 13,
+   "median_shift": -0.1,
+   "significant": 0,
+   "species": 2,
+   "stress": "Oxidative"
+  },
+  {
+   "contrasts": 13,
+   "median_shift": 0.15000000000000002,
+   "significant": 0,
+   "species": 2,
+   "stress": "Cold"
+  },
+  {
+   "contrasts": 5,
+   "median_shift": -0.1,
+   "significant": 0,
+   "species": 3,
+   "stress": "Flooding / hypoxia"
+  },
+  {
+   "contrasts": 3,
+   "median_shift": 1.5,
+   "significant": 3,
+   "species": 2,
+   "stress": "DNA damage"
+  }
+ ],
+ "missing": [],
+ "n_contrasts": 198,
+ "n_experiments": 45,
+ "n_missing": 0,
+ "n_species": 10
+}
