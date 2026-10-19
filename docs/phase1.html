@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ma-SOG1 Phase 1</title>
+<meta name="description" content="Phase 1 of my banana Ma-SOG1 project at NABI, Mohali (2023): in silico analysis of the banana SOG1 gene, cloning from banana cDNA, and a plant expression vector for overexpression in Arabidopsis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="report.css?v=2">
+<style>
+  .flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; counter-reset: st; }
+  .step { border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; position: relative; background: var(--surface); }
+  .step::before { counter-increment: st; content: counter(st); position: absolute; top: -12px; left: 14px; width: 24px; height: 24px; border-radius: 50%;
+    background: var(--accent); color: var(--surface); font-weight: 700; font-size: 13px; display: grid; place-items: center; }
+  .step h4 { margin: 6px 0 6px; font-size: 15px; }
+  .step p { margin: 0; font-size: 14px; color: var(--muted); }
+  .step .tools { margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 4px; }
+  .found { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .found div { border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 8px 8px 0; padding: 10px 14px; }
+  .found b { display: block; margin-bottom: 2px; }
+  figure.chart svg text { font-family: Inter, system-ui, sans-serif; }
+  .note-box { border: 1px dashed var(--line); border-radius: 8px; padding: 10px 14px; color: var(--muted); font-size: 14px; }
+  .bridge { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .bridge a.btn { display: inline-block; text-decoration: none; background: var(--accent); color: var(--surface); padding: 10px 16px; border-radius: 8px; font-weight: 600; }
+  @media (max-width: 820px) { .flow, .found { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Phase 1 · Research training · NABI, Mohali · Jul–Nov 2023</p>
+    <h1>Ma-SOG1 in banana: from the genome to a plant expression vector</h1>
+    <p class="lede">SOG1 is the plant counterpart of p53: when DNA breaks, the ATM and ATR kinases switch it on and it turns on DNA repair,
+      stops the cell cycle or triggers cell death. During my training in the Plant Tissue Culture &amp; Genetic Engineering lab at the
+      National Agri-Food Biotechnology Institute, I found the banana copy of SOG1, analysed it on screen, cloned it from banana leaves and
+      built a vector to overexpress it in <i>Arabidopsis</i>.</p>
+    <p class="byline">Mankirat Singh · supervised by Dr Siddharth Tiwari, NABI</p>
+    <nav class="toc" aria-label="Sections">
+      <a href="#why">Why SOG1</a><a href="#aims">Aims</a><a href="#workflow">Workflow</a><a href="#insilico">In silico</a>
+      <a href="#cloning">Cloning</a><a href="#construct">Construct</a><a href="#learned">What I learned</a><a href="index.html">Phase 2 →</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="glance">
+    <h2>At a glance</h2>
+    <div class="kpis">
+      <div class="kpi"><div class="v">1,251 bp</div><div class="l">coding sequence of Ma-SOG1</div><div class="arms small">416 amino acids</div></div>
+      <div class="kpi"><div class="v">4 of 5</div><div class="l">conserved motifs shared by every SOG1</div><div class="arms small">banana, rice, Arabidopsis, moss</div></div>
+      <div class="kpi"><div class="v">2 vectors</div><div class="l">cloning (pJET1.2) and plant expression (pRI101-AN)</div><div class="arms small">both confirmed by Sanger sequencing</div></div>
+    </div>
+    <div class="takeaways">
+      <p>The banana SOG1 gene carries the NAC (NAM) DNA-binding domain and the SQ phosphorylation sites that ATM and ATR use to switch SOG1 on.</p>
+      <p>It groups with rice and Arabidopsis SOG1, apart from the two moss copies.</p>
+      <p>I amplified it from banana leaf cDNA and moved it into a plant expression vector ready for <i>Agrobacterium</i>-mediated transformation of Arabidopsis.</p>
+    </div>
+  </section>
+
+  <section id="why">
+    <h2>Why study SOG1 in banana?</h2>
+    <p class="note">Every cell has to repair its DNA. UV light, ionising radiation, reactive oxygen species and chemicals break or modify DNA, and the
+      DNA damage response (DDR) senses the damage, signals it and repairs it. In plants the signal runs from the MRN complex to the ATM and ATR
+      kinases, which phosphorylate SOG1 on serine–glutamine (SQ) sites in its tail. Active SOG1 then controls hundreds of genes for repair,
+      cell-cycle arrest, cell death and endoreduplication.</p>
+    <p class="note">SOG1 belongs to the large plant-specific NAC family of transcription factors (NAM, ATAF1/2, CUC2); two relatives, NAC044 and NAC085,
+      also act in the DDR. Almost everything we know comes from <i>Arabidopsis</i>. Banana is a major crop with a genome shaped by repeated
+      duplications, so its SOG1 may behave differently, and understanding it could help breed crops that tolerate stress better.</p>
+  </section>
+
+  <section id="aims">
+    <h2>Aims</h2>
+    <ol class="plain">
+      <li>Analyse the <i>Ma-SOG1</i> gene sequence from the Banana Genome Hub in silico.</li>
+      <li>Design primers to isolate and amplify <i>Ma-SOG1</i>.</li>
+      <li>Clone <i>Ma-SOG1</i> into the pJET1.2 cloning vector.</li>
+      <li>Build the <i>Ma-SOG1</i>_pRI101-AN plant expression vector to overexpress <i>Ma-SOG1</i> in <i>Arabidopsis thaliana</i>.</li>
+    </ol>
+  </section>
+
+  <section id="workflow">
+    <h2>Workflow</h2>
+    <p class="note">Six stages, from a database search to a confirmed plant expression construct.</p>
+    <div class="flow">
+      <div class="step"><h4>Find the gene</h4><p>BLASTP of Arabidopsis and rice SOG1 against the banana genome (DH-Pahang v4), E-value &lt; 1e-10.</p>
+        <div class="tools"><span class="pill">Banana Genome Hub</span><span class="pill">TAIR</span><span class="pill">Oryzabase</span></div></div>
+      <div class="step"><h4>Analyse it in silico</h4><p>Conserved motifs, domain search, multiple alignment and a neighbour-joining tree with 1,000 bootstraps.</p>
+        <div class="tools"><span class="pill">MEME</span><span class="pill">CD-Search</span><span class="pill">Clustal X</span><span class="pill">MEGA X</span></div></div>
+      <div class="step"><h4>Design primers</h4><p>Gene-specific primers of suitable length and GC content, with restriction sites added for directional cloning.</p>
+        <div class="tools"><span class="pill">OligoCalc</span></div></div>
+      <div class="step"><h4>RNA to cDNA</h4><p>Total RNA from banana leaf, integrity checked on agarose, first-strand cDNA, quality checked by β-actin PCR.</p>
+        <div class="tools"><span class="pill">Spectrum Plant RNA kit</span><span class="pill">RevertAid</span></div></div>
+      <div class="step"><h4>Clone into pJET1.2</h4><p>High-fidelity PCR, gel purification, blunt-end ligation, transformation of <i>E. coli</i> DH5α, colony PCR, plasmid isolation, restriction digestion and Sanger sequencing.</p>
+        <div class="tools"><span class="pill">PrimeSTAR</span><span class="pill">CloneJET</span><span class="pill">GeneJET</span></div></div>
+      <div class="step"><h4>Move into pRI101-AN</h4><p>Insert and binary vector digested with KpnI and SacI, ligated, transformed, screened and confirmed by digestion and Sanger sequencing.</p>
+        <div class="tools"><span class="pill">KpnI · SacI</span><span class="pill">Kanamycin</span></div></div>
+    </div>
+  </section>
+
+  <section id="insilico">
+    <h2>In silico analysis</h2>
+    <div class="found">
+      <div><b>Gene retrieved</b>A single banana SOG1 candidate with a 1,251 bp coding sequence (416 amino acids), used for primer design.</div>
+      <div><b>NAC (NAM) domain</b>CD-Search found the NAM superfamily domain in the N-terminal half, the part that binds DNA.</div>
+      <div><b>Conserved motifs</b>MEME found five motifs; motifs 1–4 are shared by banana, rice, Arabidopsis and both moss SOG1 proteins, motif 5 only by the moss proteins.</div>
+      <div><b>SQ sites</b>The alignment showed the SQ motifs in the C-terminal tail, the sites ATM and ATR phosphorylate to activate SOG1, in every sequence.</div>
+    </div>
+    <h3>The Ma-SOG1 protein</h3>
+    <p class="small">416 residues: the NAC DNA-binding domain (residues 59–197) and a long flexible tail carrying five SQ sites (positions from the phase 2 analysis).</p>
+    <figure class="chart wide">
+      <svg viewBox="0 0 900 120" width="900" height="120" role="img" aria-label="Ma-SOG1 protein map: NAC domain from 59 to 197, SQ sites at 318, 324, 340, 396 and 402 in the tail">
+        <line x1="40" x2="860" y1="60" y2="60" stroke="var(--muted)" stroke-width="4" stroke-linecap="round"/>
+        <rect x="156.2" y="44" width="272" height="32" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="292" y="65" text-anchor="middle" font-size="13" font-weight="600" fill="var(--accent)">NAC (NAM) domain · DNA binding</text>
+        <g stroke="var(--c3)" stroke-width="3">
+          <line x1="666.8" x2="666.8" y1="44" y2="76"/><line x1="678.6" x2="678.6" y1="44" y2="76"/><line x1="710.2" x2="710.2" y1="44" y2="76"/>
+          <line x1="820.5" x2="820.5" y1="44" y2="76"/><line x1="832.3" x2="832.3" y1="44" y2="76"/>
+        </g>
+        <text x="750" y="34" text-anchor="middle" font-size="12" fill="var(--c3)" font-weight="600">SQ sites (ATM/ATR switch)</text>
+        <text x="600" y="98" text-anchor="middle" font-size="12" fill="var(--muted)">flexible regulatory tail</text>
+        <g font-size="11" fill="var(--muted)" text-anchor="middle"><text x="40" y="112">1</text><text x="156" y="112">59</text><text x="428" y="112">197</text><text x="860" y="112">416</text></g>
+      </svg>
+    </figure>
+    <h3>Evolutionary relationship</h3>
+    <p class="note">The neighbour-joining tree of five SOG1 proteins placed Ma-SOG1 with rice and Arabidopsis SOG1, and the two moss SOG1 proteins in a
+      separate group. <a href="index.html#tree">Phase 2</a> rebuilt this as a maximum-likelihood tree of 57 proteins from 17 genomes.</p>
+  </section>
+
+  <section id="cloning">
+    <h2>Cloning Ma-SOG1</h2>
+    <div class="found">
+      <div><b>Good-quality RNA and cDNA</b>Intact RNA from banana leaf; cDNA confirmed by amplifying the β-actin reference gene.</div>
+      <div><b>Gene amplified</b>A single band of the expected size from leaf cDNA, gel-purified for cloning.</div>
+      <div><b>Cloned in pJET1.2</b>Positive <i>E. coli</i> colonies found by colony PCR and confirmed by restriction digestion.</div>
+      <div><b>Sequence confirmed</b>Sanger sequencing with forward and reverse primers matched the reference <i>Ma-SOG1</i> sequence.</div>
+    </div>
+    <p class="note-box" style="margin-top:14px">Gel images, primer sequences and sequencing reads belong to the NABI group and are not reproduced here.</p>
+  </section>
+
+  <section id="construct">
+    <h2>The plant expression construct</h2>
+    <p class="note">The confirmed insert was cut out with KpnI and SacI and ligated into the same sites of the binary vector pRI101-AN, placing
+      <i>Ma-SOG1</i> under a strong constitutive promoter for overexpression. Positive clones were confirmed by colony PCR, KpnI–SacI digestion
+      (backbone plus insert) and Sanger sequencing, and the construct is ready for <i>Agrobacterium</i>-mediated transformation of Arabidopsis.</p>
+    <figure class="chart wide">
+      <svg viewBox="0 0 900 150" width="900" height="150" role="img" aria-label="Simplified expression cassette: CaMV 35S promoter, KpnI site, Ma-SOG1, SacI site, terminator, with kanamycin selection marker, between T-DNA borders">
+        <line x1="30" x2="870" y1="70" y2="70" stroke="var(--muted)" stroke-width="2"/>
+        <rect x="30" y="56" width="16" height="28" fill="var(--muted)"/><text x="38" y="104" text-anchor="middle" font-size="11" fill="var(--muted)">LB</text>
+        <rect x="854" y="56" width="16" height="28" fill="var(--muted)"/><text x="862" y="104" text-anchor="middle" font-size="11" fill="var(--muted)">RB</text>
+        <rect x="80" y="52" width="150" height="36" rx="6" fill="var(--surface)" stroke="var(--muted)"/><text x="155" y="75" text-anchor="middle" font-size="12">NPTII (kanamycin)</text>
+        <path d="M280,52 h120 l14,18 l-14,18 h-120 z" fill="var(--accent-soft)" stroke="var(--accent)"/><text x="345" y="75" text-anchor="middle" font-size="12" font-weight="600" fill="var(--accent)">CaMV 35S promoter</text>
+        <rect x="440" y="48" width="220" height="44" rx="6" fill="var(--c1)"/><text x="550" y="75" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Ma-SOG1 (1,251 bp)</text>
+        <rect x="680" y="52" width="110" height="36" rx="6" fill="var(--surface)" stroke="var(--muted)"/><text x="735" y="75" text-anchor="middle" font-size="12">terminator</text>
+        <line x1="440" x2="440" y1="34" y2="48" stroke="var(--ink)"/><text x="440" y="28" text-anchor="middle" font-size="12" font-weight="600">KpnI</text>
+        <line x1="660" x2="660" y1="34" y2="48" stroke="var(--ink)"/><text x="660" y="28" text-anchor="middle" font-size="12" font-weight="600">SacI</text>
+        <text x="450" y="136" text-anchor="middle" font-size="12" fill="var(--muted)">Simplified T-DNA of Ma-SOG1_pRI101-AN (not to scale)</text>
+      </svg>
+    </figure>
+  </section>
+
+  <section id="learned">
+    <h2>What I learned</h2>
+    <div class="two">
+      <div>
+        <h3>Computational</h3>
+        <ul class="plain">
+          <li>Finding a gene in a crop genome by homology search</li>
+          <li>Motif discovery, domain annotation and multiple sequence alignment</li>
+          <li>Building and reading a phylogenetic tree with bootstrap support</li>
+          <li>Primer design and in silico checks of a cloning strategy</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Laboratory</h3>
+        <ul class="plain">
+          <li>Plant RNA isolation, cDNA synthesis and PCR</li>
+          <li>Gel electrophoresis and purification</li>
+          <li>Competent cells, transformation and colony PCR</li>
+          <li>Plasmid isolation, restriction digestion, ligation and Sanger verification</li>
+          <li>Binary vector construction for <i>Agrobacterium</i></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="next">
+    <h2>What came next</h2>
+    <div class="bridge">
+      <p class="note" style="margin:0;flex:1 1 420px">In phase 2 I followed the same gene across 17 plant genomes with public data. The CDS cloned here matches banana gene
+        <code>Ma03_g07280</code>, the one-to-one ortholog of Arabidopsis SOG1. Banana has four SOG1-clade genes, the SQ switch is conserved,
+        and the SOG1 binding site is enriched near banana DNA-repair genes.</p>
+      <a class="btn" href="index.html">Open the phase 2 report →</a>
+    </div>
+  </section>
+</main>
+<p class="foot wrap">Research training report, NABI Mohali (Jul–Nov 2023), summarised by Mankirat Singh. Laboratory data remain with the NABI group.
+  Phase 2 code: <a href="https://github.com/bymankirat/SOG1-Banana-Comparative-Genomics">github.com/bymankirat/SOG1-Banana-Comparative-Genomics</a>.</p>
+</body>
+</html>
