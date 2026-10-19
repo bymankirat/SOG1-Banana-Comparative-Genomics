@@ -1,0 +1,25 @@
+
+=== phase 3 step 1: find and download stress experiments (Expression Atlas) ===
+16:10:21 Expression Atlas lists 4562 experiments; keys: ['experimentAccession', 'experimentDescription', 'experimentProjects', 'experimentType', 'experimentalFactors', 'kingdom', 'lastUpdate', 'loadDate', 'numberOfAssays', 'rawExperimentType', 'species', 'technologyType']
+16:10:21 135 differential stress-related experiments in the chosen species
+16:10:21 species
+arabidopsis thaliana              73
+brachypodium distachyon            3
+glycine max                        6
+hordeum vulgare                    4
+hordeum vulgare subsp. vulgare     1
+musa acuminata                     1
+oryza sativa                       9
+oryza sativa indica group          5
+oryza sativa japonica group        9
+physcomitrella patens              1
+solanum lycopersicum               2
+solanum tuberosum                  1
+sorghum bicolor                    4
+triticum aestivum                  3
+vitis vinifera                     4
+zea mays                           9
+16:10:36 659 contrasts, 423 classified as a stress: {'Drought': 182, 'Salt': 100, 'Cold': 44, 'Oxidative': 40, 'Flooding / hypoxia': 24, 'DNA damage': 17, 'Heat': 16}
+16:14:29 done; 0 downloads failed (see atlas_failed.json)
+
+finished in 4.4 min

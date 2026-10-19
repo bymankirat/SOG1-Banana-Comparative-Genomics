@@ -1,0 +1,660 @@
+accession,array,contrast,name,stress
+E-CURD-44,,g2_g1,'ddm1-10 loss of function mutant' vs 'wild type genotype',
+E-ENAD-8,,g1_g2,'osmotic stress treatment' vs 'none' in 'Cachaco',Drought
+E-ENAD-8,,g3_g4,'osmotic stress treatment' vs 'none' in 'Grande Naine',Drought
+E-ENAD-8,,g5_g6,'osmotic stress treatment' vs 'none' in 'Mbwazirume',Drought
+E-ENAD-9,,g1_g2,'non-vernalised rvr1-1 mutant' vs 'vernalised wild type',
+E-ENAD-9,,g3_g2,'non-vernalised rvr1-1 mutant' vs 'non-vernalised wild type',
+E-GEOD-109341,,g1_g5,'sodium chloride; 100 millimolar' vs 'none' in 'Baldo; leaf',Salt
+E-GEOD-109341,,g2_g6,'sodium chloride; 100 millimolar' vs 'none' in 'Baldo; root',Salt
+E-GEOD-109341,,g3_g7,'sodium chloride; 100 millimolar' vs 'none' in 'Vialone Nano; leaf',Salt
+E-GEOD-109341,,g4_g8,'sodium chloride; 100 millimolar' vs 'none' in 'Vialone Nano; root',Salt
+E-GEOD-111250,,g2_g5,'3 hour' vs '0 hour' in 'tunicamycin; 5 microgram',
+E-GEOD-111250,,g2_g8,'6 hour' vs '0 hour' in 'tunicamycin; 5 microgram',
+E-GEOD-111250,,g2_g3,'12 hour' vs '0 hour' in 'tunicamycin; 5 microgram',
+E-GEOD-111250,,g2_g4,'24 hour' vs '0 hour' in 'tunicamycin; 5 microgram',
+E-GEOD-111250,,g2_g6,'36 hour' vs '0 hour' in 'tunicamycin; 5 microgram',
+E-GEOD-111250,,g2_g7,'48 hour' vs '0 hour' in 'tunicamycin; 5 microgram',
+E-GEOD-111250,,g1_g7,'tunicamycin; 5 microgram' vs 'none' at '48 hour',
+E-GEOD-112368,,g2_g1,'ahl10-1' vs 'wild type genotype' in 'drought environment',Drought
+E-GEOD-112368,,g3_g1,'drought environment' vs 'none' in 'ahl10-1',Drought
+E-GEOD-112368,,g4_g2,'drought environment' vs 'none' in 'wild type genotype',Drought
+E-GEOD-112368,,g4_g3,'ahl10-1' vs 'wild type genotype' in 'none',
+E-GEOD-114379,,g2_g1,'pyl duodecuple loss of function mutant' vs 'wild type genotype' in 'abscisic acids; 100 micromolar',
+E-GEOD-114379,,g5_g1,'abscisic acids; 100 micromolar' vs 'none' in 'pyl duodecuple loss of function mutant',
+E-GEOD-114379,,g6_g2,'abscisic acids; 100 micromolar' vs 'none' in 'wild type genotype',
+E-GEOD-114379,,g4_g3,'pyl duodecuple loss of function mutant' vs 'wild type genotype' in 'mannitol; 300 millimolar',Drought
+E-GEOD-114379,,g5_g3,'mannitol; 300 millimolar' vs 'none' in 'pyl duodecuple loss of function mutant',Drought
+E-GEOD-114379,,g6_g4,'mannitol; 300 millimolar' vs 'none' in 'wild type genotype',Drought
+E-GEOD-114379,,g6_g5,'pyl duodecuple loss of function mutant' vs 'wild type genotype' in 'none',
+E-GEOD-117052,,g1_g3,'ozone; 350 nanoliter' vs 'none' in 'Cvi-0',Oxidative
+E-GEOD-117052,,g2_g4,'ozone; 350 nanoliter' vs 'none' in 'Shahdara',Oxidative
+E-GEOD-121146,,g3_g1,'leaf moving at veraison' vs 'none' in 'E-L 36',
+E-GEOD-121146,,g3_g2,'leaf removal at veraison' vs 'none' in 'E-L 36',
+E-GEOD-121146,,g6_g4,'leaf moving at veraison' vs 'none' in 'E-L 37',
+E-GEOD-121146,,g6_g5,'leaf removal at veraison' vs 'none' in 'E-L 37',
+E-GEOD-121146,,g9_g7,'leaf moving at veraison' vs 'none' in 'E-L 38',
+E-GEOD-121146,,g9_g8,'leaf removal at veraison' vs 'none' in 'E-L 38',
+E-GEOD-122866,,g1_g2,'warm/hot temperature regimen' vs 'none' in 'An'nong 591 F1',Heat
+E-GEOD-122866,,g3_g4,'warm/hot temperature regimen' vs 'none' in 'CB25',Heat
+E-GEOD-122866,,g5_g6,'warm/hot temperature regimen' vs 'none' in 'CM1',Heat
+E-GEOD-124235,,g4_g1,'bli-1 -/-' vs 'wild type genotype',
+E-GEOD-124235,,g4_g2,'bli-1 -/-; ire1a -/-' vs 'wild type genotype',
+E-GEOD-124235,,g4_g3,'bli-1 -/-; ire1b -/-' vs 'wild type genotype',
+E-GEOD-128441,,g26_g24,'drought environment before flowering' vs 'none' in '21 day; BTX642; leaf',Drought
+E-GEOD-128441,,g27_g25,'drought environment before flowering' vs 'none' in '21 day; BTX642; root',Drought
+E-GEOD-128441,,g30_g28,'drought environment before flowering' vs 'none' in '21 day; RTX430; leaf',Drought
+E-GEOD-128441,,g31_g29,'drought environment before flowering' vs 'none' in '21 day; RTX430; root',Drought
+E-GEOD-128441,,g34_g33,'drought environment before flowering' vs 'none' in '28 day; BTX642; root',Drought
+E-GEOD-128441,,g37_g35,'drought environment before flowering' vs 'none' in '28 day; RTX430; leaf',Drought
+E-GEOD-128441,,g38_g36,'drought environment before flowering' vs 'none' in '28 day; RTX430; root',Drought
+E-GEOD-128441,,g41_g39,'drought environment before flowering' vs 'none' in '35 day; BTX642; leaf',Drought
+E-GEOD-128441,,g42_g40,'drought environment before flowering' vs 'none' in '35 day; BTX642; root',Drought
+E-GEOD-128441,,g45_g43,'drought environment before flowering' vs 'none' in '35 day; RTX430; root',Drought
+E-GEOD-128441,,g48_g46,'drought environment before flowering' vs 'none' in '42 day; BTX642; leaf',Drought
+E-GEOD-128441,,g49_g47,'drought environment before flowering' vs 'none' in '42 day; BTX642; root',Drought
+E-GEOD-128441,,g52_g50,'drought environment before flowering' vs 'none' in '42 day; RTX430; leaf',Drought
+E-GEOD-128441,,g53_g51,'drought environment before flowering' vs 'none' in '42 day; RTX430; root',Drought
+E-GEOD-128441,,g55_g54,'drought environment before flowering' vs 'none' in '56 day; BTX642; leaf',Drought
+E-GEOD-128441,,g59_g57,'drought environment before flowering' vs 'none' in '56 day; RTX430; leaf',Drought
+E-GEOD-128441,,g60_g58,'drought environment before flowering' vs 'none' in '56 day; RTX430; root',Drought
+E-GEOD-128441,,g65_g61,'drought environment after flowering' vs 'none' in '63 day; BTX642; leaf',Drought
+E-GEOD-128441,,g66_g62,'drought environment after flowering' vs 'none' in '63 day; BTX642; root',Drought
+E-GEOD-128441,,g65_g63,'drought environment before flowering' vs 'none' in '63 day; BTX642; leaf',Drought
+E-GEOD-128441,,g66_g64,'drought environment before flowering' vs 'none' in '63 day; BTX642; root',Drought
+E-GEOD-128441,,g71_g67,'drought environment after flowering' vs 'none' in '63 day; RTX430; leaf',Drought
+E-GEOD-128441,,g72_g68,'drought environment after flowering' vs 'none' in '63 day; RTX430; root',Drought
+E-GEOD-128441,,g71_g69,'drought environment before flowering' vs 'none' in '63 day; RTX430; leaf',Drought
+E-GEOD-128441,,g72_g70,'drought environment before flowering' vs 'none' in '63 day; RTX430; root',Drought
+E-GEOD-128441,,g77_g73,'drought environment after flowering' vs 'none' in '70 day; BTX642; leaf',Drought
+E-GEOD-128441,,g78_g74,'drought environment after flowering' vs 'none' in '70 day; BTX642; root',Drought
+E-GEOD-128441,,g77_g75,'drought environment before flowering' vs 'none' in '70 day; BTX642; leaf',Drought
+E-GEOD-128441,,g78_g76,'drought environment before flowering' vs 'none' in '70 day; BTX642; root',Drought
+E-GEOD-128441,,g83_g79,'drought environment after flowering' vs 'none' in '70 day; RTX430; leaf',Drought
+E-GEOD-128441,,g84_g80,'drought environment after flowering' vs 'none' in '70 day; RTX430; root',Drought
+E-GEOD-128441,,g83_g81,'drought environment before flowering' vs 'none' in '70 day; RTX430; leaf',Drought
+E-GEOD-128441,,g84_g82,'drought environment before flowering' vs 'none' in '70 day; RTX430; root',Drought
+E-GEOD-128441,,g89_g85,'drought environment after flowering' vs 'none' in '77 day; BTX642; leaf',Drought
+E-GEOD-128441,,g90_g86,'drought environment after flowering' vs 'none' in '77 day; BTX642; root',Drought
+E-GEOD-128441,,g89_g87,'drought environment before flowering' vs 'none' in '77 day; BTX642; leaf',Drought
+E-GEOD-128441,,g90_g88,'drought environment before flowering' vs 'none' in '77 day; BTX642; root',Drought
+E-GEOD-128441,,g95_g91,'drought environment after flowering' vs 'none' in '77 day; RTX430; leaf',Drought
+E-GEOD-128441,,g96_g92,'drought environment after flowering' vs 'none' in '77 day; RTX430; root',Drought
+E-GEOD-128441,,g95_g93,'drought environment before flowering' vs 'none' in '77 day; RTX430; leaf',Drought
+E-GEOD-128441,,g96_g94,'drought environment before flowering' vs 'none' in '77 day; RTX430; root',Drought
+E-GEOD-128441,,g99_g97,'drought environment before flowering' vs 'none' in '84 day; BTX642; leaf',Drought
+E-GEOD-128441,,g100_g98,'drought environment before flowering' vs 'none' in '84 day; BTX642; root',Drought
+E-GEOD-128441,,g103_g101,'drought environment before flowering' vs 'none' in '84 day; RTX430; leaf',Drought
+E-GEOD-128441,,g108_g104,'drought environment after flowering' vs 'none' in '91 day; BTX642; leaf',Drought
+E-GEOD-128441,,g109_g105,'drought environment after flowering' vs 'none' in '91 day; BTX642; root',Drought
+E-GEOD-128441,,g108_g106,'drought environment before flowering' vs 'none' in '91 day; BTX642; leaf',Drought
+E-GEOD-128441,,g109_g107,'drought environment before flowering' vs 'none' in '91 day; BTX642; root',Drought
+E-GEOD-128441,,g114_g110,'drought environment after flowering' vs 'none' in '91 day; RTX430; leaf',Drought
+E-GEOD-128441,,g115_g111,'drought environment after flowering' vs 'none' in '91 day; RTX430; root',Drought
+E-GEOD-128441,,g114_g112,'drought environment before flowering' vs 'none' in '91 day; RTX430; leaf',Drought
+E-GEOD-128441,,g115_g113,'drought environment before flowering' vs 'none' in '91 day; RTX430; root',Drought
+E-GEOD-128441,,g4_g1,'drought environment after flowering' vs 'none' in '105 day; BTX642; leaf',Drought
+E-GEOD-128441,,g4_g3,'drought environment before flowering' vs 'none' in '105 day; BTX642; leaf',Drought
+E-GEOD-128441,,g7_g6,'drought environment after flowering' vs 'none' in '105 day; RTX430; root',Drought
+E-GEOD-128441,,g12_g8,'drought environment after flowering' vs 'none' in '119 day; BTX642; leaf',Drought
+E-GEOD-128441,,g13_g9,'drought environment after flowering' vs 'none' in '119 day; BTX642; root',Drought
+E-GEOD-128441,,g12_g10,'drought environment before flowering' vs 'none' in '119 day; BTX642; leaf',Drought
+E-GEOD-128441,,g13_g11,'drought environment before flowering' vs 'none' in '119 day; BTX642; root',Drought
+E-GEOD-128441,,g18_g14,'drought environment after flowering' vs 'none' in '119 day; RTX430; leaf',Drought
+E-GEOD-128441,,g19_g15,'drought environment after flowering' vs 'none' in '119 day; RTX430; root',Drought
+E-GEOD-128441,,g18_g16,'drought environment before flowering' vs 'none' in '119 day; RTX430; leaf',Drought
+E-GEOD-128441,,g19_g17,'drought environment before flowering' vs 'none' in '119 day; RTX430; root',Drought
+E-GEOD-140928,,g2_g1,"'moderate saline-alkali soil stress, 3 percent salt' vs 'none'",Salt
+E-GEOD-140928,,g2_g3,"'severe saline-alkali soil stress, 5 percent salt' vs 'none'",Salt
+E-GEOD-30249,,g5_g1,'abscisic acid; 20 micromolar' vs 'sodium hydroxide; 0.2 molar' in 'root',
+E-GEOD-30249,,g6_g2,'abscisic acid; 20 micromolar' vs 'sodium hydroxide; 0.2 molar' in 'shoot',
+E-GEOD-30249,,g7_g3,'polyethylene glycol; 20 percent' vs 'water' in 'root',Drought
+E-GEOD-30249,,g8_g4,'polyethylene glycol; 20 percent' vs 'water' in 'shoot',Drought
+E-GEOD-43560,,g1_g2,'F1 hybrids between Col-0 and Cvi-0; drought stress' vs 'F1 hybrids between Col-0 and Cvi-0; control',Drought
+E-GEOD-54705,,g5_g2,'CK60; low-nitrogen sensitive' vs 'San Chi San; low-nitrogen tolerant',
+E-GEOD-54705,,g3_g2,'CK60; low-nitrogen sensitive' vs 'China17; low-nitrogen tolerant',
+E-GEOD-54705,,g4_g2,'CK60; low-nitrogen sensitive' vs 'KS78; low-nitrogen tolerant',
+E-GEOD-54705,,g6_g2,'CK60; low-nitrogen sensitive' vs 'high-NUE bulk; low-nitrogen tolerant',
+E-GEOD-54705,,g5_g1,'BTx623; low-nitrogen sensitive' vs 'San Chi San; low-nitrogen tolerant',
+E-GEOD-54705,,g3_g1,'BTx623; low-nitrogen sensitive' vs 'China17; low-nitrogen tolerant',
+E-GEOD-54705,,g4_g1,'BTx623; low-nitrogen sensitive' vs 'KS78; low-nitrogen tolerant',
+E-GEOD-54705,,g6_g1,'BTx623; low-nitrogen sensitive' vs 'high-NUE bulk; low-nitrogen tolerant',
+E-GEOD-54705,,g5_g7,'low-NUE bulk; low-nitrogen sensitive' vs 'San Chi San; low-nitrogen tolerant',
+E-GEOD-54705,,g3_g7,'low-NUE bulk; low-nitrogen sensitive' vs 'China17; low-nitrogen tolerant',
+E-GEOD-54705,,g4_g7,'low-NUE bulk; low-nitrogen sensitive' vs 'KS78; low-nitrogen tolerant',
+E-GEOD-54705,,g6_g7,'low-NUE bulk; low-nitrogen sensitive' vs 'high-NUE bulk; low-nitrogen tolerant',
+E-GEOD-57252,,g1_g5,'salt stress' at '1 hour' vs 'control' at '0 hour',Salt
+E-GEOD-57252,,g1_g7,'salt stress' at '6 hour' vs 'control' at '0 hour',Salt
+E-GEOD-57252,,g1_g6,'salt stress' at '12 hour' vs 'control' at '0 hour',Salt
+E-GEOD-57252,,g1_g2,'dehydration stress' at '1 hour' vs 'control' at '0 hour',Drought
+E-GEOD-57252,,g1_g4,'dehydration stress' at '6 hour' vs 'control' at '0 hour',Drought
+E-GEOD-57252,,g1_g3,'dehydration stress' at '12 hour' vs 'control' at '0 hour',Drought
+E-GEOD-58805,,g1_g2,'4 week; cold temperature regimen' vs '2 week; control',Cold
+E-GEOD-61542,,g2_g1,'C24; 350 ppb ozone exposure for 2hr' vs 'C24; control',Oxidative
+E-GEOD-61542,,g4_g3,'CT101; 350 ppb ozone exposure for 2hr' vs 'CT101; control',Oxidative
+E-GEOD-61542,,g6_g5,'Col-0; 350 ppb ozone exposure for 2hr' vs 'Col-0; control',Oxidative
+E-GEOD-61542,,g8_g7,'Te; 350 ppb ozone exposure for 2hr' vs 'Te; control',Oxidative
+E-GEOD-63406,,g1_g3,'exposed to 10 degree Celsius; gemin2 mutant; 1 hour' vs 'control; gemin2 mutant',
+E-GEOD-63406,,g1_g4,'exposed to 10 degree Celsius; gemin2 mutant; 24 hour' vs 'control; gemin2 mutant',
+E-GEOD-63406,,g2_g5,'exposed to 10 degree Celsius; wild type; 1 hour' vs 'control; wild type',
+E-GEOD-63406,,g2_g6,'exposed to 10 degree Celsius; wild type; 24 hour' vs 'control; wild type',
+E-GEOD-63429,,g3_g1,B73; submergence intolerant; 24 hour; submerge' vs 'B73; submergence intolerant; control',Flooding / hypoxia
+E-GEOD-63429,,g6_g4,B97; submergence intolerant; 24 hour; submerge' vs 'B97; submergence intolerant; control',Flooding / hypoxia
+E-GEOD-63429,,g6_g5,B97; submergence intolerant; 72 hour; submerge' vs 'B97; submergence intolerant; control',Flooding / hypoxia
+E-GEOD-63429,,g9_g7,M162w; submergence tolerant; 24 hour; submerge' vs 'M162w; submergence tolerant; control',Flooding / hypoxia
+E-GEOD-63429,,g9_g8,M162w; submergence tolerant; 72 hour; submerge' vs 'M162w; submergence intolerant; control',Flooding / hypoxia
+E-GEOD-63429,,g12_g10,Mo18w; submergence tolerant; 24 hour; submerge' vs 'Mo18w; submergence tolerant; control',Flooding / hypoxia
+E-GEOD-63429,,g12_g11,Mo18w; submergence tolerant; 72 hour; submerge' vs 'Mo18w; submergence intolerant; control',Flooding / hypoxia
+E-GEOD-64087,,g2_g1,'Pseudomonas syringae pv. tomato str. DC3000' vs 'mock' in 'nightly continuous dark (no light) regimen',
+E-GEOD-64087,,g4_g3,'Pseudomonas syringae pv. tomato str. DC3000' vs 'mock' in 'nightly red light regimen',
+E-GEOD-65740,,g2_g1,"""tga2 tga5 tga6; 350 ppb ozone exposure for 2hr"" vs ""tga2 tga5 tga6; control""",Oxidative
+E-GEOD-65740,,g3_g1,"""tga2 tga5 tga6; 350 ppb ozone exposure for 2hr"" vs ""wild type genotype; 350 ppb ozone exposure for 2hr""",Oxidative
+E-GEOD-65740,,g5_g2,"""tga2 tga5 tga6; control"" vs ""wild type genotype; control""",
+E-GEOD-65740,,g5_g3,"""wild type genotype; 350 ppb ozone exposure for 2hr"" vs ""wild type genotype; control""",Oxidative
+E-GEOD-68560,,g1_g2,'light pulse at ZT18' vs 'control',
+E-GEOD-68684,,g1_g2,'simulated canopy shade condition' vs 'none' in 'wild type; wild type',
+E-GEOD-69469,,g1_g7,"'water deficit, 30% soil field capacity' vs 'control, 70% soil field capacity' at 'Zeitgeber time 0'",Drought
+E-GEOD-69469,,g2_g8,"'water deficit, 30% soil field capacity' vs 'control, 70% soil field capacity' at 'Zeitgeber time 4'",Drought
+E-GEOD-69469,,g3_g9,"'water deficit, 30% soil field capacity' vs 'control, 70% soil field capacity' at 'Zeitgeber time 8'",Drought
+E-GEOD-69469,,g4_g10,"'water deficit, 30% soil field capacity' vs 'control, 70% soil field capacity' at 'Zeitgeber time 12'",Drought
+E-GEOD-69469,,g5_g11,"'water deficit, 30% soil field capacity' vs 'control, 70% soil field capacity' at 'Zeitgeber time 16'",Drought
+E-GEOD-69469,,g6_g12,"'water deficit, 30% soil field capacity' vs 'control, 70% soil field capacity' at 'Zeitgeber time 20'",Drought
+E-GEOD-72806,,g2_g4,'salt stress' vs 'none',Salt
+E-GEOD-72806,,g2_g1,'heat stress' vs 'none',Heat
+E-GEOD-72806,,g2_g3,'salt and heat stress' vs 'none',Heat
+E-GEOD-74222,,g1_g2,'submergence stress' vs 'none' in 'Bd2-3',Flooding / hypoxia
+E-GEOD-74222,,g3_g4,'submergence stress' vs 'none' in 'Bd21',Flooding / hypoxia
+E-GEOD-77826,,g1_g3,'drought stress' vs 'control' in 'Alegria; field study',Drought
+E-GEOD-77826,,g2_g4,'drought stress' vs 'control' in 'Alegria; green house study',Drought
+E-GEOD-77826,,g5_g7,'drought stress' vs 'control' in 'Desiree; field study',Drought
+E-GEOD-77826,,g6_g8,'drought stress' vs 'control' in 'Desiree; green house study',Drought
+E-GEOD-77826,,g9_g11,'drought stress' vs 'control' in 'Milva; field study',Drought
+E-GEOD-77826,,g10_g12,'drought stress' vs 'control' in 'Milva; green house study',Drought
+E-GEOD-77826,,g13_g15,'drought stress' vs 'control' in 'Saturna; field study',Drought
+E-GEOD-77826,,g14_g16,'drought stress' vs 'control' in 'Saturna; green house study',Drought
+E-GEOD-79855,,g6_g3,'350 ppb ozone exposure for 2hr' vs 'none' in 'wrky75 mutant',Oxidative
+E-GEOD-79855,,g5_g2,"'350 ppb ozone exposure for 2hr' vs 'none' in 'wrky25, wrky33 double mutant'",Oxidative
+E-GEOD-79855,,g4_g1,'350 ppb ozone exposure for 2hr' vs 'none' in 'wild type',Oxidative
+E-GEOD-79855,,g4_g6,'wrky75 mutant' vs 'wild type' in 'none',
+E-GEOD-79855,,g4_g5,"'wrky25, wrky33 double mutant' vs 'wild type' in 'none'",
+E-GEOD-83411,,g1_g3,'weeds removed at V4' vs 'none' in '78 degree fahrenheit' at '2007-07-03',
+E-GEOD-83411,,g1_g5,'weedy through V8' vs 'none' in '78 degree fahrenheit' at '2007-07-03',
+E-GEOD-83411,,g2_g4,'weeds removed at V4' vs 'none' in '71 degree fahrenheit' at '2008-07-02',
+E-GEOD-83411,,g2_g6,'weedy through V8' vs 'none' in '71 degree fahrenheit' at '2008-07-02',
+E-GEOD-83676,,g5_g1,'Oligonychus pratensis; 2 hour' vs 'none',
+E-GEOD-83676,,g5_g2,'Oligonychus pratensis; 24 hour' vs 'none',
+E-GEOD-83676,,g5_g3,'Tetranychus urticae; 2 hour' vs 'none',
+E-GEOD-83676,,g5_g4,'Tetranychus urticae; 24 hour' vs 'none',
+E-GEOD-83676,,g5_g6,'wound; 2 hour' vs 'none',
+E-GEOD-83676,,g5_g7,'wound'; 24 hour' vs 'none',
+E-GEOD-85653,,g2_g1,'35S:HSFA1b-RFP' vs 'wild type genotype' in 'none',
+E-GEOD-85653,,g1_g3,'warm/hot temperature regimen' vs 'none' in '35S:HSFA1b-RFP',Heat
+E-GEOD-85653,,g2_g4,'warm/hot temperature regimen' vs 'none' in 'wild type genotype',Heat
+E-GEOD-85653,,g4_g3,'35S:HSFA1b-RFP' vs 'wild type genotype' in 'warm/hot temperature regimen',Heat
+E-GEOD-93081,,g2_g1,'Rcc3-OsERF48' vs 'wild type genotype',
+E-GEOD-95373,,g2_g1,'Space Flight' vs 'none' in '4 day; Col-0',
+E-GEOD-95373,,g4_g3,'Space Flight' vs 'none' in '4 day; Wassilewskija ecotype',
+E-GEOD-95373,,g6_g5,'Space Flight' vs 'none' in '8 day; Col-0',
+E-GEOD-95373,,g8_g7,'Space Flight' vs 'none' in '8 day; Wassilewskija ecotype',
+E-GEOD-98045,,g2_g1,'CPL4RNAi' vs 'wild type genotype',
+E-GEOD-99576,,g3_g1,'ire1a; ire1b double mutant' vs 'wild type genotype' in 'none',
+E-GEOD-99576,,g1_g4,'tunicamycin; 5 microgram per milliliter' vs 'none' in 'ire1a; ire1b double mutant',
+E-GEOD-99576,,g3_g2,'ire1b mutant' vs 'wild type genotype' in 'none',
+E-GEOD-99576,,g2_g5,'tunicamycin; 5 microgram per milliliter' vs 'none' in 'ire1b mutant',
+E-GEOD-99576,,g3_g6,'tunicamycin; 5 microgram per milliliter' vs 'none' in 'wild type genotype',
+E-GEOD-99576,,g6_g4,'ire1a; ire1b double mutant' vs 'wild type genotype' in 'tunicamycin; 5 microgram per milliliter',
+E-GEOD-99576,,g6_g5,'ire1b mutant' vs 'wild type genotype' in 'tunicamycin; 5 microgram per milliliter',
+E-GEOD-99677,,g2_g1,'nup85 loss of function mutant' vs 'wild type genotype' in 'abscisic acids; 50 micromolar',
+E-GEOD-99677,,g3_g1,'abscisic acids; 50 micromolar' vs 'none' in 'nup85 loss of function mutant',
+E-GEOD-99677,,g4_g2,'abscisic acids; 50 micromolar' vs 'none' in 'wild type genotype',
+E-GEOD-99677,,g4_g3,'nup85 loss of function mutant' vs 'wild type genotype' in 'none',
+E-MTAB-10374,,g2_g1,'drought environment' vs 'none' in 'ICE163',Drought
+E-MTAB-10374,,g4_g3,'drought environment' vs 'none' in 'Yeg-1',Drought
+E-MTAB-1625,,g1_g2,'normal watering' at '5 hours' vs. '1 hour',
+E-MTAB-1625,,g1_g3,'normal watering' at '24 hours' vs. '1 hour',
+E-MTAB-1625,,g2_g3,'normal watering' at '24 hours' vs. '5 hours',
+E-MTAB-1625,,g4_g5,'300 millimolar sodium chloride' at '5 hours' vs. '1 hour',Salt
+E-MTAB-1625,,g4_g6,'300 millimolar sodium chloride' at '24 hours' vs. '1 hour',Salt
+E-MTAB-1625,,g5_g6,'300 millimolar sodium chloride' at '24 hours' vs. '5 hours',Salt
+E-MTAB-1625,,g1_g4,'300 millimolar sodium chloride' vs. 'normal watering' at '1 hour',Salt
+E-MTAB-1625,,g2_g5,'300 millimolar sodium chloride' vs. 'normal watering' at '5 hours',Salt
+E-MTAB-1625,,g3_g6,'300 millimolar sodium chloride' vs. 'normal watering' at '24 hours',Salt
+E-MTAB-1913,,g1_g2,'normal watering' at '2 hours' vs. '1 hour',
+E-MTAB-1913,,g1_g5,'normal watering' at '24 hours' vs. '1 hour',
+E-MTAB-1913,,g2_g3,'normal watering' at '5 hours' vs. '2 hours',
+E-MTAB-1913,,g3_g4,'normal watering' at '10 hours' vs. '5 hours',
+E-MTAB-1913,,g4_g5,'normal watering' at '24 hours' vs. '10 hours',
+E-MTAB-1913,,g6_g7,'300 millimolar sodium chloride' at '2 hours' vs. '1 hour',Salt
+E-MTAB-1913,,g6_g10,'300 millimolar sodium chloride' at '24 hours' vs. '1 hour',Salt
+E-MTAB-1913,,g7_g8,'300 millimolar sodium chloride' at '5 hours' vs. '2 hours',Salt
+E-MTAB-1913,,g8_g9,'300 millimolar sodium chloride' at '10 hours' vs. '5 hours',Salt
+E-MTAB-1913,,g9_g10,'300 millimolar sodium chloride' at '24 hours' vs. '10 hours',Salt
+E-MTAB-1913,,g1_g6,'300 millimolar sodium chloride' vs. 'normal watering' at '1 hour',Salt
+E-MTAB-1913,,g2_g7,'300 millimolar sodium chloride' vs. 'normal watering' at '2 hours',Salt
+E-MTAB-1913,,g3_g8,'300 millimolar sodium chloride' vs. 'normal watering' at '5 hours',Salt
+E-MTAB-1913,,g4_g9,'300 millimolar sodium chloride' vs. 'normal watering' at '10 hours',Salt
+E-MTAB-1913,,g5_g10,'300 millimolar sodium chloride' vs. 'normal watering' at '24 hours',Salt
+E-MTAB-1914,,g1_g2,'normal watering' at '2 hours' vs. '1 hour',
+E-MTAB-1914,,g1_g5,'normal watering' at '24 hours' vs. '1 hour',
+E-MTAB-1914,,g2_g3,'normal watering' at '5 hours' vs. '2 hours',
+E-MTAB-1914,,g3_g4,'normal watering' at '10 hours' vs. '5 hours',
+E-MTAB-1914,,g4_g5,'normal watering' at '24 hours' vs. '10 hours',
+E-MTAB-1914,,g6_g7,'300 millimolar sodium chloride' at '2 hours' vs. '1 hour',Salt
+E-MTAB-1914,,g6_g10,'300 millimolar sodium chloride' at '24 hours' vs. '1 hour',Salt
+E-MTAB-1914,,g7_g8,'300 millimolar sodium chloride' at '5 hours' vs. '2 hours',Salt
+E-MTAB-1914,,g8_g9,'300 millimolar sodium chloride' at '10 hours' vs. '5 hours',Salt
+E-MTAB-1914,,g9_g10,'300 millimolar sodium chloride' at '24 hours' vs. '10 hours',Salt
+E-MTAB-1914,,g1_g6,'300 millimolar sodium chloride' vs. 'normal watering' at '1 hour',Salt
+E-MTAB-1914,,g2_g7,'300 millimolar sodium chloride' vs. 'normal watering' at '2 hours',Salt
+E-MTAB-1914,,g3_g8,'300 millimolar sodium chloride' vs. 'normal watering' at '5 hours',Salt
+E-MTAB-1914,,g4_g9,'300 millimolar sodium chloride' vs. 'normal watering' at '10 hours',Salt
+E-MTAB-1914,,g5_g10,'300 millimolar sodium chloride' vs. 'normal watering' at '24 hours',Salt
+E-MTAB-3279,,g1_g2,'mild drought' vs 'control' in 'An-1',Drought
+E-MTAB-3279,,g3_g4,'mild drought' vs 'control' in 'Blh-1',Drought
+E-MTAB-3279,,g5_g6,'mild drought' vs 'control' in 'Col-0',Drought
+E-MTAB-3279,,g8_g9,'mild drought' vs 'control' in 'Oy-0',Drought
+E-MTAB-3279,,g10_g11,'mild drought' vs 'control' in 'Shahdara',Drought
+E-MTAB-3834,,g1_g2,'submergence low oxygen' vs 'normal air',Flooding / hypoxia
+E-MTAB-4114,,g4_g3,'ppd-H1 mutant' vs 'wild type' in 'leaf; early reproductive phase; long day length regimen',
+E-MTAB-4114,,g2_g1,'ppd-H1 mutant' vs 'wild type' in 'leaf; early reproductive phase; long day length regimen',
+E-MTAB-4114,,g10_g9,'ppd-H1 mutant' vs 'wild type' in 'shoot apex; end of vegetative phase; long day length regimen',
+E-MTAB-4114,,g13_g12,'ppd-H1 mutant' vs 'wild type' in 'shoot apex; stamen primordium visible phase; long day length regimen',
+E-MTAB-4114,,g5_g4,'long day length regimen' vs 'short day length regimen' in 'leaf; vegetative phase; wild type',
+E-MTAB-4114,,g6_g2,'long day length regimen' vs 'short day length regimen' in 'leaf; early reproductive phase; wild type',
+E-MTAB-4114,,g11_g10,'long day length regimen' vs 'short day length regimen' in 'shoot apex; end of vegetative phase; wild type',
+E-MTAB-4114,,g14_g13,'long day length regimen' vs 'short day length regimen' in 'shoot apex; stamen primordium visible phase; wild type',
+E-MTAB-4124,,g2_g1,'limited phosphate treatment' vs 'none',
+E-MTAB-4245,,g1_g3,'limited phosphate treatment' vs 'control' in 'root',
+E-MTAB-4245,,g2_g4,'limited phosphate treatment' vs 'control' in 'shoot',
+E-MTAB-4252,,g1_g2,"'warm/hot air temperature regimen, 1stHS' vs 'control'",Heat
+E-MTAB-4252,,g1_g3,"'warm/hot air temperature regimen, 2ndHS' vs 'control'",Heat
+E-MTAB-4258,,g4_g1,'cold temperature regimen' vs 'control' in 'B73 inbred line',Cold
+E-MTAB-4258,,g5_g2,'cold temperature regimen' vs 'control' in 'Mo17 inbred line',Cold
+E-MTAB-4258,,g6_g3,'cold temperature regimen' vs 'control' in 'Oh43 inbred line',Cold
+E-MTAB-4258,,g4_g7,'warm/hot temperature regimen' vs 'control' in 'B73 inbred line',Heat
+E-MTAB-4258,,g5_g8,'warm/hot temperature regimen' vs 'control' in 'Mo17 inbred line',Heat
+E-MTAB-4258,,g6_g9,'warm/hot temperature regimen' vs 'control' in 'Oh43 inbred line',Heat
+E-MTAB-4274,,g1_g2,'elevated ozone' vs 'ambient ozone',Oxidative
+E-MTAB-4297,,g4_g8,"'water deficit, -0.8MPa for 6 hours; stele of primary root' vs 'control; stele of primary root'",Drought
+E-MTAB-4297,,g1_g5,"'water deficit, -0.8MPa for 6 hours; cortex of primary root' vs 'control; cortex of primary root'",Drought
+E-MTAB-4297,,g3_g7,"'water deficit, -0.8MPa for 6 hours; meristematic zone of primary root' vs 'control; meristematic zone of primary root'",Drought
+E-MTAB-4297,,g2_g6,"'water deficit, -0.8MPa for 6 hours; elongation zone of primary root' vs 'control; elongation zone of primary root'",Drought
+E-MTAB-4325,,g2_g4,'mild drought environment' vs 'control' at '6 hour',Drought
+E-MTAB-4325,,g1_g3,'mild drought environment' vs 'control' at '24 hour',Drought
+E-MTAB-4325,,g2_g6,'severe drought environment' vs 'control' at '6 hour',Drought
+E-MTAB-4325,,g1_g5,'severe drought environment' vs 'control' at '24 hour',Drought
+E-MTAB-4352,,g1_g5,'drought; drought sensitive; 6 hour' vs 'control; drought sensitive; 0 hour',Drought
+E-MTAB-4352,,g1_g3,'drought; drought sensitive; 12 hour' vs 'control; drought sensitive; 0 hour',Drought
+E-MTAB-4352,,g1_g4,'drought; drought sensitive; 24 hour' vs 'control; drought sensitive; 0 hour',Drought
+E-MTAB-4352,,g2_g8,'drought; drought tolerant; 6 hour' vs 'control; drought tolerant; 0 hour',Drought
+E-MTAB-4352,,g2_g6,'drought; drought tolerant; 12 hour' vs 'control; drought tolerant; 0 hour',Drought
+E-MTAB-4352,,g2_g7,'drought; drought tolerant; 24 hour' vs 'control; drought tolerant; 0 hour',Drought
+E-MTAB-4391,,g1_g2,'limited iron regimen' vs 'control',
+E-MTAB-4447,,g4_g2,'500 ppm carbon dioxide' vs '150 ppm carbon dioxide' in 'wild type',
+E-MTAB-4447,,g3_g1,"'500 ppm carbon dioxide' vs '150 ppm carbon dioxide' in 'ca1, ca4 double mutant'",
+E-MTAB-4447,,g2_g1,"'ca1, ca4 double mutant' vs 'wild type' in '500 ppm carbon dioxide'",
+E-MTAB-4447,,g4_g3,"'ca1, ca4 double mutant' vs 'wild type' in '150 ppm carbon dioxide'",
+E-MTAB-4634,,g1_g7,'sodium chloride; 100 millimolar' vs 'none' in 'Clipper; root differentiation zone',Salt
+E-MTAB-4634,,g2_g8,'sodium chloride; 100 millimolar' vs 'none' in 'Clipper; root elongation zone',Salt
+E-MTAB-4634,,g3_g9,'sodium chloride; 100 millimolar' vs 'none' in 'Clipper; root tip',Salt
+E-MTAB-4634,,g4_g10,'sodium chloride; 100 millimolar' vs 'none' in 'Sahara 3771; root differentiation zone',Salt
+E-MTAB-4634,,g5_g11,'sodium chloride; 100 millimolar' vs 'none' in 'Sahara 3771; root elongation zone',Salt
+E-MTAB-4634,,g6_g12,'sodium chloride; 100 millimolar' vs 'none' in 'Sahara 3771; root tip',Salt
+E-MTAB-4789,,g8_g9,'flagellin II-28 peptide' vs 'control',
+E-MTAB-4789,,g7_g4,'Pseudomonas syringae pv. tomato str. DC3000' vs 'control',
+E-MTAB-4789,,g7_g5,'Pseudomonas syringae pv. tomato str. DC3000 mutant (lacking a functional T3SS and flagellin)' vs 'control',
+E-MTAB-4789,,g7_g6,'Pseudomonas syringae pv. tomato str. DC3000 mutant (lacking AvrPto and AvrPtoB effectors)' vs 'control',
+E-MTAB-4789,,g7_g2,'Pseudomonas fluorescens' vs 'control',
+E-MTAB-4789,,g7_g3,'Pseudomonas putida KT2440' vs 'control',
+E-MTAB-4789,,g7_g1,'Agrobacterium tumefaciens' vs 'control',
+E-MTAB-5076,,g4_g3,'drought environment' vs 'none',Drought
+E-MTAB-5076,,g1_g5,'ozone treatment' vs 'control',Oxidative
+E-MTAB-5076,,g2_g6,'warm/hot temperature regimen' vs 'control',Heat
+E-MTAB-5103,,g3_g1,'vtc2 mutant' vs 'wild type genotype' in 'drought environment',Drought
+E-MTAB-5103,,g3_g2,'vtc2.5 mutant' vs 'wild type genotype' in 'drought environment',Drought
+E-MTAB-5103,,g6_g4,'vtc2 mutant' vs 'wild type genotype' in 'normal watering',
+E-MTAB-5103,,g6_g5,'vtc2.5 mutant' vs 'wild type genotype' in 'normal watering',
+E-MTAB-5103,,g4_g1,'drought environment' vs 'normal watering' in 'vtc2 mutant',Drought
+E-MTAB-5103,,g5_g2,'drought environment' vs 'normal watering' in 'vtc2.5 mutant',Drought
+E-MTAB-5103,,g6_g3,'drought environment' vs 'normal watering' in 'wild type genotype',Drought
+E-MTAB-5188,,g2_g1,'1 hour of blue light exposure' vs 'none',
+E-MTAB-5226,,g1_g3,'ozone; 150 ppb' vs 'ozone; 20 ppb' in 'flower',Oxidative
+E-MTAB-5226,,g2_g4,'ozone; 150 ppb' vs 'ozone; 20 ppb' in 'fruit',Oxidative
+E-MTAB-5941,,g3_g6,'Volano' vs 'Thaibonnet' in 'none' at '0 hour',
+E-MTAB-5941,,g2_g5,'Volano' vs 'Thaibonnet' in 'cold temperature regimen' at '2 hour',Cold
+E-MTAB-5941,,g1_g4,'Volano' vs 'Thaibonnet' in 'cold temperature regimen' at '10 hour',Cold
+E-MTAB-5941,,g3_g2,'cold temperature regimen; 2 hour' vs 'none; 0 hour' in 'Thaibonnet',Cold
+E-MTAB-5941,,g3_g1,'cold temperature regimen; 10 hour' vs 'none; 0 hour' in 'Thaibonnet',Cold
+E-MTAB-5941,,g6_g5,'cold temperature regimen; 2 hour' vs 'none; 0 hour' in 'Volano',Cold
+E-MTAB-5941,,g6_g4,'cold temperature regimen; 10 hour' vs 'none; 0 hour' in 'Volano',Cold
+E-MTAB-6445,,g2_g1,'continuous dark (no light) regimen' vs 'continuous light regimen',
+E-MTAB-6565,,g2_g1,'Tetranychus urticae' vs 'none' in 'drought environment',Drought
+E-MTAB-6565,,g3_g1,'drought environment' vs 'none' in 'Tetranychus urticae',Drought
+E-MTAB-6565,,g4_g2,'drought environment' vs 'none' in 'none',Drought
+E-MTAB-6565,,g4_g3,'Tetranychus urticae' vs 'none' in 'none',
+E-MTAB-6965,,g7_g5,'pao-1 mutant' vs 'wild type genotype' in 'none' at '0 day',
+E-MTAB-6965,,g7_g6,'pph1 mutant' vs 'wild type genotype' in 'none' at '0 day',
+E-MTAB-6965,,g4_g1,'nye1 mutant' vs 'wild type genotype' in 'continuous dark (no light) regimen' at '2 day',
+E-MTAB-6965,,g4_g2,'pao-1 mutant' vs 'wild type genotype' in 'continuous dark (no light) regimen' at '2 day',
+E-MTAB-6965,,g4_g3,'pph1 mutant' vs 'wild type genotype' in 'continuous dark (no light) regimen' at '2 day',
+E-MTAB-8073,,g4_g1,'snrk2.1/2.4/2.5/2.9/2.10 quintuple mutant' vs 'wild type genotype' in 'none',
+E-MTAB-8073,,g1_g5,'sodium chloride; 150 millimolar' vs 'none' in 'snrk2.1/2.4/2.5/2.9/2.10 quintuple mutant',Salt
+E-MTAB-8073,,g4_g2,'snrk2.4 mutant' vs 'wild type genotype' in 'none',
+E-MTAB-8073,,g2_g6,'sodium chloride; 150 millimolar' vs 'none' in 'snrk2.4 mutant',Salt
+E-MTAB-8073,,g4_g3,'snrk2.4/2.10 double mutant' vs 'wild type genotype' in 'none',
+E-MTAB-8073,,g3_g7,'sodium chloride; 150 millimolar' vs 'none' in 'snrk2.4/2.10 double mutant',Salt
+E-MTAB-8073,,g4_g8,'sodium chloride; 150 millimolar' vs 'none' in 'wild type genotype',Salt
+E-MTAB-8073,,g8_g5,'snrk2.1/2.4/2.5/2.9/2.10 quintuple mutant' vs 'wild type genotype' in 'sodium chloride; 150 millimolar',Salt
+E-MTAB-8073,,g8_g6,'snrk2.4 mutant' vs 'wild type genotype' in 'sodium chloride; 150 millimolar',Salt
+E-MTAB-8073,,g8_g7,'snrk2.4/2.10 double mutant' vs 'wild type genotype' in 'sodium chloride; 150 millimolar',Salt
+E-MTAB-8520,,g1_g2,'warm/hot temperature regimen' vs 'control' in '10 days post anthesis',Heat
+E-MTAB-8520,,g3_g4,'warm/hot temperature regimen' vs 'control' in '14 days post anthesis',Heat
+E-MTAB-8523,,g2_g1,'Laccaria bicolor' vs 'none' in 'Trichoplusia ni feeding',
+E-MTAB-8523,,g3_g1,'Trichoplusia ni feeding' vs 'control' in 'Laccaria bicolor',
+E-MTAB-8523,,g4_g2,'Trichoplusia ni feeding' vs 'control' in 'none',
+E-MTAB-8523,,g4_g3,'Laccaria bicolor' vs 'none' in 'control',
+E-GEOD-11175,A-AFFY-126,g1_g2,'drought and salt tolerance (dst) mutant' vs 'wild type',Drought
+E-GEOD-11758,A-AFFY-2,g1_g2,'37 degrees celsius' vs '20 degrees celsius',
+E-GEOD-11758,A-AFFY-2,g3_g4,'L-azetidine-2-carboxylic acid' vs 'L-proline',
+E-GEOD-11758,A-AFFY-2,g5_g6,'tunicamycin' vs 'dimethylformamide',
+E-GEOD-13735,A-AFFY-126,g1_g2,"'salt stress' vs 'control' in 'FL478, salt-tolerant'",Salt
+E-GEOD-15970,A-AFFY-31,g1_g4,'drought; HS41-1; drought tolerance; 1 day' vs 'control; HS41-1; drought tolerance',Drought
+E-GEOD-15970,A-AFFY-31,g1_g5,'drought; HS41-1; drought tolerance; 3 day' vs 'control; HS41-1; drought tolerance',Drought
+E-GEOD-15970,A-AFFY-31,g1_g6,'drought; HS41-1; drought tolerance; 5 day' vs 'control; HS41-1; drought tolerance',Drought
+E-GEOD-15970,A-AFFY-31,g2_g7,'drought; Martin; drought tolerance; 1 day' vs 'control; Martin; drought tolerance',Drought
+E-GEOD-15970,A-AFFY-31,g2_g8,'drought; Martin; drought tolerance; 3 day' vs 'control; Martin; drought tolerance',Drought
+E-GEOD-15970,A-AFFY-31,g2_g9,'drought; Martin; drought tolerance; 5 day' vs 'control; Martin; drought tolerance',Drought
+E-GEOD-15970,A-AFFY-31,g3_g10,'drought; Moroc9-75; sensitive to drought stress; 1 day' vs 'control; Moroc9-75; sensitive to drought stress',Drought
+E-GEOD-15970,A-AFFY-31,g3_g11,'drought; Moroc9-75; sensitive to drought stress; 5 day' vs 'control; Moroc9-75; sensitive to drought stress',Drought
+E-GEOD-16567,A-AFFY-77,g2_g1,'moderate drought stress' vs 'control' in 'Ye478',Drought
+E-GEOD-16567,A-AFFY-77,g2_g4,'re-watering' vs 'control' in 'Ye478',
+E-GEOD-16567,A-AFFY-77,g2_g7,'severe drought stress' vs 'control' in 'Ye478',Drought
+E-GEOD-16567,A-AFFY-77,g3_g5,'re-watering' vs 'control' in 'Han21',
+E-GEOD-16567,A-AFFY-77,g3_g6,'moderate drought stress' vs 'control' in 'Han21',Drought
+E-GEOD-16567,A-AFFY-77,g3_g8,'severe drought stress' vs 'control' in 'Han21',Drought
+E-GEOD-19603,A-AFFY-2,g2_g1,'msh1 recA3 double mutant' vs 'wild type' at '2 hour at 37 degree celsius',
+E-GEOD-19700,A-AFFY-2,g2_g4,'drought' vs 'control' at '00:00',Drought
+E-GEOD-19700,A-AFFY-2,g5_g3,'drought' vs 'control' at '06:00',Drought
+E-GEOD-19700,A-AFFY-2,g6_g7,'drought' vs 'control' at '12:00',Drought
+E-GEOD-19700,A-AFFY-2,g1_g8,'drought' vs 'control' at '18:00',Drought
+E-GEOD-22671,A-AFFY-2,g1_g2,'dark' vs 'control',
+E-GEOD-22671,A-AFFY-2,g1_g3,'high light' vs 'control',Oxidative
+E-GEOD-23211,A-AFFY-126,g4_g3,'PSARK::IPT transgenic' vs 'wild type' in 'none',
+E-GEOD-23211,A-AFFY-126,g2_g1,'PSARK::IPT transgenic' vs 'wild type' in 'drought environment',Drought
+E-GEOD-23846,A-AFFY-2,g2_g1,'transgenic LeB4::AtHb1' vs 'wild type' in 'control',
+E-GEOD-23846,A-AFFY-2,g1_g3,'hypoxia' vs 'control' in 'transgenic LeB4::AtHb1',Flooding / hypoxia
+E-GEOD-23846,A-AFFY-2,g2_g4,'hypoxia' vs 'control' in 'wild type',Flooding / hypoxia
+E-GEOD-23846,A-AFFY-2,g4_g3,'transgenic LeB4::AtHb1' vs 'wild type' in 'hypoxia',Flooding / hypoxia
+E-GEOD-25206,A-AFFY-126,g5_g1,'arsenic(5+); 100 micromolar' vs 'water',
+E-GEOD-25206,A-AFFY-126,g5_g3,'chromium(6+); 100 micromolar' vs 'water',
+E-GEOD-25206,A-AFFY-126,g5_g4,'lead; 100 micromolar' vs 'water',
+E-GEOD-27475,A-AFFY-2,g1_g2,'HRE1-RNAi20' vs 'wild type' in 'normoxia',
+E-GEOD-27475,A-AFFY-2,g1_g3,'hypoxia' vs 'normoxia' in 'wild type',Flooding / hypoxia
+E-GEOD-27475,A-AFFY-2,g2_g4,'hypoxia' vs 'normoxia' in 'HRE1-RNAi20',Flooding / hypoxia
+E-GEOD-27475,A-AFFY-2,g3_g4,'HRE1-RNAi20' vs 'wild type' in 'hypoxia',Flooding / hypoxia
+E-GEOD-27861,A-AFFY-2,g1_g2,'OsRLCK253 transgenic' vs 'wild type',
+E-GEOD-27861,A-AFFY-2,g1_g3,'OsSAP11 transgenic' vs 'wild type',
+E-GEOD-29187,A-AFFY-2,g1_g5,'35S::amiRAP2.2-12' vs 'wild type' in 'hypoxia',Flooding / hypoxia
+E-GEOD-29187,A-AFFY-2,g1_g6,'35S::HA::RAP2.12' vs 'wild type' in 'hypoxia',Flooding / hypoxia
+E-GEOD-29187,A-AFFY-2,g3_g2,'35S::HA::RAP2.12' vs 'wild type' in 'aerobic',
+E-GEOD-29187,A-AFFY-2,g3_g4,'35S::amiRAP2.2-12' vs 'wild type' in 'aerobic',
+E-GEOD-31594,A-AFFY-78,g4_g1,'cold (5degC)' at '1 hour' vs 'control' at '0 hour',Cold
+E-GEOD-31594,A-AFFY-78,g5_g1,'cold (5degC)' at '1 hour' vs 'control' at '1 hour',Cold
+E-GEOD-31594,A-AFFY-78,g4_g2,'cold (5degC)' at '4 hour' vs 'control' at '0 hour',Cold
+E-GEOD-31594,A-AFFY-78,g7_g2,'cold (5degC)' at '4 hour' vs 'control' at '4 hour',Cold
+E-GEOD-31594,A-AFFY-78,g4_g3,'cold (5degC)' at '8 hour' vs 'control' at '0 hour',Cold
+E-GEOD-31594,A-AFFY-78,g8_g3,'cold (5degC)' at '8 hour' vs 'control' at '8 hour',Cold
+E-GEOD-31594,A-AFFY-78,g4_g9,'increased salinity' at '1 hour' vs 'control' at '0 hour',Salt
+E-GEOD-31594,A-AFFY-78,g5_g9,'increased salinity' at '1 hour' vs 'control' at '1 hour',Salt
+E-GEOD-31594,A-AFFY-78,g4_g11,'increased salinity' at '4 hour' vs 'control' at '0 hour',Salt
+E-GEOD-31594,A-AFFY-78,g7_g11,'increased salinity' at '4 hour' vs 'control' at '4 hour',Salt
+E-GEOD-31594,A-AFFY-78,g4_g12,'increased salinity' at '8 hour' vs 'control' at '0 hour',Salt
+E-GEOD-31594,A-AFFY-78,g8_g12,'increased salinity' at '8 hour' vs 'control' at '8 hour',Salt
+E-GEOD-31594,A-AFFY-78,g4_g10,'increased salinity' at '24 hour' vs 'control' at '0 hour',Salt
+E-GEOD-31594,A-AFFY-78,g6_g10,'increased salinity' at '24 hour' vs 'control' at '24 hour',Salt
+E-GEOD-31594,A-AFFY-78,g4_g13,'with polyethylene glycol' at '1 hour' vs 'control' at '0 hour',Drought
+E-GEOD-31594,A-AFFY-78,g5_g13,'with polyethylene glycol' at '1 hour' vs 'control' at '1 hour',Drought
+E-GEOD-31594,A-AFFY-78,g4_g15,'with polyethylene glycol' at '4 hour' vs 'control' at '0 hour',Drought
+E-GEOD-31594,A-AFFY-78,g7_g15,'with polyethylene glycol' at '4 hour' vs 'control' at '4 hour',Drought
+E-GEOD-31594,A-AFFY-78,g4_g16,'with polyethylene glycol' at '8 hour' vs 'control' at '0 hour',Drought
+E-GEOD-31594,A-AFFY-78,g8_g16,'with polyethylene glycol' at '8 hour' vs 'control' at '8 hour',Drought
+E-GEOD-31594,A-AFFY-78,g4_g14,'with polyethylene glycol' at '24 hour' vs 'control' at '0 hour',Drought
+E-GEOD-31594,A-AFFY-78,g6_g14,'with polyethylene glycol' at '24 hour' vs 'control' at '24 hour',Drought
+E-GEOD-31677,A-AFFY-78,g4_g1,'increased salinity' vs 'control' at '4 day',Salt
+E-GEOD-31677,A-AFFY-78,g4_g8,'water deprivation' vs 'control' at '4 day',
+E-GEOD-31677,A-AFFY-78,g13_g2,'water deprivation' vs 'control' at '8 day',
+E-GEOD-31677,A-AFFY-78,g13_g5,'increased salinity' vs 'control' at '8 day',Salt
+E-GEOD-31677,A-AFFY-78,g6_g7,'water deprivation' vs 'control' at '12 day',
+E-GEOD-31677,A-AFFY-78,g6_g11,'increased salinity' vs 'control' at '12 day',Salt
+E-GEOD-31677,A-AFFY-78,g9_g10,'increased salinity' vs 'control' at '16 day',Salt
+E-GEOD-31677,A-AFFY-78,g9_g12,'water deprivation' vs 'control' at '16 day',
+E-GEOD-34667,A-AFFY-2,g1_g5,'ozone' vs 'control' in 'G-protein knockout mutant' at '3 hour',Oxidative
+E-GEOD-34667,A-AFFY-2,g2_g6,'ozone' vs 'control' in 'G-protein knockout mutant' at '48 hour',Oxidative
+E-GEOD-34667,A-AFFY-2,g3_g7,'ozone' vs 'control' in 'wild type' at '3 hour',Oxidative
+E-GEOD-34667,A-AFFY-2,g4_g8,'ozone' vs 'control' in 'wild type' at '48 hour',Oxidative
+E-GEOD-34667,A-AFFY-2,g3_g1,'G-protein knockout mutant' vs 'wild type' in 'control' at '3 hour',
+E-GEOD-34667,A-AFFY-2,g4_g2,'G-protein knockout mutant' vs 'wild type' in 'control' at '48 hour',
+E-GEOD-34667,A-AFFY-2,g7_g5,'G-protein knockout mutant' vs 'wild type' in 'ozone' at '3 hour',Oxidative
+E-GEOD-34667,A-AFFY-2,g8_g6,'G-protein knockout mutant' vs 'wild type' in 'ozone' at '48 hour',Oxidative
+E-GEOD-35258,A-AFFY-2,g2_g1,'hai1-2 mutant' vs 'wild type' in 'control',
+E-GEOD-35258,A-AFFY-2,g1_g3,'low water potential stress' vs 'control' in 'hai1-2 mutant',
+E-GEOD-35258,A-AFFY-2,g2_g4,'low water potential stress' vs 'control' in 'wild type',
+E-GEOD-35258,A-AFFY-2,g4_g3,'hai1-2 mutant' vs 'wild type' in 'low water potential stress',
+E-GEOD-36011,A-AFFY-2,g4_g1,'antimycin A; 50 micromolar' vs 'water' in 'rao1-1 mutant',
+E-GEOD-36011,A-AFFY-2,g5_g2,'antimycin A; 50 micromolar' vs 'water' in 'rao1-2 mutant',
+E-GEOD-36011,A-AFFY-2,g6_g3,'antimycin A; 50 micromolar' vs 'water' in 'wild type',
+E-GEOD-36011,A-AFFY-2,g3_g1,'rao1-1 mutant' vs 'wild type' in 'antimycin A; 50 micromolar',
+E-GEOD-36011,A-AFFY-2,g3_g2,'rao1-2 mutant' vs 'wild type' in 'antimycin A; 50 micromolar',
+E-GEOD-36011,A-AFFY-2,g6_g4,'rao1-1 mutant' vs 'wild type' in 'water',
+E-GEOD-36011,A-AFFY-2,g6_g5,'rao1-2 mutant' vs 'wild type' in 'water',
+E-GEOD-36789,A-AFFY-2,g1_g3,'osmotic stress (3h with 0.3 molar mannitol)' vs 'control' in 'leaf',Drought
+E-GEOD-36789,A-AFFY-2,g1_g4,'returned to basal medium 1 day after osmotic stress' vs 'control' in 'leaf',Drought
+E-GEOD-36789,A-AFFY-2,g2_g5,'osmotic stress (3h with 0.3 molar mannitol)' vs 'control' in 'root',Drought
+E-GEOD-36789,A-AFFY-2,g2_g6,'returned to basal medium 1 day after osmotic stress' vs 'control' in 'root',Drought
+E-GEOD-37940,A-AFFY-126,g1_g2,'2 hour;cold stress' vs '0 hour;control' in 'C418',Cold
+E-GEOD-37940,A-AFFY-126,g1_g3,'6 hour;cold stress' vs '0 hour;control' in 'C418',Cold
+E-GEOD-37940,A-AFFY-126,g1_g4,'12 hour;cold stress' vs '0 hour;control' in 'C418',Cold
+E-GEOD-37940,A-AFFY-126,g1_g5,'24 hour;cold stress' vs '0 hour;control' in 'C418',Cold
+E-GEOD-37940,A-AFFY-126,g1_g6,'48 hour;cold stress' vs '0 hour;control' in 'C418',Cold
+E-GEOD-37940,A-AFFY-126,g7_g8,'2 hour;cold stress' vs '0 hour;control' in 'K354',Cold
+E-GEOD-37940,A-AFFY-126,g7_g9,'6 hour;cold stress' vs '0 hour;control' in 'K354',Cold
+E-GEOD-37940,A-AFFY-126,g7_g10,'12 hour;cold stress' vs '0 hour;control' in 'K354',Cold
+E-GEOD-37940,A-AFFY-126,g7_g11,'24 hour;cold stress' vs '0 hour;control' in 'K354',Cold
+E-GEOD-37940,A-AFFY-126,g7_g12,'48 hour;cold stress' vs '0 hour;control' in 'K354',Cold
+E-GEOD-38023,A-AFFY-126,g9_g1,'cold stress; sensitive to chilling; 2 hour' vs 'control; sensitive to chilling',Cold
+E-GEOD-38023,A-AFFY-126,g9_g4,'cold stress; sensitive to chilling; 8 hour' vs 'control; sensitive to chilling',Cold
+E-GEOD-38023,A-AFFY-126,g9_g2,'cold stress; sensitive to chilling; 24 hour' vs 'control; sensitive to chilling',Cold
+E-GEOD-38023,A-AFFY-126,g9_g3,'cold stress; sensitive to chilling; 48 hour' vs 'control; sensitive to chilling',Cold
+E-GEOD-38023,A-AFFY-126,g9_g11,'recovery from cold stress; sensitive to chilling; 24 hour' vs 'control; sensitive to chilling',Cold
+E-GEOD-38023,A-AFFY-126,g10_g5,'cold stress; tolerant to chilling; 2 hour' vs 'control; tolerant to chilling',Cold
+E-GEOD-38023,A-AFFY-126,g10_g8,'cold stress; tolerant to chilling; 8 hour' vs 'control; tolerant to chilling',Cold
+E-GEOD-38023,A-AFFY-126,g10_g6,'cold stress; tolerant to chilling; 24 hour' vs 'control; tolerant to chilling',Cold
+E-GEOD-38023,A-AFFY-126,g10_g7,'cold stress; tolerant to chilling; 48 hour' vs 'control; tolerant to chilling',Cold
+E-GEOD-38023,A-AFFY-126,g10_g12,'recovery from cold stress; tolerant to chilling; 24 hour' vs 'control; tolerant to chilling',Cold
+E-GEOD-39236,A-AFFY-2,g1_g3,'sodium chloride; 120 millimolar' vs 'control; 0 millimolar' in 'rsa1-1 mutant' at '24 hour',Salt
+E-GEOD-39236,A-AFFY-2,g2_g4,'sodium chloride; 120 millimolar' vs 'control; 0 millimolar' in 'wild type' at '24 hour',Salt
+E-GEOD-39236,A-AFFY-2,g4_g3,'rsa1-1 mutant' vs 'wild type' in 'sodium chloride; 120 millimolar' at '24 hour',Salt
+E-GEOD-39236,A-AFFY-2,g2_g1,'rsa1-1 mutant' vs 'wild type' in  'control; 0 millimolar' at '0 hour',
+E-GEOD-40061,A-AFFY-2,g1_g3,'drought' vs 'control' in 'camta1-3 mutant; leaf',Drought
+E-GEOD-40061,A-AFFY-2,g5_g1,'camta1-3 mutant' vs 'wild type' in 'control; leaf',
+E-GEOD-40061,A-AFFY-2,g2_g4,'drought' vs 'control' in 'camta1-3 mutant; root',Drought
+E-GEOD-40061,A-AFFY-2,g6_g2,'camta1-3 mutant' vs 'wild type' in 'control; root',
+E-GEOD-40061,A-AFFY-2,g7_g3,'camta1-3 mutant' vs 'wild type' in 'drought; leaf',Drought
+E-GEOD-40061,A-AFFY-2,g8_g4,'camta1-3 mutant' vs 'wild type' in 'drought; root',Drought
+E-GEOD-40061,A-AFFY-2,g5_g7,'drought' vs 'control' in 'wild type; leaf',Drought
+E-GEOD-40061,A-AFFY-2,g6_g8,'drought' vs 'control' in 'wild type; root',Drought
+E-GEOD-40549,A-GEOD-6864,g9_g1,'cadmium stressed; cortex of root' vs 'normal; cortex of root',
+E-GEOD-40549,A-GEOD-6864,g10_g2,'cadmium stressed; epidermis plus exodermis of root' vs 'normal; epidermis plus exodermis of root',
+E-GEOD-40549,A-GEOD-6864,g13_g3,'cadmium stressed; vascular bundle of root' vs 'normal; vascular bundle of root',
+E-GEOD-40549,A-GEOD-6864,g9_g4,'iron defiency; cortex of root' vs 'normal; cortex of root',
+E-GEOD-40549,A-GEOD-6864,g10_g5,'iron defiency; epidermis plus exodermis of root' vs 'normal; epidermis plus exodermis of root',
+E-GEOD-40549,A-GEOD-6864,g13_g8,'iron defiency; vascular bundle of root' vs 'normal; vascular bundle of root',
+E-GEOD-40549,A-GEOD-6864,g11_g6,'iron defiency; vascular bundle from new leaf at the lowest node' vs 'normal; vascular bundle from new leaf at the lowest node',
+E-GEOD-40549,A-GEOD-6864,g12_g7,'iron defiency; vascular bundle from old leaf at the lowest node' vs 'normal; vascular bundle from old leaf at the lowest node',
+E-GEOD-41136,A-AFFY-2,g9_g1,'antimycin A; 50 micromolar; anac017-1' vs 'water; anac017-1',
+E-GEOD-41136,A-AFFY-2,g9_g5,'hydrogen peroxide; 20 millimolar; anac017-1' vs 'water; anac017-1',Oxidative
+E-GEOD-41136,A-AFFY-2,g10_g2,'antimycin A; 50 micromolar; anac017-2' vs 'water; anac017-2',
+E-GEOD-41136,A-AFFY-2,g10_g6,'hydrogen peroxide; 20 millimolar; anac017-2' vs 'water; anac017-2',Oxidative
+E-GEOD-41136,A-AFFY-2,g11_g3,'antimycin A; 50 micromolar; rao2_EMS_mutant' vs 'water; rao2_EMS_mutant',
+E-GEOD-41136,A-AFFY-2,g11_g7,'hydrogen peroxide; 20 millimolar; rao2_EMS_mutant' vs 'water; rao2_EMS_mutant',Oxidative
+E-GEOD-41136,A-AFFY-2,g12_g4,'antimycin A; 50 micromolar; wild type' vs 'water; wild type',
+E-GEOD-41136,A-AFFY-2,g12_g8,'hydrogen peroxide; 20 millimolar; wild type' vs 'water; wild type',Oxidative
+E-GEOD-41647,A-AFFY-126,g1_g3,'drought environment' vs 'control' in 'susceptible to drought environment' at '3 hour',Drought
+E-GEOD-41647,A-AFFY-126,g1_g4,'drought environment' vs 'control' in 'susceptible to drought environment' at '6 hour',Drought
+E-GEOD-41647,A-AFFY-126,g2_g5,'drought environment' vs 'control' in 'tolerant to drought environment' at '3 hour',Drought
+E-GEOD-41647,A-AFFY-126,g2_g6,'drought environment' vs 'control' in 'tolerant to drought environment' at '6 hour',Drought
+E-GEOD-44343,A-AFFY-2,g2_g1,'35S:PCO1 overexpression' vs 'wild type',
+E-GEOD-44793,A-AFFY-2,g4_g1,"'2, 6-dichloroisonicotinic acid' vs 'none'",
+E-GEOD-44793,A-AFFY-2,g4_g2,'bleomycin' vs 'none',DNA damage
+E-GEOD-44793,A-AFFY-2,g4_g3,"'bleomycin and 2, 6-dichloroisonicotinic acid' vs 'none'",DNA damage
+E-GEOD-45724,A-AFFY-126,g3_g1,'alkali; Jijing88' vs 'control; Jijing88',
+E-GEOD-45724,A-AFFY-126,g4_g2,'alkali; K83' vs 'control; K83',
+E-GEOD-47195,A-AFFY-126,g2_g1,'serf1' vs 'wild type',
+E-GEOD-49418,A-AFFY-2,g3_g1,'dehydration; 46T' vs 'none; 46T',Drought
+E-GEOD-49418,A-AFFY-2,g2_g1,'dehydration; 46T' vs 'dehydration; wild type',Drought
+E-GEOD-49418,A-AFFY-2,g4_g3,'none; 46T' vs 'none; wild type',
+E-GEOD-49418,A-AFFY-2,g4_g2,'dehydration; wild type' vs 'none; wild type',Drought
+E-GEOD-52013,A-AFFY-2,g2_g1,"'treated with 2-(2,4-dichlorophenoxy)-N-[4-(isobutyrylamino)-3-methoxyphenyl]propanamid; 5 micromolar' vs 'control'",
+E-GEOD-52046,A-AFFY-2,g2_g1,"'spx1,spx2 double mutant' vs 'wild type' in 'complete medium'",
+E-GEOD-52046,A-AFFY-2,g1_g3,"'phosphate-lacking medium and resupplied with Pi for 4 h' vs 'complete medium' in 'spx1,spx2 double mutant'",
+E-GEOD-52046,A-AFFY-2,g1_g5,"'phosphate-lacking medium' vs 'complete medium' in 'spx1,spx2 double mutant'",
+E-GEOD-52046,A-AFFY-2,g2_g4,'phosphate-lacking medium and resupplied with Pi for 4 h' vs 'complete medium' in 'wild type',
+E-GEOD-52046,A-AFFY-2,g2_g6,'phosphate-lacking medium' vs 'complete medium' in 'wild type',
+E-GEOD-52046,A-AFFY-2,g4_g3,"'spx1,spx2 double mutant' vs 'wild type' in 'phosphate-lacking medium and resupplied with Pi for 4 h'",
+E-GEOD-52046,A-AFFY-2,g6_g5,"'spx1,spx2 double mutant' vs 'wild type' in 'phosphate-lacking medium'",
+E-GEOD-53308,A-AFFY-2,g2_g1,'4 days salt treatment' vs 'control',Salt
+E-GEOD-54466,A-AFFY-126,g1_g3,'drought' vs 'control' in 'osnox2 mutant',Drought
+E-GEOD-54466,A-AFFY-126,g2_g4,'drought' vs 'control' in 'wild type',Drought
+E-GEOD-5530,A-AFFY-2,g2_g1,'35S-CalMV::Zat12 mutant' vs 'wild type' in 'no compound',
+E-GEOD-5530,A-AFFY-2,g4_g3,'35S-CalMV::Zat12 mutant' vs 'wild type' in 'hydrogen peroxide',Oxidative
+E-GEOD-5539,A-AFFY-2,g1_g2,'At3g24500 overexpression' vs 'wild type',
+E-GEOD-55835,A-AFFY-2,g7_g10,'sub-zero acclimation' vs 'cold acclimation' in 'Te-0' at '8 hour',Cold
+E-GEOD-55835,A-AFFY-2,g3_g6,'sub-zero acclimation' vs 'cold acclimation' in 'Rschew' at '8 hour',Cold
+E-GEOD-55835,A-AFFY-2,g1_g2,'sub-zero acclimation' vs 'cold acclimation' in 'Col-0' at '24 hour',Cold
+E-GEOD-55835,A-AFFY-2,g7_g8,'sub-zero acclimation' vs 'cold acclimation' in 'Te-0' at '24 hour',Cold
+E-GEOD-55835,A-AFFY-2,g3_g4,'sub-zero acclimation' vs 'cold acclimation' in 'Rschew' at '24 hour',Cold
+E-GEOD-55835,A-AFFY-2,g7_g9,'sub-zero acclimation' vs 'cold acclimation' in 'Te-0' at '72 hour',Cold
+E-GEOD-55835,A-AFFY-2,g3_g5,'sub-zero acclimation' vs 'cold acclimation' in 'Rschew' at '72 hour',Cold
+E-GEOD-5722,A-AFFY-2,g2_g1,'ozone 500 parts per billion' vs 'control',Oxidative
+E-GEOD-58603,A-AFFY-126,g3_g1,'abscisic acid; salt-tolerant introgression line PL177; sodium chloride 140 millimolar; leaf' vs 'abscisic acid; wild type genotype; sodium chloride 140 millimolar; leaf',Salt
+E-GEOD-58603,A-AFFY-126,g7_g1,'abscisic acid; salt-tolerant introgression line PL177; sodium chloride 140 millimolar; leaf' vs 'none; salt-tolerant introgression line PL177; sodium chloride 140 millimolar; leaf',Salt
+E-GEOD-58603,A-AFFY-126,g4_g2,'abscisic acid; salt-tolerant introgression line PL177; sodium chloride 140 millimolar; root' vs 'abscisic acid; wild type genotype; sodium chloride 140 millimolar; root',Salt
+E-GEOD-58603,A-AFFY-126,g8_g2,'abscisic acid; salt-tolerant introgression line PL177; sodium chloride 140 millimolar; root' vs 'none; salt-tolerant introgression line PL177; sodium chloride 140 millimolar; root',Salt
+E-GEOD-58603,A-AFFY-126,g11_g3,'abscisic acid; wild type genotype; sodium chloride 140 millimolar; leaf' vs 'none; wild type genotype; sodium chloride 140 millimolar; leaf',Salt
+E-GEOD-58603,A-AFFY-126,g12_g4,'abscisic acid; wild type genotype; sodium chloride 140 millimolar; root' vs 'none; wild type genotype; sodium chloride 140 millimolar; root',Salt
+E-GEOD-58603,A-AFFY-126,g5_g7,'none; salt-tolerant introgression line PL177; sodium chloride 140 millimolar; leaf' vs 'none; salt-tolerant introgression line PL177; normal watering; leaf',Salt
+E-GEOD-58603,A-AFFY-126,g9_g5,'none; salt-tolerant introgression line PL177; normal watering; leaf' vs 'none; wild type genotype; normal watering; leaf',Salt
+E-GEOD-58603,A-AFFY-126,g11_g7,'none; salt-tolerant introgression line PL177; sodium chloride 140 millimolar; leaf' vs 'none; wild type genotype; sodium chloride 140 millimolar; leaf',Salt
+E-GEOD-58603,A-AFFY-126,g12_g8,'none; salt-tolerant introgression line PL177; sodium chloride 140 millimolar; root' vs 'none; wild type genotype; sodium chloride 140 millimolar; root',Salt
+E-GEOD-58603,A-AFFY-126,g9_g11,'none; wild type genotype; sodium chloride 140 millimolar; leaf' vs 'none; wild type genotype; normal watering; leaf',Salt
+E-GEOD-58603,A-AFFY-126,g10_g12,'none; wild type genotype; sodium chloride 140 millimolar; root' vs 'none; wild type genotype; normal watering; root',Salt
+E-GEOD-62315,A-AFFY-78,g2_g1,'UV-C irradiation at 6W/m2' at '6 hour' vs 'no UV' at '0 hour',DNA damage
+E-GEOD-62315,A-AFFY-78,g2_g3,'UV-C irradiation at 6W/m2' at '12 hour' vs 'no UV' at '0 hour',DNA damage
+E-GEOD-6583,A-AFFY-2,g1_g4,'siz1-3' vs 'wild type' in 'control',
+E-GEOD-6583,A-AFFY-2,g3_g2,'siz1-3' vs 'wild type' in 'drought',Drought
+E-GEOD-68439,A-AFFY-2,g2_g1,'double mutant at3g03940/at518190 knockdown' vs 'wild type',
+E-GEOD-71001,A-AFFY-2,g6_g3,"'bzip1, bzip53 double knockout' vs 'wild type' in 'sodium chloride; 150 millimolar' at '1 hour'",Salt
+E-GEOD-71001,A-AFFY-2,g7_g4,"'bzip1, bzip53 double knockout' vs 'wild type' in 'sodium chloride; 150 millimolar' at '3 hour'",Salt
+E-GEOD-71001,A-AFFY-2,g1_g3,"'sodium chloride; 150 millimolar' vs 'control; 0 millimolar' in 'bzip1, bzip53 double knockout' at '1 hour'",Salt
+E-GEOD-71001,A-AFFY-2,g1_g4,"'sodium chloride; 150 millimolar' vs 'control; 0 millimolar' in 'bzip1, bzip53 double knockout' at '3 hour'",Salt
+E-GEOD-71001,A-AFFY-2,g1_g5,"'sodium chloride; 150 millimolar' vs 'control; 0 millimolar' in 'bzip1, bzip53 double knockout' at '6 hour'",Salt
+E-GEOD-71001,A-AFFY-2,g2_g6,'sodium chloride; 150 millimolar' vs 'control; 0 millimolar' in 'wild type' at '1 hour',Salt
+E-GEOD-71001,A-AFFY-2,g2_g7,'sodium chloride; 150 millimolar' vs 'control; 0 millimolar' in 'wild type' at '3 hour',Salt
+E-GEOD-71001,A-AFFY-2,g2_g1,"'bzip1, bzip53 double knockout' vs 'wild type' in 'control; 0 millimolar' at '0 hour'",
+E-GEOD-7211,A-AFFY-2,g1_g2,'oxt6 mutant' vs 'wild type',
+E-GEOD-7211,A-AFFY-2,g1_g3,'oxt6:AtCPSF30' vs 'wild type',
+E-GEOD-7641,A-AFFY-2,g1_g2,'NaCl' vs 'control' in 'cortex cells',Salt
+E-GEOD-7641,A-AFFY-2,g3_g12,'NaCl' vs 'control' in 'stele cells',Salt
+E-GEOD-7641,A-AFFY-2,g11_g4,'NaCl' vs 'control' in 'columella root cap cells',Salt
+E-GEOD-7641,A-AFFY-2,g5_g8,'NaCl' vs 'control' in 'endodermal and quiescent center cells',Salt
+E-GEOD-7641,A-AFFY-2,g6_g10,'NaCl' vs 'control' in 'protophloem cells',Salt
+E-GEOD-7641,A-AFFY-2,g9_g7,'NaCl' vs 'control' in 'epidermal and lateral root cap cells',Salt
+E-GEOD-7743,A-AFFY-2,g1_g2,'hy5' vs 'wild type' in 'control',
+E-GEOD-7743,A-AFFY-2,g6_g3,'cry1' vs 'wild type' in 'high light',Oxidative
+E-GEOD-7743,A-AFFY-2,g6_g4,'hy5' vs 'wild type' in 'high light',Oxidative
+E-GEOD-9719,A-AFFY-2,g2_g1,'2 hr hypoxia' vs '2 hr control' in 'total mRNA',Flooding / hypoxia
+E-GEOD-9719,A-AFFY-2,g4_g3,'9 hr hypoxia' vs '9 hr control' in 'total mRNA',Flooding / hypoxia
+E-GEOD-9719,A-AFFY-2,g5_g3,'9 hr hypoxia + 1hr recovery' vs '9 hr control' in 'total mRNA',Flooding / hypoxia
+E-GEOD-9719,A-AFFY-2,g7_g6,'2 hr hypoxia' vs '2 hr control' in 'polysomal mRNA',Flooding / hypoxia
+E-GEOD-9719,A-AFFY-2,g9_g8,'9 hr hypoxia' vs '9 hr control' in 'polysomal mRNA',Flooding / hypoxia
+E-GEOD-9719,A-AFFY-2,g10_g8,'9 hr hypoxia + 1hr recovery' vs '9 hr control' in 'polysomal mRNA',Flooding / hypoxia
+E-MEXP-1345,A-AFFY-2,g1_g2,'after cold treatment at 4 degrees Celsius' vs 'before cold treatment',Cold
+E-MEXP-1863,A-AFFY-2,g2_g1,'control; abi1td' at '0 hour' vs 'control; wild type' at '0 hour',
+E-MEXP-1863,A-AFFY-2,g1_g3,'drought; abi1td' at '0 hour' vs 'control; abi1td' at '0 hour',Drought
+E-MEXP-1863,A-AFFY-2,g4_g3,'drought; abi1td' at '0 hour' vs 'drought; wild type' at '0 hour',Drought
+E-MEXP-1863,A-AFFY-2,g2_g4,'drought; wild type' at '0 hour' vs 'control; wild type' at '0 hour',Drought
+E-MEXP-1957,A-AFFY-2,g1_g2,'cop-1; UV-B light regimen (345 nm); 1 hour; 305nm' vs 'cop-1; UV-B light regimen (305 nm); control',DNA damage
+E-MEXP-1957,A-AFFY-2,g1_g3,'cop-1; UV-B light regimen (345 nm); 6 hour; 305nm' vs 'cop-1; UV-B light regimen (305 nm); control',DNA damage
+E-MEXP-1957,A-AFFY-2,g4_g2,'cop-1; UV-B light regimen (345 nm); 1 hour; 305nm' vs 'cop-1; UV-B light regimen (345 nm); control',DNA damage
+E-MEXP-1957,A-AFFY-2,g4_g3,'cop-1; UV-B light regimen (345 nm); 6 hour; 305nm' vs 'cop-1; UV-B light regimen (345 nm); control',DNA damage
+E-MEXP-1957,A-AFFY-2,g5_g6,'uvr-8; UV-B light regimen (345 nm); 1 hour; 305nm' vs 'uvr-8; UV-B light regimen (305 nm); control',DNA damage
+E-MEXP-1957,A-AFFY-2,g5_g7,'uvr-8; UV-B light regimen (345 nm); 6 hour; 305nm' vs 'uvr-8; UV-B light regimen (305 nm); control',DNA damage
+E-MEXP-1957,A-AFFY-2,g8_g6,'uvr-8; UV-B light regimen (345 nm); 1 hour; 305nm' vs 'uvr-8; UV-B light regimen (345 nm); control',DNA damage
+E-MEXP-1957,A-AFFY-2,g8_g7,'uvr-8; UV-B light regimen (345 nm); 6 hour; 305nm' vs 'uvr-8; UV-B light regimen (345 nm); control',DNA damage
+E-MEXP-1957,A-AFFY-2,g9_g10,'wild type; UV-B light regimen (345 nm); 1 hour; 305nm' vs 'wild type; UV-B light regimen (305 nm); control',DNA damage
+E-MEXP-1957,A-AFFY-2,g9_g11,'wild type; UV-B light regimen (345 nm); 6 hour; 305nm' vs 'wild type; UV-B light regimen (305 nm); control',DNA damage
+E-MEXP-1957,A-AFFY-2,g12_g10,'wild type; UV-B light regimen (345 nm); 1 hour; 305nm' vs 'wild type; UV-B light regimen (345 nm); control',DNA damage
+E-MEXP-1957,A-AFFY-2,g12_g11,'wild type; UV-B light regimen (345 nm); 6 hour; 305nm' vs 'wild type; UV-B light regimen (345 nm); control',DNA damage
+E-MEXP-2377,A-AFFY-2,g4_g6,'srk2cf double knockout' vs 'wild type' in 'normal' at '0 hour',
+E-MEXP-2377,A-AFFY-2,g2_g1,'srk2cf double knockout' vs 'wild type' in 'drought' at '1 hour',Drought
+E-MEXP-2377,A-AFFY-2,g5_g3,'srk2cf double knockout' vs 'wild type' in 'drought' at '4 hour',Drought
+E-MEXP-2435,A-AFFY-2,g3_g1,'ABF3 overexpression' vs 'control' in 'drought stress' at '2 hour',Drought
+E-MEXP-2435,A-AFFY-2,g4_g2,'ABF3 overexpression' vs 'control' in 'drought stress' at '24 hour',Drought
+E-MEXP-2435,A-AFFY-2,g5_g1,'drought stress' vs 'none' in 'ABF3 overexpression' at '2 hour',Drought
+E-MEXP-2435,A-AFFY-2,g6_g2,'drought stress' vs 'none' in 'ABF3 overexpression' at '24 hour',Drought
+E-MEXP-2435,A-AFFY-2,g7_g3,'drought stress' vs 'none' in 'control' at '2 hour',Drought
+E-MEXP-2435,A-AFFY-2,g8_g4,'drought stress' vs 'none' in 'control' at '24 hour',Drought
+E-MEXP-2435,A-AFFY-2,g9_g5,'ABF3 overexpression' vs 'wild type' at '2 hour',
+E-MEXP-2435,A-AFFY-2,g7_g5,'ABF3 overexpression' vs 'control' at '2 hour',
+E-MEXP-2435,A-AFFY-2,g8_g6,'ABF3 overexpression' vs 'control'  at '24 hour',
+E-MEXP-2702,A-AFFY-77,g1_g2,'50 micromolar; camptothecin' vs 'none',DNA damage
+E-MEXP-2760,A-AFFY-2,g2_g1,'mbf1c mutant' vs 'wild type' at '0 minute',
+E-MEXP-2760,A-AFFY-2,g4_g3,'mbf1c mutant' vs 'wild type' at '20 minute',
+E-MEXP-2760,A-AFFY-2,g6_g5,'mbf1c mutant' vs 'wild type' at '60 minute',
+E-MEXP-342,A-AFFY-2,g2_g1,'ozone 500 parts per billion' vs 'control',Oxidative
+E-MEXP-3714,A-AFFY-2,g1_g3,'ahk2ahk3' vs 'wild type' in '1 degree celsius',
+E-MEXP-3714,A-AFFY-2,g2_g4,'ahk2ahk3' vs 'wild type' in '23 degree celsius',
+E-MTAB-10282,A-AFFY-2,g5_g1,'gpt2 T-DNA mutant' vs 'wild type genotype' in 'high light intensity' at '1 day',Oxidative
+E-MTAB-10282,A-AFFY-2,g7_g3,'gpt2 T-DNA mutant' vs 'wild type genotype' in 'low light intensity' at '1 day',
+E-MTAB-10282,A-AFFY-2,g6_g2,'gpt2 T-DNA mutant' vs 'wild type genotype' in 'high light intensity' at '7 day',Oxidative
+E-MTAB-10282,A-AFFY-2,g8_g4,'gpt2 T-DNA mutant' vs 'wild type genotype' in 'low light intensity' at '7 day',
+E-MTAB-1344,A-AFFY-2,g1_g3,'from low light to high light; RAP2.4a T-DNA Insertion (At1g36060)' vs 'control; RAP2.4a T-DNA Insertion (At1g36060)',Oxidative
+E-MTAB-1344,A-AFFY-2,g1_g5,'high light; RAP2.4a T-DNA Insertion (At1g36060)' vs 'control; RAP2.4a T-DNA Insertion (At1g36060)',Oxidative
+E-MTAB-1344,A-AFFY-2,g1_g7,'low light; RAP2.4a T-DNA Insertion (At1g36060)' vs 'control; RAP2.4a T-DNA Insertion (At1g36060)',
+E-MTAB-1344,A-AFFY-2,g4_g3,'from low light to high light; RAP2.4a T-DNA Insertion (At1g36060)' vs 'from low light to high light; wild type',Oxidative
+E-MTAB-1344,A-AFFY-2,g6_g5,'high light; RAP2.4a T-DNA Insertion (At1g36060)' vs 'high light; wild type',Oxidative
+E-MTAB-1344,A-AFFY-2,g2_g1,'control; RAP2.4a T-DNA Insertion (At1g36060)' vs 'control; wild type',
+E-MTAB-1344,A-AFFY-2,g8_g7,'low light; RAP2.4a T-DNA Insertion (At1g36060)' vs 'low light; wild type',
+E-MTAB-1344,A-AFFY-2,g2_g4,'from low light to high light; wild type' vs 'control; wild type',Oxidative
+E-MTAB-1344,A-AFFY-2,g2_g6,'high light; wild type' vs 'control; wild type',Oxidative
+E-MTAB-1344,A-AFFY-2,g2_g8,'low light; wild type' vs 'control; wild type',
+E-MTAB-1624,A-AFFY-126,g1_g2,'normal watering' at '5 hours' vs. '1 hour',
+E-MTAB-1624,A-AFFY-126,g1_g3,'normal watering' at '24 hours' vs. '1 hour',
+E-MTAB-1624,A-AFFY-126,g2_g3,'normal watering' at '24 hours' vs. '5 hours',
+E-MTAB-1624,A-AFFY-126,g4_g5,'300 millimolar sodium chloride' at '5 hours' vs. '1 hour',Salt
+E-MTAB-1624,A-AFFY-126,g4_g6,'300 millimolar sodium chloride' at '24 hours' vs. '1 hour',Salt
+E-MTAB-1624,A-AFFY-126,g5_g6,'300 millimolar sodium chloride' at '24 hours' vs. '5 hours',Salt
+E-MTAB-1624,A-AFFY-126,g1_g4,'300 millimolar sodium chloride' vs. 'normal watering' at '1 hour',Salt
+E-MTAB-1624,A-AFFY-126,g2_g5,'300 millimolar sodium chloride' vs 'normal watering' at '5 hours',Salt
+E-MTAB-1624,A-AFFY-126,g3_g6,'300 millimolar sodium chloride' vs. 'normal watering' at '24 hours',Salt
+E-MTAB-3230,A-AFFY-126,g1_g3,'PEG Stress' vs 'normal' in 'Mutant',Drought
+E-MTAB-3230,A-AFFY-126,g4_g2,'PEG Stress' vs 'normal' in 'Wild Type',Drought
+E-MTAB-3817,A-AFFY-2,g2_g1,'none; atpao5-3 mutant' vs 'none; wild type genotype',
+E-MTAB-3817,A-AFFY-2,g1_g3,'sodium chloride; 50 millimolar; atpao5-3 mutant' vs 'none; ; atpao5-3 mutant',Salt
+E-MTAB-3817,A-AFFY-2,g2_g4,'sodium chloride; 50 millimolar; wild type genotype' vs 'none; ; wild type genotype',Salt
+E-MTAB-3817,A-AFFY-2,g4_g3,'sodium chloride; 50 millimolar; atpao5-3 mutant' vs 'sodium chloride; 50 millimolar; wild type genotype',Salt
+E-MTAB-4994,A-AFFY-126,g2_g1,'drought environment' vs 'normal watering',Drought
+E-MTAB-5118,A-GEOD-6864,g1_g2,'1:60 carbon:nitrogen ratio' vs '1:1 carbon:nitrogen ratio',
+E-MTAB-5118,A-GEOD-6864,g1_g3,'60:1 carbon:nitrogen ratio' vs '1:1 carbon:nitrogen ratio',
+E-MTAB-5118,A-GEOD-6864,g3_g4,'60:60 carbon:nitrogen ratio' vs '60:1 carbon:nitrogen ratio',
+E-MTAB-5118,A-GEOD-6864,g2_g4,'60:60 carbon:nitrogen ratio' vs '1:60 carbon:nitrogen ratio',
+E-MTAB-5118,A-GEOD-6864,g1_g4,'60:60 carbon:nitrogen ratio' vs '1:1 carbon:nitrogen ratio',
+E-MTAB-8326,A-AFFY-2,g4_g1,'VIP2 overexpression' vs 'wild type genotype' at '0 hour',
+E-MTAB-8326,A-AFFY-2,g5_g2,'VIP2 overexpression' vs 'wild type genotype' at '48 hour',
+E-MTAB-8326,A-AFFY-2,g6_g3,'VIP2 overexpression' vs 'wild type genotype' at '72 hour',
+E-TABM-52,A-AFFY-2,g1_g5,'4 degree celsius' vs '20 degree celsius' in 'Columbia-0',
+E-TABM-52,A-AFFY-2,g3_g11,'4 degree celsius' vs '20 degree celsius' in 'Cape Verde Islands',
+E-TABM-52,A-AFFY-2,g4_g12,'4 degree celsius' vs '20 degree celsius' in 'Coimbra',
+E-TABM-52,A-AFFY-2,g6_g13,'4 degree celsius' vs '20 degree celsius' in 'Landsberg erecta',
+E-TABM-52,A-AFFY-2,g7_g15,'4 degree celsius' vs '20 degree celsius' in 'Rschew',
+E-TABM-52,A-AFFY-2,g8_g16,'4 degree celsius' vs '20 degree celsius' in 'Tenela',

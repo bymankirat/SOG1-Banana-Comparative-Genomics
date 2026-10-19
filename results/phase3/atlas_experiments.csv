@@ -1,0 +1,136 @@
+accession,species,type,description,factors,arrays
+E-CURD-44,arabidopsis thaliana,Differential,Transposable elements (TEs) contribute to stress-related long intergenic noncoding RNAs in Plants (I),genotype,
+E-ENAD-8,musa acuminata,Differential,RNA-seq of banana in vitro roots under mild osmotic stress,cultivar environmental stress,
+E-ENAD-9,brachypodium distachyon,Differential,RNA-seq of non-vernalised rvr1-1 mutant versus vernalised and non-vernalised wild type Brachypodium distachyon plants,environmental stress genotype,
+E-GEOD-109341,oryza sativa japonica group,Differential,Adaptation Versus Senescence In Rice: Early Signalling Events Play A Role In Inducing Specificity And Tolerance To Salinity,compound cultivar organism part,
+E-GEOD-111250,zea mays,Differential,Persistent ER stress in maize seedlings engages ZmIRE1 in a multiphasic process that transitions from prosurvival activities to cell death [RNA-Seq],compound time,
+E-GEOD-112368,arabidopsis thaliana,Differential,Transcriptome analysis using RNA sequencing conducted for Arabidopsis thaliana Col-0 wild type and ahl10-1 mutant in response to low water potential (drought environment),environmental stress genotype,
+E-GEOD-114379,arabidopsis thaliana,Differential,Gene expression responses to ABA and to osmotic stress in the Arabidopsis thaliana pyl duodecuple mutant ,compound genotype,
+E-GEOD-117052,arabidopsis thaliana,Differential,Transcriptome analysis of apoplastic reactive oxygen species signalling in Arabidopsis thaliana accessions with varying ozone sensitivity.,compound ecotype,
+E-GEOD-121146,vitis vinifera,Differential,Volatile profiles and transcriptomic variation in Cabernet Sauvignon grapes in response to various sunlight exposure strategies in a warm climate,developmental stage stimulus,
+E-GEOD-122866,zea mays,Differential,Transcriptome analysis of maize hybrid An’nong 591 and its parental lines under heat stress,cultivar environmental stress,
+E-GEOD-124235,arabidopsis thaliana,Differential,BLISTER safeguards the protein kinase activity of ER stress modulator IRE1A during plant growth and development in Arabidopsis thaliana,genotype,
+E-GEOD-128441,sorghum bicolor,Differential,Lifecycle transcriptomics of field-droughted sorghum reveals rapid biotic and metabolic responses,age cultivar environmental stress organism part,
+E-GEOD-140928,sorghum bicolor,Differential,"Genome-wide analysis of abscisic acid biosynthesis, catabolism, and signaling in Sorghum bicolor under saline-alkali stress",environmental stress,
+E-GEOD-30249,sorghum bicolor,Differential,RNA-Seq of Sorghum bicolor 9d seedlings in response to osmotic stress and abscisic acid,compound organism part,
+E-GEOD-43560,arabidopsis thaliana,Differential,Allele-specific expression in A. thaliana hybrids grown under control and drought stress conditions,genotype treatment,
+E-GEOD-54705,sorghum bicolor,Differential,Comparison of transcriptomes between N-stress tolerant and sensitive genotypes,cultivar environmental stress,
+E-GEOD-57252,glycine max,Differential,Transcription profiling by high throughput sequencing of soybean root during dehydration and salt stress,environmental stress time,
+E-GEOD-58805,triticum aestivum,Differential,Transcription profiling by high throughput sequencing of wheat in response to low temperature,age environmental stress,
+E-GEOD-61542,arabidopsis thaliana,Differential,Quantitative trait loci mapping and transcriptome analysis reveal candidate genes regulating the response to ozone in Arabidopsis thaliana,genotype treatment,
+E-GEOD-63406,arabidopsis thaliana,Differential,Genome-wide analysis of wild type and gemin2 mutant plants [cold exposure],environmental stress genotype time,
+E-GEOD-63429,zea mays,Differential,Transcription profiling of submergence tolerance in Maize,cultivar phenotype time treatment,
+E-GEOD-64087,solanum lycopersicum,Differential,Transcription profiling by high throughput sequencing of tomato leaves treated with and without the DC3000 pathogen and nightly red light treatment,environmental stress infect,
+E-GEOD-65740,arabidopsis thaliana,Differential,"RNA-seq of two arabidopsis triple mutants coi1-16 ein2 sid2 and tga2 tga5 tga6 related to Jasmonic acid, salicylic acid and ethylene signaling under ozone treatment to identify hormone-independant apoplastic reactive oxygen species (ROS) signaling",genotype growth condition,
+E-GEOD-68560,arabidopsis thaliana,Differential,Transcription profiling by high throughput sequencing of Arabidopsis exposed to a pulse of white light at ZT18 to study the effect of light on alternative splicing,environmental stress,
+E-GEOD-68684,arabidopsis thaliana,Differential,Transcription profiling by high throughput sequencing of Arabidopsis transgenic plants expressing 35S::FLAG-GR-KAN1 exposed to either mock treatment or dexamethasone (DEX) to induce KAN1 release from its cytoplasmic blockage,environmental stress genotype phenotype,
+E-GEOD-69469,glycine max,Differential,Transcription profiling by high throughput sequencing of soybean leaves under water deficit in 6 periods of day,environmental stress sampling time point,
+E-GEOD-72806,arabidopsis thaliana,Differential,Transcription profiling by high throughput sequencing of Arabidopsis plants in response to a combination of salt and heat stress,environmental stress,
+E-GEOD-74222,brachypodium distachyon,Differential,RNA-seq of Brachypodium distachyon subjected to a 48 h submergence stress,ecotype environmental stress,
+E-GEOD-77826,solanum tuberosum,Differential,Transcription profiling by high throughput sequencing of four potato reference cultivars with differential drought tolerance in response to drought stress,cultivar environmental stress growth condition,
+E-GEOD-79855,arabidopsis thaliana,Differential,"Transcription profiling by high throughput sequencing of Arabidopsis wrky75 mutant and wrky25, wrky33 double mutant in response to ozone treatment",environmental stress genotype,
+E-GEOD-83411,zea mays,Differential,Weed presence altered biotic stress and light signalling in maize even when weeds were removed early in the critical weed-free period,environmental stress sampling time point temperature,
+E-GEOD-83676,hordeum vulgare,Differential,Time course RNA-seq data from barley infested with Tetranychus urticae and Banks grass mite,environmental stress time,
+E-GEOD-85653,arabidopsis thaliana,Differential,Genome-wide mapping of the Arabidopsis thaliana heat shock transcription factor A1b binding sites under non-stress and heat stress conditions [RNA-seq],environmental stress genotype,
+E-GEOD-93081,oryza sativa,Differential,"Root-specific overexpression of OsERF48 causes regulation of OsCML16, a calmodulin-like protein gene that enhances root growth and drought tolerance",genotype,
+E-GEOD-95373,arabidopsis thaliana,Differential,Plant development on ISS differs from the development on the ground and is influenced by the genetic background.,age ecotype environmental stress,
+E-GEOD-98045,arabidopsis thaliana,Differential,Salt-stress and CTD phosphatase-like 4 mediate switching of snRNA to mRNA transcription in Arabidopsis thaliana [CPL4(Oto)],genotype,
+E-GEOD-99576,arabidopsis thaliana,Differential,Exploring the link between ER stress and autophagy in Arabidopsis thaliana,compound genotype,
+E-GEOD-99677,arabidopsis thaliana,Differential,An Arabidopsis Nucleoporin NUP85 modulates plant responses to ABA and salt stress,compound genotype,
+E-MTAB-10374,arabidopsis thaliana,Differential,Distinct Cellular Strategies Determine Sensitivity to Mild Drought of Arabidopsis Natural Accessions,ecotype environmental stress,
+E-MTAB-1625,oryza sativa japonica group,Differential,"RNA-seq of coding RNA in rice (Oryza sativa L. Japonica nipponbare) under salt stress over a time-course, Gramene project",growth condition time,
+E-MTAB-1913,oryza sativa indica group,Differential,Salt stress in salt sensitive Oryza sativa Indica group IR29 ,growth condition time,
+E-MTAB-1914,oryza sativa indica group,Differential,Salt stress in salt sensitive Oryza sativa Indica group Pokkali (salt sensitive),growth condition time,
+E-MTAB-3279,arabidopsis thaliana,Differential,RNA-sequencing data of young developing leaves of 6 Arabidopsis accessions in control and mild drought conditions,block ecotype growth condition,
+E-MTAB-3834,oryza sativa,Differential,Transcriptome profiling of contrasting rice genotypes in response to submergence during seed germination,growth condition,
+E-MTAB-4114,hordeum vulgare,Differential,Expression profiling of developing barley main shoot apices and leaves during the vegetative phase and early inflorescence development in response to the photoperiod and natural allelic variation at Ppd-H1,developmental stage environmental stress genotype organism part,
+E-MTAB-4124,arabidopsis thaliana,Differential,Transcription profiling by high throughput sequencing of Arabidopsis roots upon exposure of phosphate starvation,environmental stress,
+E-MTAB-4245,triticum aestivum,Differential,Transcription profiling by high throughput sequencing of wheat cultivar Chinese Spring seedlings maintained without phosphate for 10 days,environmental stress organism part,
+E-MTAB-4252,physcomitrella patens,Differential,Transcription profiling by high throughput sequencing in protonemata of Physcomitrella patens after heat shock treatments,environmental stress,
+E-MTAB-4258,zea mays,Differential,"Transcription profiling by high throughput sequencing of maize inbred lines B73, Mo17 and Oh43 under control and stress conditions",environmental stress genotype,
+E-MTAB-4274,glycine max,Differential,Transcription profiling by high throughput sequencing of soybean's response to elevated ozone level,growth condition,
+E-MTAB-4297,zea mays,Differential,Transcription profiling by high throughput sequencing in different primary root segments of Zea mays,environmental stress organism part,
+E-MTAB-4325,zea mays,Differential,Transcription profiling by high throughput sequencing of young maize primary roots in response to low water potentials,environmental stress time,
+E-MTAB-4352,glycine max,Differential,Transcription profiling by high throughput sequencing in Glycine Max under water deficit,environmental stress phenotype time,
+E-MTAB-4391,arabidopsis thaliana,Differential,Transcription profiling by high throughput sequencing of Arabidopsis roots grown in the presence or absence of Fe,environmental stress,
+E-MTAB-4447,arabidopsis thaliana,Differential,Transcription profiling by high throughput sequencing of immature aerial tissues of A. thaliana seedlings grown at the low and elevated CO2 concentrations,environmental stress genotype,
+E-MTAB-4634,hordeum vulgare,Differential,Transcription profiling by high throughput sequencing of two genotypes of barley grown under control and salt-treated conditions,compound genotype organism part,
+E-MTAB-4789,solanum lycopersicum,Differential,Transcription profiling by high throughput sequencing of tomato Rio Grande prf3 leaves challenged with either the flgII-28 peptide or different bacterial strains,environmental stress,
+E-MTAB-5076,glycine max,Differential,"Transcription profiling by high throughput sequencing of soybean seed coat after elevated temperature, drought and ozone treatment",block environmental stress,
+E-MTAB-5103,arabidopsis thaliana,Differential,Gene expression between dry and imbibed seeds in vitamin C defective (vtc) mutants and wild-type Arabidopsis thaliana,environmental stress genotype,
+E-MTAB-5188,arabidopsis thaliana,Differential,Transcription profiling by high throughput sequencing of Arabidopsis wild type plants during the shift from dark to blue light,environmental stress,
+E-MTAB-5226,glycine max,Differential,Transcription profiling by high throughput sequencing of soybean flower and pods in response to elevated concentration of ozone,block compound organism part,
+E-MTAB-5941,oryza sativa japonica group,Differential,Transcriptome profiling of short-term response to chilling stress in resistant and susceptible rice seedlings,cultivar environmental stress time,
+E-MTAB-6445,brachypodium distachyon,Differential,Gene expression ATLAS of Brachypodium distachyon (cv. BD21) during photomorphogenesis (transition from dark to light),environmental stress,
+E-MTAB-6565,hordeum vulgare subsp. vulgare,Differential,"RNA-seq of barley lines after dehydration, spider mite or combined stress.",environmental stress infect,
+E-MTAB-6965,arabidopsis thaliana,Differential,Transcriptome profiling of Arabidopsis mutants of the chlorophyll degradation PAO/Phyllobilin pathway,environmental stress genotype time,
+E-MTAB-8073,arabidopsis thaliana,Differential,"RNA-seq of Arabidopsis Col-0, snrk2.4, double snrk2.4/2.10 and quintuple snrk2.1/2.4/2.5/2.9/2.10 mutants from control (0mM) and salt stress (150mM NaCl for 1hour) treatment.",compound genotype,
+E-MTAB-8520,triticum aestivum,Differential,Effect of heat stress on developing wheat grain,age environmental stress,
+E-MTAB-8523,arabidopsis thaliana,Differential,Transcription profiling of Arabidopsis thaliana leaves as reaction to caterpillar (Trichoplusia ni) feeding and fungi (Laccaria bicolor) infection of the roots,environmental stress infect,
+E-GEOD-11175,oryza sativa japonica group,Differential,Transcription profiling by array of wild type and drought and salt tolerance (DST) mutant Japanese rice plants,genotype,A-AFFY-126
+E-GEOD-11758,arabidopsis thaliana,Differential,Transcription profiling by array of Arabidopsis after heat shock or treatment with tunicamycin or L-azetidine-2-carboxylic acid,compound temperature,A-AFFY-2
+E-GEOD-13735,oryza sativa,Differential,Transcription profiling by array of rice salt-tolerant cultivar FL7478 under salt stress conditions,cultivar environmental stress,A-AFFY-126
+E-GEOD-15970,hordeum vulgare,Differential,Differentially Expressed Genes between Drought-tolerant and Drought-sensitive Barley Genotypes,environmental stress genotype phenotype time,A-AFFY-31
+E-GEOD-16567,zea mays,Differential,"Transcription profiling by array of seedlings from two maize inbred lines (Ye478 and Han21 )under drought stress, re-watering after drought, or normal watering conditions",cultivar growth condition,A-AFFY-77
+E-GEOD-19603,arabidopsis thaliana,Differential,Transcription profiling by array of Arabidopsis msh1 recA3 double mutants under heat stress,environmental stress genotype,A-AFFY-2
+E-GEOD-19700,arabidopsis thaliana,Differential,Transcription profiling by array of Arabidopsis after drought conditions sampled at different times of day,growth condition time,A-AFFY-2
+E-GEOD-22671,arabidopsis thaliana,Differential,Gene expression from Arabidopsis  under high light conditions,environmental stress,A-AFFY-2
+E-GEOD-23211,oryza sativa japonica group,Differential,Transcription profiling by array of transgenic rice plants expressing an isopentenyltransferase gene driven by PSARK under water stress,environmental stress genotype,A-AFFY-126
+E-GEOD-23846,arabidopsis thaliana,Differential,Expression data from siliques of wild type and AtHb1-overexpressing plants under moderate hypoxia and standard conditions,genotype growth condition,A-AFFY-2
+E-GEOD-25206,oryza sativa indica group,Differential,Transcription profiling by array of rice roots in response to chromium stress,compound,A-AFFY-126
+E-GEOD-27475,arabidopsis thaliana,Differential,Transcription profiling by array of Arabidopsis with RNAi-mediated knockdown of AtERF73/HRE1 after growth in hypoxic conditions,genotype growth condition,A-AFFY-2
+E-GEOD-27861,arabidopsis thaliana,Differential,Rice A20/AN1 zinc-finger containing stress-associated proteins (SAP1/11) and a receptor-like cytoplasmic kinase (OsRLCK253) interact via A20 zinc-finger and confer abiotic stress tolerance in transgenic Arabidopsis plants,genotype,A-AFFY-2
+E-GEOD-29187,arabidopsis thaliana,Differential,Transcription profiling by array of Arabidopsis overexpressing RAP2.12 or with RAP2.12 and RAP2.2 silenced after growth in hypoxic conditions,genotype growth condition,A-AFFY-2
+E-GEOD-31594,vitis vinifera,Differential,"Transcription profiling by array of grape after growth in increased salinity, at 5degC, or in the presence of polyethylene glycol",growth condition sampling time point,A-AFFY-78
+E-GEOD-31677,vitis vinifera,Differential,Transcription profiling by array of Cabernet Sauvignon grapes after growth in increased salinity or water deprivation,growth condition time,A-AFFY-78
+E-GEOD-34667,arabidopsis thaliana,Differential,Transcription profiling by array of Arabidopsis G-protein knockout plants in response to ozone ,environmental stress genotype time,A-AFFY-2
+E-GEOD-35258,arabidopsis thaliana,Differential,Comparison of low water potential (drought)-regulated gene expression in wild type (Col-0) and the hai1-2 (At5g59220) mutant,genotype growth condition,A-AFFY-2
+E-GEOD-36011,arabidopsis thaliana,Differential,Transcription profiling by array of Arabidopsis Col:LUC and rao1 mutants under 3 hour stress treatment with antimycin A,compound genotype,A-AFFY-2
+E-GEOD-36789,arabidopsis thaliana,Differential,Transcriptome Profiling of Roots and leaves Under High Osmotic Stress in Arabidopsis,growth condition organism part,A-AFFY-2
+E-GEOD-37940,oryza sativa japonica group,Differential,Genome-wide Gene Expression Profiling Associated with Seedling Cold Tolerance Improvement in Japonica Rice Background,genotype growth condition time,A-AFFY-126
+E-GEOD-38023,oryza sativa,Differential,Comparative transcriptome profiling of chilling stress responsiveness in two contrasting rice genotypes,environmental stress phenotype time,A-AFFY-126
+E-GEOD-39236,arabidopsis thaliana,Differential,Transcription profiling by array of Arabidopsis rsa1-1 mutants under salt stress,compound genotype time,A-AFFY-2
+E-GEOD-40061,arabidopsis thaliana,Differential,Role of CAMTA1 gene under drought stress,genotype growth condition organism part,A-AFFY-2
+E-GEOD-40549,oryza sativa,Differential,Spatial transcriptomes of iron-deficient and cadmium-stressed rice,environmental stress organism part,A-GEOD-6864
+E-GEOD-41136,arabidopsis thaliana,Differential,Transcription profiling by array of Arabidopsis to investogate reactive oxygen signals and specific mitochondrial retrograde stress signals,compound genotype,A-AFFY-2
+E-GEOD-41647,oryza sativa indica group,Differential,Transcriptome profiling for drought tolerant and susceptible cultivars of indica rice,environmental stress phenotype time,A-AFFY-126
+E-GEOD-44343,arabidopsis thaliana,Differential,Effect of PCO1 overexpression [hypoxia],genotype,A-AFFY-2
+E-GEOD-44793,arabidopsis thaliana,Differential,"Transcription profiling by array of Arabidopsis seedlings grown after DNA-damaging agent bleomycin (BLM) and/or immune inducer 2, 6-dichloroisonicotinic acid (INA) treatment to identify synergistically induced defence genes",stimulus,A-AFFY-2
+E-GEOD-45724,oryza sativa,Differential,Microarray analysis of transcriptional responses to alkali stress in two rice genotypes,environmental stress genotype,A-AFFY-126
+E-GEOD-47195,oryza sativa,Differential,SALT-RESPONSIVE ERF1 expression profiling in rice roots,genotype,A-AFFY-126
+E-GEOD-49418,arabidopsis thaliana,Differential,Transcription factor WRKY46 regulates osmotic stress responses and stomatal movement tissue specifically and independently in Arabidopsis,environmental stress genotype,A-AFFY-2
+E-GEOD-52013,arabidopsis thaliana,Differential,Activation of auxin signalling counteracts photorespiratory hydrogen peroxide dependent cell death,compound,A-AFFY-2
+E-GEOD-52046,arabidopsis thaliana,Differential,"Expression data from Col-0 and sp1,spx2 under phosphate starvation stress and recovery after resupplying phosphate",genotype growth condition,A-AFFY-2
+E-GEOD-53308,arabidopsis thaliana,Differential,Transcription profiling by array of Arabidopsis leaves under the condition of salt-induced senescence,growth condition,A-AFFY-2
+E-GEOD-54466,oryza sativa japonica group,Differential,Transcription profiling by array of drought-stress response in wild type and mutant rice,environmental stress genotype,A-AFFY-126
+E-GEOD-5530,arabidopsis thaliana,Differential,Transcription profiling by array of Arabidopsis over-expressing Zat12 after treatment with hydrogen peroxide,genotype growth condition,A-AFFY-2
+E-GEOD-5539,arabidopsis thaliana,Differential,Over-expression of MBF1c enhances stress tolerance,genotype,A-AFFY-2
+E-GEOD-55835,arabidopsis thaliana,Differential,Transcription profiling by array of three Arabidopsis accessions under acclimation to sub-zero temperature at -3 degree Celsius after cold acclimation,ecotype environmental stress time,A-AFFY-2
+E-GEOD-5722,arabidopsis thaliana,Differential,Functional Genomics of Ozone Stress in Arabidopsis.,growth condition,A-AFFY-2
+E-GEOD-58603,oryza sativa,Differential,Transcription profiling of two different rice genotypes in response to salt stress and abscisic acid treatment,compound genotype growth condition organism part,A-AFFY-126
+E-GEOD-62315,vitis vinifera,Differential,Transcription profiling by array of 30-day old detached grape leaves exposed to ultraviolet C radiation for 6 or 12 hours against unexposed controls,irradiate time,A-AFFY-78
+E-GEOD-6583,arabidopsis thaliana,Differential,Transcription profiling by array of Arabidopsis mutant for siz1 after exposure to drought,genotype growth condition,A-AFFY-2
+E-GEOD-68439,arabidopsis thaliana,Differential,Osmotic stress induces phosphorylation of histone H3 at threonine 3 in pericentromeric regions of Arabidopsis thaliana [expression],genotype,A-AFFY-2
+E-GEOD-71001,arabidopsis thaliana,Differential,"Transcription profiling by array of Arabidopsis roots treated with salt from bzip1, bzip53 double knockout",compound genotype time,A-AFFY-2
+E-GEOD-7211,arabidopsis thaliana,Differential,A polyadenylation factor subunit implicated in regulating oxidative stress responses in Arabidopsis thaliana,genotype,A-AFFY-2
+E-GEOD-7641,arabidopsis thaliana,Differential,Transcription profiling by array of Arabidopsis root cells after treatment with NaCl,cell type growth condition,A-AFFY-2
+E-GEOD-7743,arabidopsis thaliana,Differential,Transcription profiling by array of Arabidopsis mutant for cry1 or hy5 after growth in high light or blue light ,genotype growth condition,A-AFFY-2
+E-GEOD-9719,arabidopsis thaliana,Differential,Transcription profiling by array of Arabidopsis after short and prolonged hypoxia treatment,RNA growth condition,A-AFFY-2
+E-MEXP-1345,arabidopsis thaliana,Differential,Transcription profiling of Arabdiposis plants before and after cold treatment using spike-in controls to allow measurement of absolute mRNA expression at the global level,growth condition,A-AFFY-2
+E-MEXP-1863,arabidopsis thaliana,Differential,Transcription profiling of Arabidopsis wild type and abi1td mutant plants stressed by ozone or drought to better understand ABA signalling,environmental stress genotype time,A-AFFY-2
+E-MEXP-1957,arabidopsis thaliana,Differential,Transcription profiling of Arabodpsis seedings exposed to UV-B irradiation,genotype light time treatment,A-AFFY-2
+E-MEXP-2377,arabidopsis thaliana,Differential,Transcription profiling by array of Arabidopsis srk2cf mutants in a drought stress time course.,genotype growth condition time,A-AFFY-2
+E-MEXP-2435,arabidopsis thaliana,Differential,Transcription profiling by array of Arabidopsis thaliana transgenic plants overexpressing ABF3 under drought stress,environmental stress genotype time,A-AFFY-2
+E-MEXP-2702,zea mays,Differential,Transcription profiling of Zea mays embryos under camptothecin (CPT) treatment.,compound,A-AFFY-77
+E-MEXP-2760,arabidopsis thaliana,Differential,Transcription profiling by array of Arabidopsis thaliana Multiprotein Bridging Factor 1c knock out plants following heat stress,genotype time,A-AFFY-2
+E-MEXP-342,arabidopsis thaliana,Differential,Arabidopsis thaliana response to ozone,growth condition,A-AFFY-2
+E-MEXP-3714,arabidopsis thaliana,Differential,Transcription profiling by array of genes regulated by ahk2 ahk3 in response to cold in Arabidopsis thaliana,genotype temperature,A-AFFY-2
+E-MTAB-10282,arabidopsis thaliana,Differential,Acclimation of photosynthesis to changes in the environment results decreases oxidative stress in Arabidopsis thaliana,genotype growth condition time,A-AFFY-2
+E-MTAB-1344,arabidopsis thaliana,Differential,Transcription profiling by array of Arabidopsis thaliana Col-0 and RAP2.4a mutants under time dependent light stress by transfer to high light,environmental stress genotype,A-AFFY-2
+E-MTAB-1624,oryza sativa japonica group,Differential,"Transcription profiling by array of rice (Oryza sativa L. Japonica Nipponbare) unders salt stress over a time course, Gramene project",growth condition sampling time time,A-AFFY-126
+E-MTAB-3230,oryza sativa,Differential,Comparative transcriptome study of enhanced water stress tolerant (ewst1) mutant of rice variety Nagina22,phenotype stimulus,A-AFFY-126
+E-MTAB-3817,arabidopsis thaliana,Differential,Transcription profiling by array of Arabidopsis wild type and polyamine oxidase 5 loss-of-function mutant exposed to sodium chloride,compound genotype,A-AFFY-2
+E-MTAB-4994,oryza sativa indica group,Differential,Identification of drought responsive genes at reproductive stage in upland rice variety Nagina22 through comparative microarray analysis,environmental stress,A-AFFY-126
+E-MTAB-5118,oryza sativa japonica group,Differential,Transcriptomic Analysis of Responses to Imbalanced Carbon:Nitrogen Availabilities in Rice Seedlings,environmental stress,A-GEOD-6864
+E-MTAB-8326,arabidopsis thaliana,Differential,Transcriptome analysis of Arabidopsis VIRE2-INTERACTING PROTEIN2 Overexpressor in Agrobacterium-mediated plant transformation and abiotic stresses,genotype time,A-AFFY-2
+E-TABM-52,arabidopsis thaliana,Differential,Transcription profiling by array of nine ecotypes of Arabidopsis before and after cold acclimation,ecotype temperature,A-AFFY-2
