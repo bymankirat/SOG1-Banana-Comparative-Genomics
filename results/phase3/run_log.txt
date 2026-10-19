@@ -1,8 +1,8 @@
 
 === phase 3 step 1: find and download stress experiments (Expression Atlas) ===
-16:10:21 Expression Atlas lists 4562 experiments; keys: ['experimentAccession', 'experimentDescription', 'experimentProjects', 'experimentType', 'experimentalFactors', 'kingdom', 'lastUpdate', 'loadDate', 'numberOfAssays', 'rawExperimentType', 'species', 'technologyType']
-16:10:21 135 differential stress-related experiments in the chosen species
-16:10:21 species
+16:26:07 Expression Atlas lists 4562 experiments; keys: ['experimentAccession', 'experimentDescription', 'experimentProjects', 'experimentType', 'experimentalFactors', 'kingdom', 'lastUpdate', 'loadDate', 'numberOfAssays', 'rawExperimentType', 'species', 'technologyType']
+16:26:07 135 differential stress-related experiments in the chosen species
+16:26:07 species
 arabidopsis thaliana              73
 brachypodium distachyon            3
 glycine max                        6
@@ -19,7 +19,15 @@ sorghum bicolor                    4
 triticum aestivum                  3
 vitis vinifera                     4
 zea mays                           9
-16:10:36 659 contrasts, 423 classified as a stress: {'Drought': 182, 'Salt': 100, 'Cold': 44, 'Oxidative': 40, 'Flooding / hypoxia': 24, 'DNA damage': 17, 'Heat': 16}
-16:14:29 done; 0 downloads failed (see atlas_failed.json)
+16:26:07 659 contrasts, 423 classified as a stress: {'Drought': 182, 'Salt': 100, 'Cold': 44, 'Oxidative': 40, 'Flooding / hypoxia': 24, 'DNA damage': 17, 'Heat': 16}
+16:26:07 done; 0 downloads failed (see atlas_failed.json)
 
-finished in 4.4 min
+=== phase 3 step 2: map SOG1 and its targets to every species (Compara) ===
+16:26:07 species with stress contrasts: ['arabidopsis_thaliana', 'brachypodium_distachyon', 'glycine_max', 'hordeum_vulgare', 'hordeum_vulgare_subsp._vulgare', 'musa_acuminata', 'oryza_sativa', 'oryza_sativa_indica_group', 'oryza_sativa_japonica_group', 'physcomitrella_patens', 'solanum_tuberosum', 'sorghum_bicolor', 'triticum_aestivum', 'vitis_vinifera', 'zea_mays']
+16:26:22   brachypodium_distachyon: no ortholog for RPA1E
+16:26:24   brachypodium_distachyon: no ortholog for SMR4
+16:26:27   brachypodium_distachyon: no ortholog for SMR7
+16:26:28   brachypodium_distachyon: no ortholog for NAC044
+16:26:28   brachypodium_distachyon: no ortholog for NAC085
+16:26:29   brachypodium_distachyon: no ortholog for XRI1
+16:26:38   glycine_max: no ortholog for BRCA1
